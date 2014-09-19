@@ -9,7 +9,6 @@
 #import "SalsaViewController.h"
 #import "CCIngredientItem.h"
 #import "CondimentViewController.h"
-#import "UIImageEffects.h"
 
 @interface SalsaViewController ()
 
@@ -50,26 +49,18 @@
     [self performSegueWithIdentifier:@"salsaItemSelected" sender:self];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
+- (void)blurBG{
     self.image = [UIImage imageNamed:@"salsa"];
-    [self updateImage:nil];
-    UIGraphicsBeginImageContextWithOptions(self.image.size, NO, self.image.scale);
-    [self.image drawAtPoint:CGPointZero];
-    self.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-}
-
-- (void)updateImage:(id)sender
-{
-    UIImage *effectImage = nil;
-    effectImage = [UIImageEffects imageByApplyingLightEffectToImage:self.image];
-    self.imageView.image = effectImage;
+    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    self.imageView.image = self.image;
+    visualEffectView.frame = self.imageView.bounds;
+    [self.imageView addSubview:visualEffectView];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self blurBG];
     self.tomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTomato];
     self.tRed = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTRed];
     self.tGreen = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTGreen];

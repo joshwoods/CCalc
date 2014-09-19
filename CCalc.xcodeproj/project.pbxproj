@@ -20,7 +20,6 @@
 		F7086A0718A80D8B003493AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7086A0518A80D8B003493AC /* InfoPlist.strings */; };
 		F7086A0918A80D8B003493AC /* cCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7086A0818A80D8B003493AC /* cCalcTests.m */; };
 		F7113FFC18B70A32003D870A /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7113FFB18B70A32003D870A /* SummaryViewController.m */; };
-		F748ACF819C8F7840066706E /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F748ACF719C8F7840066706E /* UIImageEffects.m */; };
 		F74FC1CC18D77D5300A7D925 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74FC1CB18D77D5300A7D925 /* Images.xcassets */; };
 		F7514E0E19C92021006D7599 /* MeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7514E0D19C92021006D7599 /* MeatViewController.m */; };
 		F7514E1119C92494006D7599 /* SalsaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7514E1019C92494006D7599 /* SalsaViewController.m */; };
@@ -61,8 +60,6 @@
 		F7113FFA18B70A32003D870A /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		F7113FFB18B70A32003D870A /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
 		F726CE0918E27FDB00EB357D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F748ACF619C8F7840066706E /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
-		F748ACF719C8F7840066706E /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		F74FC1CB18D77D5300A7D925 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F7514E0C19C92021006D7599 /* MeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeatViewController.h; sourceTree = "<group>"; };
 		F7514E0D19C92021006D7599 /* MeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeatViewController.m; sourceTree = "<group>"; };
@@ -141,8 +138,6 @@
 		F70869E318A80D8B003493AC /* cCalc */ = {
 			isa = PBXGroup;
 			children = (
-				F748ACF619C8F7840066706E /* UIImageEffects.h */,
-				F748ACF719C8F7840066706E /* UIImageEffects.m */,
 				F726CE0918E27FDB00EB357D /* AppDelegate.h */,
 				F70869ED18A80D8B003493AC /* AppDelegate.m */,
 				F70869EF18A80D8B003493AC /* Main.storyboard */,
@@ -312,7 +307,6 @@
 				F70869EE18A80D8B003493AC /* AppDelegate.m in Sources */,
 				F70869EA18A80D8B003493AC /* main.m in Sources */,
 				F7DD676619C938F900EC32B4 /* CondimentViewController.m in Sources */,
-				F748ACF819C8F7840066706E /* UIImageEffects.m in Sources */,
 				F7AA0A9418C278BB004D90FC /* CCNutrition.m in Sources */,
 				F7113FFC18B70A32003D870A /* SummaryViewController.m in Sources */,
 			);

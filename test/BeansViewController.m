@@ -9,7 +9,6 @@
 #import "BeansViewController.h"
 #import "SalsaViewController.h"
 #import "CCIngredientItem.h"
-#import "UIImageEffects.h"
 
 @interface BeansViewController ()
 
@@ -27,18 +26,9 @@
 
 @implementation BeansViewController
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    self.image = [UIImage imageNamed:@"fajitas"];
-    [self updateImage:nil];
-    UIGraphicsBeginImageContextWithOptions(self.image.size, NO, self.image.scale);
-    [self.image drawAtPoint:CGPointZero];
-    self.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self blurBG];
     self.fajitas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeFajitas];
     self.wRice = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeWRice];
     self.bRice = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBRice];
@@ -47,11 +37,13 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)updateImage:(id)sender
-{
-    UIImage *effectImage = nil;
-    effectImage = [UIImageEffects imageByApplyingLightEffectToImage:self.image];
-    self.imageView.image = effectImage;
+- (void)blurBG{
+    self.image = [UIImage imageNamed:@"fajitas"];
+    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    self.imageView.image = self.image;
+    visualEffectView.frame = self.imageView.bounds;
+    [self.imageView addSubview:visualEffectView];
 }
 
 -(IBAction)fajitasPressed

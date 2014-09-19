@@ -9,11 +9,9 @@
 #import "MeatViewController.h"
 #import "BeansViewController.h"
 #import "CCIngredientItem.h"
-#import "UIImageEffects.h"
 
 @interface MeatViewController () <UINavigationBarDelegate>
 
-@property (nonatomic, strong) IBOutlet UINavigationBar *navbar;
 @property (nonatomic, strong) CCIngredientItem *steak;
 @property (nonatomic, strong) CCIngredientItem *chicken;
 @property (nonatomic, strong) CCIngredientItem *carnitas;
@@ -21,25 +19,19 @@
 
 @property (nonatomic) UIImage *image;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
 
 @end
 
 @implementation MeatViewController
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    self.image = [UIImage imageNamed:@"nachos"];
-    [self updateImage:nil];
-    UIGraphicsBeginImageContextWithOptions(self.image.size, NO, self.image.scale);
-    [self.image drawAtPoint:CGPointZero];
-    self.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navbar.delegate = self;
+    self.navBar.delegate = self;
+    
+    [self setupNavBar];
+    [self blurBG];
+    
     self.steak= [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSteak];
     self.chicken= [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChicken];
     self.barbacoa= [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBarbacoa];
@@ -47,16 +39,24 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)updateImage:(id)sender
-{
-    UIImage *effectImage = nil;
-    effectImage = [UIImageEffects imageByApplyingLightEffectToImage:self.image];
-    self.imageView.image = effectImage;
+- (void)blurBG{
+    self.image = [UIImage imageNamed:@"nachos"];
+    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    self.imageView.image = self.image;
+    visualEffectView.frame = self.imageView.bounds;
+    [self.imageView addSubview:visualEffectView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goBack:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.menuItem.items removeLastObject];
+    NSLog(@"%lu", (unsigned long)[self.menuItem.items count]);
 }
 
 -(IBAction)steakPressed
@@ -84,6 +84,22 @@
     [self performSegueWithIdentifier:@"meatItemSelected" sender:self];
 }
 
+- (void)setupNavBar
+{
+    [self.navBar setBackgroundImage:[UIImage new]
+                      forBarMetrics:UIBarMetricsDefault];
+    self.navBar.shadowImage = [UIImage new];
+    self.navBar.translucent = YES;
+    self.navBar.backgroundColor = [UIColor clearColor];
+}
+
+#pragma mark - UINavigationBarDelegate
+
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
+{
+    return UIBarPositionTopAttached;
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
 {
     if([segue.identifier isEqualToString:@"meatItemSelected"])
@@ -92,13 +108,6 @@
         transferViewController.menuItem = self.menuItem;
         NSLog(@"%lu", (unsigned long)[self.menuItem.items count]);
     }
-}
-
-#pragma mark - UINavigationBarDelegate
-
-- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
-{
-    return UIBarPositionTopAttached;
 }
 
 @end

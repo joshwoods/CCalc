@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gxa-ze-1RB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxa-ze-1RB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WXH-FV-Afu">
@@ -48,11 +48,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Win-jq-b3G">
-                                <rect key="frame" x="0.0" y="78" width="320" height="411"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Win-jq-b3G">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uy-Br-pkH">
-                                        <rect key="frame" x="62" y="220" width="197" height="71"/>
+                                        <rect key="frame" x="62" y="298" width="197" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Soft Taco">
@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-1A-AFh">
-                                        <rect key="frame" x="109" y="120" width="102" height="71"/>
+                                        <rect key="frame" x="109" y="198" width="102" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Bowl">
@@ -74,7 +74,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URS-Hk-jt9">
-                                        <rect key="frame" x="54" y="320" width="213" height="71"/>
+                                        <rect key="frame" x="54" y="398" width="213" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Hard Taco">
@@ -85,7 +85,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq2-EL-I5N">
-                                        <rect key="frame" x="94" y="20" width="133" height="71"/>
+                                        <rect key="frame" x="94" y="98" width="133" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
                                         <state key="normal" title="Burrito">
@@ -95,56 +95,57 @@
                                             <action selector="burritoPressed" destination="9M5-rO-xtA" eventType="touchUpInside" id="H9Q-eh-ws8"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aog-Fq-xAB">
+                                        <rect key="frame" x="-50" y="468" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                             </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OWn-Bw-ESS">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZu-yh-fhS">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <navigationItem id="aeH-Hc-VQq">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Zxq-J9-GUZ">
+                                    <navigationItem id="H4T-hB-so4">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="LEW-v5-z1j">
                                             <connections>
-                                                <action selector="refresh:" destination="9M5-rO-xtA" id="9nQ-fp-sBK"/>
+                                                <action selector="refresh:" destination="9M5-rO-xtA" id="zLI-hf-dDS"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                                 <connections>
-                                    <outlet property="delegate" destination="9M5-rO-xtA" id="gVW-cF-8tW"/>
+                                    <outlet property="delegate" destination="9M5-rO-xtA" id="KCP-ul-oFw"/>
                                 </connections>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gxa-ze-1RB" firstAttribute="top" secondItem="zAq-RB-GzM" secondAttribute="topMargin" id="D1j-9b-Ey7"/>
-                            <constraint firstItem="gxa-ze-1RB" firstAttribute="top" secondItem="zAq-RB-GzM" secondAttribute="topMargin" id="DQB-JW-Exz"/>
-                            <constraint firstItem="e2Z-gv-dIi" firstAttribute="top" secondItem="gxa-ze-1RB" secondAttribute="bottom" id="ELe-Gb-cyZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gxa-ze-1RB" secondAttribute="trailing" constant="-16" id="Te8-Vq-wNp"/>
-                            <constraint firstItem="gxa-ze-1RB" firstAttribute="leading" secondItem="zAq-RB-GzM" secondAttribute="leadingMargin" constant="-16" id="Yb4-mv-M9X"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gxa-ze-1RB" secondAttribute="trailing" constant="-16" id="Zen-Sn-tvW"/>
-                            <constraint firstItem="gxa-ze-1RB" firstAttribute="leading" secondItem="zAq-RB-GzM" secondAttribute="leadingMargin" constant="-16" id="aAA-91-5jt"/>
-                            <constraint firstItem="e2Z-gv-dIi" firstAttribute="top" secondItem="gxa-ze-1RB" secondAttribute="bottom" id="nza-Rj-kG5"/>
+                            <constraint firstItem="Win-jq-b3G" firstAttribute="top" secondItem="zAq-RB-GzM" secondAttribute="topMargin" id="hiK-eE-nwz"/>
+                            <constraint firstItem="e2Z-gv-dIi" firstAttribute="top" secondItem="Win-jq-b3G" secondAttribute="bottom" id="jHx-v1-mv8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Win-jq-b3G" secondAttribute="trailing" constant="-16" id="ouz-dY-MKB"/>
+                            <constraint firstItem="Win-jq-b3G" firstAttribute="leading" secondItem="zAq-RB-GzM" secondAttribute="leadingMargin" constant="-16" id="qYP-rg-Ane"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dh8-Ez-xzY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="fhH-XG-vIf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="lYY-xS-xk2">
                             <connections>
-                                <action selector="refresh:" destination="9M5-rO-xtA" id="1GS-zL-6PO"/>
+                                <action selector="refresh:" destination="9M5-rO-xtA" id="HO4-Ji-nTV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="circle" destination="Aog-Fq-xAB" id="xxi-ao-vWy"/>
                         <outlet property="imageView" destination="gxa-ze-1RB" id="8PO-YA-zp5"/>
                         <outlet property="loadMealButton" destination="g7H-j9-DG8" id="YNV-Kf-Xa8"/>
                         <outlet property="mainScreenContainerView" destination="WXH-FV-Afu" id="eXA-Uz-EGj"/>
                         <outlet property="mealButton" destination="vcr-eC-dIL" id="94D-Sc-hoK"/>
                         <outlet property="mealSelectionView" destination="Win-jq-b3G" id="CNb-94-y2b"/>
-                        <outlet property="navBar" destination="OWn-Bw-ESS" id="eQL-wC-2i1"/>
+                        <outlet property="navBar" destination="sZu-yh-fhS" id="VMs-Gc-8Gl"/>
                         <segue destination="Wfi-aV-Wi7" kind="modal" identifier="mealTypeSelected" id="14Z-vu-00w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbq-0B-tob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2578" y="-1297"/>
+            <point key="canvasLocation" x="3110" y="-1297"/>
         </scene>
         <!--Meat View Controller-->
         <scene sceneID="TgY-BP-h2b">
@@ -158,14 +159,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClC-sl-eh8">
-                                <rect key="frame" x="-6" y="0.0" width="332" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClC-sl-eh8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQ2-Jr-Uyf">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="nNA-Zu-PAB">
+                                        <barButtonItem key="leftBarButtonItem" title="Go Back" id="kgR-9B-Foy">
+                                            <connections>
+                                                <action selector="goBack:" destination="Wfi-aV-Wi7" id="dAx-hc-jlt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="kqJ-7V-Wk5"/>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="Wfi-aV-Wi7" id="YC0-kG-aiJ"/>
+                                </connections>
+                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fHb-Ag-ArC">
-                                <rect key="frame" x="0.0" y="78" width="320" height="411"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-wE-HqL">
-                                        <rect key="frame" x="62" y="220" width="197" height="71"/>
+                                        <rect key="frame" x="62" y="298" width="197" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Carnitas">
@@ -176,7 +193,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNB-bC-0ef">
-                                        <rect key="frame" x="54" y="320" width="213" height="71"/>
+                                        <rect key="frame" x="54" y="398" width="213" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Barbacoa">
@@ -187,7 +204,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZE-1c-gwO">
-                                        <rect key="frame" x="94" y="20" width="133" height="71"/>
+                                        <rect key="frame" x="94" y="98" width="133" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
                                         <state key="normal" title="Steak">
@@ -198,7 +215,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie2-Ss-vAU">
-                                        <rect key="frame" x="79" y="120" width="163" height="71"/>
+                                        <rect key="frame" x="79" y="198" width="163" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Chicken">
@@ -211,16 +228,18 @@
                                 </subviews>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="PPD-Tx-2Mj"/>
                     <connections>
                         <outlet property="imageView" destination="ClC-sl-eh8" id="Zzp-FL-sue"/>
+                        <outlet property="navBar" destination="EQ2-Jr-Uyf" id="N3v-Ct-x5n"/>
                         <segue destination="tYo-8N-MJL" kind="modal" identifier="meatItemSelected" id="97N-qD-0NO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6V-cZ-4qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2990" y="-1297"/>
+            <point key="canvasLocation" x="3512" y="-1304"/>
         </scene>
         <!--Salsa View Controller-->
         <scene sceneID="n2U-nn-YaV">
@@ -234,14 +253,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ae-Gw-RlQ">
-                                <rect key="frame" x="-6" y="0.0" width="332" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ae-Gw-RlQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GE5-aI-C93">
-                                <rect key="frame" x="0.0" y="78" width="320" height="411"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fh-Hv-tmD">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="71"/>
+                                        <rect key="frame" x="0.0" y="298" width="320" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Tomatillo Green">
@@ -252,7 +271,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cq-V2-OcH">
-                                        <rect key="frame" x="30" y="320" width="261" height="71"/>
+                                        <rect key="frame" x="30" y="398" width="261" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Roasted Chili">
@@ -263,7 +282,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZn-0L-jpN">
-                                        <rect key="frame" x="86" y="20" width="148" height="71"/>
+                                        <rect key="frame" x="86" y="98" width="148" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="2" height="1"/>
                                         <state key="normal" title="Tomato">
@@ -274,7 +293,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCW-5u-PWR">
-                                        <rect key="frame" x="28" y="120" width="264" height="71"/>
+                                        <rect key="frame" x="28" y="198" width="264" height="71"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Tomatillo Red">
@@ -289,6 +308,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="40x-TD-uDn"/>
                     <connections>
                         <outlet property="imageView" destination="0Ae-Gw-RlQ" id="PCT-iG-PdW"/>
                         <segue destination="1Sw-m2-a7W" kind="modal" identifier="salsaItemSelected" id="Eg7-XO-iOF"/>
@@ -296,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kag-Wv-7zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3704" y="-1304"/>
+            <point key="canvasLocation" x="4264" y="-1304"/>
         </scene>
         <!--Beans View Controller-->
         <scene sceneID="3iN-CI-dY0">
@@ -310,22 +330,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-EK-XlU">
-                                <rect key="frame" x="-6" y="0.0" width="332" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-EK-XlU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jis-GG-iti">
-                                <rect key="frame" x="0.0" y="250" width="320" height="71"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Brown Rice">
-                                    <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="bRicePressed" destination="tYo-8N-MJL" eventType="touchUpInside" id="MSK-79-gQK"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-nO-hLH">
-                                <rect key="frame" x="29" y="350" width="261" height="71"/>
+                                <rect key="frame" x="29" y="348" width="261" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Black Beans">
@@ -336,7 +345,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPQ-Je-qfI">
-                                <rect key="frame" x="86" y="50" width="148" height="71"/>
+                                <rect key="frame" x="86" y="98" width="148" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="2" height="1"/>
                                 <state key="normal" title="Fajitas">
@@ -347,7 +356,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ia-ru-lFJ">
-                                <rect key="frame" x="27" y="150" width="264" height="71"/>
+                                <rect key="frame" x="27" y="188" width="264" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="White Rice">
@@ -358,7 +367,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVN-KG-6r2">
-                                <rect key="frame" x="27" y="450" width="261" height="71"/>
+                                <rect key="frame" x="27" y="428" width="261" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Pinto Beans">
@@ -368,9 +377,21 @@
                                     <action selector="pBeansPressed" destination="tYo-8N-MJL" eventType="touchUpInside" id="Kd9-eI-5rm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jis-GG-iti">
+                                <rect key="frame" x="0.0" y="268" width="320" height="71"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Brown Rice">
+                                    <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bRicePressed" destination="tYo-8N-MJL" eventType="touchUpInside" id="MSK-79-gQK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="i9Z-eZ-MB5"/>
                     <connections>
                         <outlet property="imageView" destination="UVk-EK-XlU" id="1gp-fd-aX4"/>
                         <segue destination="jjj-Jx-pnZ" kind="modal" identifier="beanItemSelected" id="KYj-8u-Euw"/>
@@ -378,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIK-bB-m8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3356" y="-1304"/>
+            <point key="canvasLocation" x="3888" y="-1304"/>
         </scene>
         <!--Condiment View Controller-->
         <scene sceneID="8pH-av-ZEI">
@@ -392,67 +413,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gm6-ws-pUF">
-                                <rect key="frame" x="-6" y="0.0" width="332" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gm6-ws-pUF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63t-Qg-3Rs">
-                                <rect key="frame" x="0.0" y="250" width="320" height="71"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Guacamole">
-                                    <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="guacPressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="Eq4-Ac-Mj8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hr-Oo-XbJ">
-                                <rect key="frame" x="30" y="350" width="261" height="71"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Lettuce">
-                                    <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="lettucePressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="z18-YU-VXg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-M2-4QG">
-                                <rect key="frame" x="80" y="50" width="158" height="71"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
-                                <size key="titleShadowOffset" width="2" height="1"/>
-                                <state key="normal" title="Cheese">
-                                    <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="cheesePressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="lUE-A8-ihl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74i-NR-WdO">
-                                <rect key="frame" x="28" y="150" width="264" height="71"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Corn">
-                                    <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="cornPressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="fTa-N1-dOL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7d-oc-Juc">
-                                <rect key="frame" x="29" y="450" width="261" height="71"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Sour Cream">
-                                    <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="sourCreamPressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="qLa-Dq-YOL"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRb-4e-C2G">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63t-Qg-3Rs">
+                                        <rect key="frame" x="0.0" y="248" width="320" height="71"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Guacamole">
+                                            <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="guacPressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="Eq4-Ac-Mj8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hr-Oo-XbJ">
+                                        <rect key="frame" x="30" y="323" width="261" height="71"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Lettuce">
+                                            <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lettucePressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="z18-YU-VXg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-M2-4QG">
+                                        <rect key="frame" x="80" y="98" width="158" height="71"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="2" height="1"/>
+                                        <state key="normal" title="Cheese">
+                                            <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cheesePressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="lUE-A8-ihl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74i-NR-WdO">
+                                        <rect key="frame" x="28" y="173" width="264" height="71"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Corn">
+                                            <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cornPressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="fTa-N1-dOL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7d-oc-Juc">
+                                        <rect key="frame" x="29" y="398" width="261" height="71"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Sour Cream">
+                                            <color key="titleShadowColor" red="0.56078431370000004" green="0.47843137250000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sourCreamPressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="qLa-Dq-YOL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0Io-F2-anz"/>
                     <connections>
                         <outlet property="imageView" destination="gm6-ws-pUF" id="BdR-S5-VLd"/>
                         <segue destination="6dj-7Z-BEd" kind="modal" identifier="condimentItemSelected" id="I2E-2G-6oX"/>
@@ -460,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65H-W2-jYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4087" y="-1304"/>
+            <point key="canvasLocation" x="4619" y="-1304"/>
         </scene>
         <!--Summary View Controller-->
         <scene sceneID="a9h-4e-tHR">
@@ -475,10 +503,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4JD-7F-4pd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4A-qU-4bs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4476" y="-1307"/>
+            <point key="canvasLocation" x="5008" y="-1307"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

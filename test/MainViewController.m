@@ -7,7 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "UIImageEffects.h"
 #import "CCMenuItem.h"
 #import "CCIngredientItem.h"
 #import "MeatViewController.h"
@@ -17,7 +16,7 @@
 @property (nonatomic, strong) IBOutlet UIButton *mealButton;
 @property (nonatomic, strong) IBOutlet UIButton *loadMealButton;
 @property (nonatomic, strong) IBOutlet UIView *mainScreenContainerView;
-@property (nonatomic, strong) IBOutlet UIView *mealSelectionView;
+@property (nonatomic, strong) IBOutlet UIView *circle;
 
 @property (nonatomic) UIImage *image;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
@@ -32,39 +31,35 @@
 @end
 
 @implementation MainViewController
-{
-    BOOL _changeBackground;
-}
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:YES];
-    self.mealSelectionView.alpha = 0;
-    [self setupNavBar];
-    self.navBar.delegate = self;
-    self.navBar.alpha = 0;
-    self.image = [UIImage imageNamed:@"burrito"];
-    [self updateImage:nil];
-    UIGraphicsBeginImageContextWithOptions(self.image.size, NO, self.image.scale);
-    [self.image drawAtPoint:CGPointZero];
-    self.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-}
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.menuItem = [[CCMenuItem alloc] init];
+    self.navBar.delegate = self;
     
+    [super viewDidLoad];
+    [self blurBG];
+    [self setupNavBar];
+    
+    self.circle.layer.cornerRadius = self.circle.frame.size.width/2;
+    self.circle.clipsToBounds = YES;
+    
+    self.navBar.alpha = 0;
+    self.mealSelectionView.alpha = 0;
+    
+    self.menuItem = [[CCMenuItem alloc] init];
     self.burrito = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBurrito];
     self.bowl = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBowl];
     self.hardTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeHardTaco];
     self.softTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSoftTaco];
 }
 
-- (void)updateImage:(id)sender
-{
-    UIImage *effectImage = nil;
-    effectImage = [UIImageEffects imageByApplyingLightEffectToImage:self.image];
-    self.imageView.image = effectImage;
+- (void)blurBG{
+    self.image = [UIImage imageNamed:@"burrito"];
+    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    self.imageView.image = self.image;
+    visualEffectView.frame = self.imageView.bounds;
+    [self.imageView addSubview:visualEffectView];
 }
 
 #pragma mark - IBActions
@@ -75,7 +70,7 @@
     }];
     [UIView animateWithDuration:0.5 delay:0.4 options:UIViewAnimationOptionTransitionNone animations:^{
         self.mealSelectionView.alpha = 1;
-        self.navBar.alpha = 1;
+        self.navBar.alpha = 1;;
     }completion:^(BOOL finished){
     }];
 }
@@ -117,13 +112,6 @@
     [self performSegueWithIdentifier:@"mealTypeSelected" sender:self];
 }
 
-#pragma mark - UINavigationBarDelegate
-
-- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
-{
-    return UIBarPositionTopAttached;
-}
-
 - (void)setupNavBar
 {
     [self.navBar setBackgroundImage:[UIImage new]
@@ -131,6 +119,13 @@
     self.navBar.shadowImage = [UIImage new];
     self.navBar.translucent = YES;
     self.navBar.backgroundColor = [UIColor clearColor];
+}
+
+#pragma mark - UINavigationBarDelegate
+
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
+{
+    return UIBarPositionTopAttached;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender

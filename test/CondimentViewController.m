@@ -8,7 +8,6 @@
 
 #import "CondimentViewController.h"
 #import "SummaryViewController.h"
-#import "UIImageEffects.h"
 #import "CCIngredientItem.h"
 
 @interface CondimentViewController ()
@@ -26,31 +25,15 @@
 
 @implementation CondimentViewController
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    self.image = [UIImage imageNamed:@"tacos"];
-    [self updateImage:nil];
-    UIGraphicsBeginImageContextWithOptions(self.image.size, NO, self.image.scale);
-    [self.image drawAtPoint:CGPointZero];
-    self.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self blurBG];
     self.cheese = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeCheese];
     self.corn = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeCorn];
     self.guac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeGuac];
     self.lettuce = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeLettuce];
     self.sourCream = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSourCream];
     // Do any additional setup after loading the view.
-}
-
-- (void)updateImage:(id)sender
-{
-    UIImage *effectImage = nil;
-    effectImage = [UIImageEffects imageByApplyingLightEffectToImage:self.image];
-    self.imageView.image = effectImage;
 }
 
 -(IBAction)cheesePressed
@@ -81,6 +64,15 @@
 {
     [self.menuItem addIngredientItem:self.sourCream];
     [self performSegueWithIdentifier:@"condimentItemSelected" sender:self];
+}
+
+- (void)blurBG{
+    self.image = [UIImage imageNamed:@"tacos"];
+    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    self.imageView.image = self.image;
+    visualEffectView.frame = self.imageView.bounds;
+    [self.imageView addSubview:visualEffectView];
 }
 
 - (void)didReceiveMemoryWarning {

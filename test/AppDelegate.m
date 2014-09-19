@@ -15,15 +15,6 @@
 {
     self.firstVC = [[MainViewController alloc] init];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.firstVC];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.604 green:0.733 blue:0.525 alpha:1]];
-    
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
-    shadow.shadowOffset = CGSizeMake(1, 2);
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:0.835 green:0.871 blue:0.741 alpha:1], NSForegroundColorAttributeName,
-                                                           shadow, NSShadowAttributeName,
-                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:25.0], NSFontAttributeName, nil]];
     return YES;
 }
 
