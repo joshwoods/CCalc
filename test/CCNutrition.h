@@ -11,15 +11,15 @@
 @interface CCNutrition : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, assign) NSInteger cal;
-@property (nonatomic, assign) NSInteger tFat;
-@property (nonatomic, assign) NSInteger sf;
-@property (nonatomic, assign) NSInteger transf;
-@property (nonatomic, assign) NSInteger cho;
-@property (nonatomic, assign) NSInteger sod;
-@property (nonatomic, assign) NSInteger tc;
-@property (nonatomic, assign) NSInteger df;
-@property (nonatomic, assign) NSInteger sug;
-@property (nonatomic, assign) NSInteger pro;
+@property (nonatomic, assign) NSInteger calories;
+@property (nonatomic, assign) NSInteger totalFat;
+@property (nonatomic, assign) NSInteger saturatedFat;
+@property (nonatomic, assign) NSInteger transFat;
+@property (nonatomic, assign) NSInteger cholesterol;
+@property (nonatomic, assign) NSInteger sodium;
+@property (nonatomic, assign) NSInteger totalCarbs;
+@property (nonatomic, assign) NSInteger dietaryFiber;
+@property (nonatomic, assign) NSInteger sugar;
+@property (nonatomic, assign) NSInteger protein;
 
 @end

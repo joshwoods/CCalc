@@ -10,7 +10,7 @@
 #import "CCIngredientItem.h"
 #import "CondimentViewController.h"
 
-@interface SalsaViewController ()
+@interface SalsaViewController () <UINavigationBarDelegate>
 
 @property (nonatomic, strong) CCIngredientItem *tomato;
 @property (nonatomic, strong) CCIngredientItem *tRed;
@@ -20,6 +20,8 @@
 @property (nonatomic) UIImage *image;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
+
 @end
 
 @implementation SalsaViewController
@@ -28,25 +30,29 @@
 {
     
     [self.menuItem addIngredientItem:self.tomato];
-    [self performSegueWithIdentifier:@"salsaItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)tRedPressed
 {
     [self.menuItem addIngredientItem:self.tRed];
-    [self performSegueWithIdentifier:@"salsaItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)tGreenPressed
 {
     [self.menuItem addIngredientItem:self.tGreen];
-    [self performSegueWithIdentifier:@"salsaItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)chiliPressed
 {
     [self.menuItem addIngredientItem:self.chili];
-    [self performSegueWithIdentifier:@"salsaItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
+}
+
+- (IBAction)goBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)blurBG{
@@ -60,6 +66,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
     [self blurBG];
     self.tomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTomato];
     self.tRed = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTRed];

@@ -8,6 +8,7 @@
 
 #import "MeatViewController.h"
 #import "BeansViewController.h"
+#import "MainViewController.h"
 #import "CCIngredientItem.h"
 
 @interface MeatViewController () <UINavigationBarDelegate>
@@ -28,8 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.delegate = self;
-    
-    [self setupNavBar];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
     [self blurBG];
     
     self.steak= [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSteak];
@@ -53,51 +53,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)goBack:(id)sender{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self.menuItem.items removeLastObject];
-    NSLog(@"%lu", (unsigned long)[self.menuItem.items count]);
-}
-
 -(IBAction)steakPressed
 {
     [self.menuItem addIngredientItem:self.steak];
-    [self performSegueWithIdentifier:@"meatItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)chickenPressed
 {
     
     [self.menuItem addIngredientItem:self.chicken];
-    [self performSegueWithIdentifier:@"meatItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)barbacoaPressed
 {
     [self.menuItem addIngredientItem:self.barbacoa];
-    [self performSegueWithIdentifier:@"meatItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)carnitasPressed
 {
     [self.menuItem addIngredientItem:self.carnitas];
-    [self performSegueWithIdentifier:@"meatItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
-- (void)setupNavBar
-{
-    [self.navBar setBackgroundImage:[UIImage new]
-                      forBarMetrics:UIBarMetricsDefault];
-    self.navBar.shadowImage = [UIImage new];
-    self.navBar.translucent = YES;
-    self.navBar.backgroundColor = [UIColor clearColor];
-}
-
-#pragma mark - UINavigationBarDelegate
-
-- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
-{
-    return UIBarPositionTopAttached;
+- (IBAction)goBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender

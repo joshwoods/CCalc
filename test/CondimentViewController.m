@@ -10,7 +10,7 @@
 #import "SummaryViewController.h"
 #import "CCIngredientItem.h"
 
-@interface CondimentViewController ()
+@interface CondimentViewController () <UINavigationBarDelegate>
 
 @property (nonatomic, strong) CCIngredientItem *cheese;
 @property (nonatomic, strong) CCIngredientItem *lettuce;
@@ -21,12 +21,15 @@
 
 @property (nonatomic) UIImage *image;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
 @end
 
 @implementation CondimentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
     [self blurBG];
     self.cheese = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeCheese];
     self.corn = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeCorn];
@@ -39,31 +42,35 @@
 -(IBAction)cheesePressed
 {
     [self.menuItem addIngredientItem:self.cheese];
-    [self performSegueWithIdentifier:@"condimentItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)guacPressed
 {
     [self.menuItem addIngredientItem:self.guac];
-    [self performSegueWithIdentifier:@"condimentItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)cornPressed
 {
     [self.menuItem addIngredientItem:self.corn];
-    [self performSegueWithIdentifier:@"condimentItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)lettucePressed
 {
     [self.menuItem addIngredientItem:self.lettuce];
-    [self performSegueWithIdentifier:@"condimentItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)sourCreamPressed
 {
     [self.menuItem addIngredientItem:self.sourCream];
-    [self performSegueWithIdentifier:@"condimentItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
+}
+
+- (IBAction)goBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)blurBG{

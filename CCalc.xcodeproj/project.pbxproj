@@ -20,6 +20,7 @@
 		F7086A0718A80D8B003493AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7086A0518A80D8B003493AC /* InfoPlist.strings */; };
 		F7086A0918A80D8B003493AC /* cCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7086A0818A80D8B003493AC /* cCalcTests.m */; };
 		F7113FFC18B70A32003D870A /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7113FFB18B70A32003D870A /* SummaryViewController.m */; };
+		F73D6D5519F2D516000775DA /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73D6D5419F2D516000775DA /* InitialViewController.m */; };
 		F74FC1CC18D77D5300A7D925 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74FC1CB18D77D5300A7D925 /* Images.xcassets */; };
 		F7514E0E19C92021006D7599 /* MeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7514E0D19C92021006D7599 /* MeatViewController.m */; };
 		F7514E1119C92494006D7599 /* SalsaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7514E1019C92494006D7599 /* SalsaViewController.m */; };
@@ -27,7 +28,8 @@
 		F7AA0A8E18C274C4004D90FC /* CCMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F7AA0A8D18C274C4004D90FC /* CCMenuItem.m */; };
 		F7AA0A9118C274D1004D90FC /* CCIngredientItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F7AA0A9018C274D1004D90FC /* CCIngredientItem.m */; };
 		F7AA0A9418C278BB004D90FC /* CCNutrition.m in Sources */ = {isa = PBXBuildFile; fileRef = F7AA0A9318C278BB004D90FC /* CCNutrition.m */; };
-		F7CC064E18D3686000B8F901 /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CC064D18D3686000B8F901 /* FifthViewController.m */; };
+		F7D9C78F19F3545B00552A1E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D9C78D19F3545B00552A1E /* TableViewCell.m */; };
+		F7D9C79019F3545B00552A1E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D9C78E19F3545B00552A1E /* TableViewCell.xib */; };
 		F7DD676619C938F900EC32B4 /* CondimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD676519C938F900EC32B4 /* CondimentViewController.m */; };
 		F7DD676919C93D9A00EC32B4 /* BeansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD676819C93D9A00EC32B4 /* BeansViewController.m */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		F7113FFA18B70A32003D870A /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		F7113FFB18B70A32003D870A /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
 		F726CE0918E27FDB00EB357D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F73D6D5319F2D516000775DA /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		F73D6D5419F2D516000775DA /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		F74FC1CB18D77D5300A7D925 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F7514E0C19C92021006D7599 /* MeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeatViewController.h; sourceTree = "<group>"; };
 		F7514E0D19C92021006D7599 /* MeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeatViewController.m; sourceTree = "<group>"; };
@@ -73,8 +77,9 @@
 		F7AA0A9018C274D1004D90FC /* CCIngredientItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCIngredientItem.m; sourceTree = "<group>"; };
 		F7AA0A9218C278BB004D90FC /* CCNutrition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNutrition.h; sourceTree = "<group>"; };
 		F7AA0A9318C278BB004D90FC /* CCNutrition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNutrition.m; sourceTree = "<group>"; };
-		F7CC064C18D3686000B8F901 /* FifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
-		F7CC064D18D3686000B8F901 /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
+		F7D9C78C19F3545B00552A1E /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		F7D9C78D19F3545B00552A1E /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		F7D9C78E19F3545B00552A1E /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		F7DD676419C938F900EC32B4 /* CondimentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondimentViewController.h; sourceTree = "<group>"; };
 		F7DD676519C938F900EC32B4 /* CondimentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CondimentViewController.m; sourceTree = "<group>"; };
 		F7DD676719C93D9A00EC32B4 /* BeansViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeansViewController.h; sourceTree = "<group>"; };
@@ -138,31 +143,11 @@
 		F70869E318A80D8B003493AC /* cCalc */ = {
 			isa = PBXGroup;
 			children = (
-				F726CE0918E27FDB00EB357D /* AppDelegate.h */,
-				F70869ED18A80D8B003493AC /* AppDelegate.m */,
-				F70869EF18A80D8B003493AC /* Main.storyboard */,
-				F75EAC8D19C8A060005AB655 /* MainViewController.h */,
-				F75EAC8E19C8A060005AB655 /* MainViewController.m */,
-				F7514E0C19C92021006D7599 /* MeatViewController.h */,
-				F7514E0D19C92021006D7599 /* MeatViewController.m */,
-				F7DD676719C93D9A00EC32B4 /* BeansViewController.h */,
-				F7DD676819C93D9A00EC32B4 /* BeansViewController.m */,
-				F7514E0F19C92494006D7599 /* SalsaViewController.h */,
-				F7514E1019C92494006D7599 /* SalsaViewController.m */,
-				F7DD676419C938F900EC32B4 /* CondimentViewController.h */,
-				F7DD676519C938F900EC32B4 /* CondimentViewController.m */,
-				F7CC064C18D3686000B8F901 /* FifthViewController.h */,
-				F7CC064D18D3686000B8F901 /* FifthViewController.m */,
-				F7113FFA18B70A32003D870A /* SummaryViewController.h */,
-				F7113FFB18B70A32003D870A /* SummaryViewController.m */,
+				F73D6D5719F2D53D000775DA /* AppDelegate */,
+				F73D6D5819F2D54F000775DA /* Data Model */,
+				F73D6D5619F2D522000775DA /* ViewControllers */,
 				F74FC1CB18D77D5300A7D925 /* Images.xcassets */,
 				F70869E418A80D8B003493AC /* Supporting Files */,
-				F7AA0A8C18C274C4004D90FC /* CCMenuItem.h */,
-				F7AA0A8D18C274C4004D90FC /* CCMenuItem.m */,
-				F7AA0A8F18C274D1004D90FC /* CCIngredientItem.h */,
-				F7AA0A9018C274D1004D90FC /* CCIngredientItem.m */,
-				F7AA0A9218C278BB004D90FC /* CCNutrition.h */,
-				F7AA0A9318C278BB004D90FC /* CCNutrition.m */,
 			);
 			name = cCalc;
 			path = test;
@@ -195,6 +180,53 @@
 				F7086A0518A80D8B003493AC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F73D6D5619F2D522000775DA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F70869EF18A80D8B003493AC /* Main.storyboard */,
+				F73D6D5319F2D516000775DA /* InitialViewController.h */,
+				F73D6D5419F2D516000775DA /* InitialViewController.m */,
+				F75EAC8D19C8A060005AB655 /* MainViewController.h */,
+				F75EAC8E19C8A060005AB655 /* MainViewController.m */,
+				F7514E0C19C92021006D7599 /* MeatViewController.h */,
+				F7514E0D19C92021006D7599 /* MeatViewController.m */,
+				F7DD676719C93D9A00EC32B4 /* BeansViewController.h */,
+				F7DD676819C93D9A00EC32B4 /* BeansViewController.m */,
+				F7514E0F19C92494006D7599 /* SalsaViewController.h */,
+				F7514E1019C92494006D7599 /* SalsaViewController.m */,
+				F7DD676419C938F900EC32B4 /* CondimentViewController.h */,
+				F7DD676519C938F900EC32B4 /* CondimentViewController.m */,
+				F7113FFA18B70A32003D870A /* SummaryViewController.h */,
+				F7113FFB18B70A32003D870A /* SummaryViewController.m */,
+				F7D9C78C19F3545B00552A1E /* TableViewCell.h */,
+				F7D9C78D19F3545B00552A1E /* TableViewCell.m */,
+				F7D9C78E19F3545B00552A1E /* TableViewCell.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F73D6D5719F2D53D000775DA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F726CE0918E27FDB00EB357D /* AppDelegate.h */,
+				F70869ED18A80D8B003493AC /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		F73D6D5819F2D54F000775DA /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA0A8C18C274C4004D90FC /* CCMenuItem.h */,
+				F7AA0A8D18C274C4004D90FC /* CCMenuItem.m */,
+				F7AA0A8F18C274D1004D90FC /* CCIngredientItem.h */,
+				F7AA0A9018C274D1004D90FC /* CCIngredientItem.m */,
+				F7AA0A9218C278BB004D90FC /* CCNutrition.h */,
+				F7AA0A9318C278BB004D90FC /* CCNutrition.m */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F74FC1CC18D77D5300A7D925 /* Images.xcassets in Resources */,
+				F7D9C79019F3545B00552A1E /* TableViewCell.xib in Resources */,
 				F70869E818A80D8B003493AC /* InfoPlist.strings in Resources */,
 				F70869F118A80D8B003493AC /* Main.storyboard in Resources */,
 			);
@@ -297,12 +330,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7CC064E18D3686000B8F901 /* FifthViewController.m in Sources */,
 				F7AA0A9118C274D1004D90FC /* CCIngredientItem.m in Sources */,
+				F73D6D5519F2D516000775DA /* InitialViewController.m in Sources */,
 				F7AA0A8E18C274C4004D90FC /* CCMenuItem.m in Sources */,
 				F7DD676919C93D9A00EC32B4 /* BeansViewController.m in Sources */,
 				F75EAC8F19C8A060005AB655 /* MainViewController.m in Sources */,
 				F7514E1119C92494006D7599 /* SalsaViewController.m in Sources */,
+				F7D9C78F19F3545B00552A1E /* TableViewCell.m in Sources */,
 				F7514E0E19C92021006D7599 /* MeatViewController.m in Sources */,
 				F70869EE18A80D8B003493AC /* AppDelegate.m in Sources */,
 				F70869EA18A80D8B003493AC /* main.m in Sources */,
@@ -437,7 +471,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test/CCalc-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/testTests/CCalcTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = CCalc;
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,7 +487,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test/CCalc-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/testTests/CCalcTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = CCalc;
 				WRAPPER_EXTENSION = app;
 			};

@@ -55,16 +55,16 @@
     CCNutrition *nutrition = [CCNutrition new];
     for(CCIngredientItem *item in self.items)
     {
-        nutrition.cal += item.nutrition.cal;
-        nutrition.tFat += item.nutrition.tFat;
-        nutrition.sf += item.nutrition.sf;
-        nutrition.transf += item.nutrition.transf;
-        nutrition.cho += item.nutrition.cho;
-        nutrition.sod += item.nutrition.sod;
-        nutrition.tc += item.nutrition.tc;
-        nutrition.df += item.nutrition.df;
-        nutrition.sug += item.nutrition.sug;
-        nutrition.pro += item.nutrition.pro;
+        nutrition.calories += item.nutrition.calories;
+        nutrition.totalFat += item.nutrition.totalFat;
+        nutrition.saturatedFat += item.nutrition.saturatedFat;
+        nutrition.transFat += item.nutrition.transFat;
+        nutrition.cholesterol += item.nutrition.cholesterol;
+        nutrition.sodium += item.nutrition.sodium;
+        nutrition.totalCarbs += item.nutrition.totalCarbs;
+        nutrition.dietaryFiber += item.nutrition.dietaryFiber;
+        nutrition.sugar += item.nutrition.sugar;
+        nutrition.protein += item.nutrition.protein;
     }
     return nutrition;
 }
@@ -75,16 +75,16 @@
     for(CCIngredientItem *item in self.aboutItem)
     {
         about.name = item.ingredientName;
-        about.cal += item.nutrition.cal;
-        about.tFat += item.nutrition.tFat;
-        about.sf += item.nutrition.sf;
-        about.transf += item.nutrition.transf;
-        about.cho += item.nutrition.cho;
-        about.sod += item.nutrition.sod;
-        about.tc += item.nutrition.tc;
-        about.df += item.nutrition.df;
-        about.sug += item.nutrition.sug;
-        about.pro += item.nutrition.pro;
+        about.calories += item.nutrition.calories;
+        about.totalFat += item.nutrition.totalFat;
+        about.saturatedFat += item.nutrition.saturatedFat;
+        about.transFat += item.nutrition.transFat;
+        about.cholesterol += item.nutrition.cholesterol;
+        about.sodium += item.nutrition.sodium;
+        about.totalCarbs += item.nutrition.totalCarbs;
+        about.dietaryFiber += item.nutrition.dietaryFiber;
+        about.sugar += item.nutrition.sugar;
+        about.protein += item.nutrition.protein;
     }
     return about;
 }

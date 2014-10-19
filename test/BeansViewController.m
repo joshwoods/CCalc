@@ -10,7 +10,7 @@
 #import "SalsaViewController.h"
 #import "CCIngredientItem.h"
 
-@interface BeansViewController ()
+@interface BeansViewController () <UINavigationBarDelegate>
 
 @property (nonatomic, strong) CCIngredientItem *fajitas;
 @property (nonatomic, strong) CCIngredientItem *wRice;
@@ -22,12 +22,15 @@
 @property (nonatomic) UIImage *image;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
+
 @end
 
 @implementation BeansViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
     [self blurBG];
     self.fajitas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeFajitas];
     self.wRice = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeWRice];
@@ -49,31 +52,35 @@
 -(IBAction)fajitasPressed
 {
     [self.menuItem addIngredientItem:self.fajitas];
-    [self performSegueWithIdentifier:@"beanItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)wRicePressed
 {
     [self.menuItem addIngredientItem:self.wRice];
-    [self performSegueWithIdentifier:@"beanItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)bRicePressed
 {
     [self.menuItem addIngredientItem:self.bRice];
-    [self performSegueWithIdentifier:@"beanItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)pBeansPressed
 {
     [self.menuItem addIngredientItem:self.pBeans];
-    [self performSegueWithIdentifier:@"beanItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 -(IBAction)bBeansPressed
 {
     [self.menuItem addIngredientItem:self.bBeans];
-    [self performSegueWithIdentifier:@"beanItemSelected" sender:self];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
+}
+
+- (IBAction)goBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
