@@ -7,17 +7,17 @@
 		<key>CCalc.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>F70869D918A80D8B003493AC</key>
+		<key>F728F57219FF4CA500BB7AC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F70869FA18A80D8B003493AC</key>
+		<key>F728F58E19FF4CA500BB7AC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

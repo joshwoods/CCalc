@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="SavedMenuItems" representedClassName="SavedMenuItems" syncable="YES">
+        <attribute name="calories" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cholesterol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dietaryFiber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menuName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="protein" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="saturatedFat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sodium" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sugar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalCarbs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalFat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transFat" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SavedMenuItems" positionX="-36" positionY="9" width="128" height="210"/>
+    </elements>
+</model>
