@@ -233,7 +233,7 @@
         } break;
         case CCIngredientItemTypeBBeans:
         {
-            item.nutrition.name = @"Black Bens";
+            item.nutrition.name = @"Black Beans";
             item.nutrition.calories = 120;
             item.nutrition.totalFat = 1;
             item.nutrition.saturatedFat = 0;

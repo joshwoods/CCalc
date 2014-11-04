@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uLL-ca-dtL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uLL-ca-dtL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
@@ -15,24 +15,29 @@
                         <viewControllerLayoutGuide type="bottom" id="IBE-10-usL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O0T-su-bmy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7p-hk-mil">
-                                <rect key="frame" x="108" y="292" width="104" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7p-hk-mil">
+                                <rect key="frame" x="304" y="264" width="150" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="dPR-Sp-uHl"/>
+                                    <constraint firstAttribute="width" constant="150" id="vAQ-4p-nkr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="2" height="2"/>
                                 <state key="normal" title="Load">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vaj-jZ-Jhv" kind="modal" identifier="loadSavedItemsSegue" id="GPJ-F8-3hF"/>
+                                    <segue destination="vaj-jZ-Jhv" kind="presentation" identifier="loadSavedItemsSegue" id="GPJ-F8-3hF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brr-xe-dVD">
-                                <rect key="frame" x="112" y="180" width="96" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brr-xe-dVD">
+                                <rect key="frame" x="146" y="264" width="150" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="0F7-J3-0Cu"/>
+                                    <constraint firstAttribute="height" constant="71" id="cAj-s8-z8I"/>
+                                    <constraint firstAttribute="width" constant="150" id="cas-jK-ipl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="2" height="2"/>
@@ -40,17 +45,16 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9M5-rO-xtA" kind="modal" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="uEb-nd-AXD"/>
+                                    <segue destination="9M5-rO-xtA" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="uEb-nd-AXD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Brr-xe-dVD" secondAttribute="centerX" id="1pg-rI-bRn"/>
-                            <constraint firstAttribute="centerX" secondItem="C7p-hk-mil" secondAttribute="centerX" id="3H7-9d-Lsn"/>
-                            <constraint firstItem="Brr-xe-dVD" firstAttribute="top" secondItem="EAY-Yl-V1b" secondAttribute="bottom" constant="160" id="7eA-A2-Y2H"/>
-                            <constraint firstItem="C7p-hk-mil" firstAttribute="top" secondItem="Brr-xe-dVD" secondAttribute="bottom" constant="41" id="cdi-aw-ciz"/>
-                            <constraint firstItem="IBE-10-usL" firstAttribute="top" secondItem="C7p-hk-mil" secondAttribute="bottom" constant="206" id="jlK-rp-RV4"/>
+                            <constraint firstItem="C7p-hk-mil" firstAttribute="leading" secondItem="Brr-xe-dVD" secondAttribute="trailing" constant="8" id="4lj-sc-7Wg"/>
+                            <constraint firstItem="IBE-10-usL" firstAttribute="top" secondItem="Brr-xe-dVD" secondAttribute="bottom" constant="265" id="Ax4-w1-km1"/>
+                            <constraint firstAttribute="centerX" secondItem="Brr-xe-dVD" secondAttribute="centerX" constant="79" id="a5h-y9-ICu"/>
+                            <constraint firstItem="IBE-10-usL" firstAttribute="top" secondItem="C7p-hk-mil" secondAttribute="bottom" constant="265" id="drX-gw-PDe"/>
                         </constraints>
                     </view>
                     <connections>
@@ -61,14 +65,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UG5-iN-xdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="W5c-xm-jdA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3173" y="-700"/>
+            <point key="canvasLocation" x="5949.375" y="-739.43661971830977"/>
         </scene>
         <!--Load Items Table View Controller-->
         <scene sceneID="IHn-I1-Puj">
             <objects>
                 <tableViewController id="tPi-lB-6sU" customClass="LoadItemsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="X2W-oL-YJP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -86,7 +90,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="HTb-MT-MtM" kind="push" identifier="SelectedItemDetail" id="zwS-CG-453"/>
+                                    <segue destination="uje-9Q-CqK" kind="show" identifier="SelectedItemDetail" id="BOE-QD-8eW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,38 +110,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jt1-Gt-QYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4117" y="-340"/>
-        </scene>
-        <!--Loaded Details Table View Controller-->
-        <scene sceneID="qUz-mP-iYV">
-            <objects>
-                <tableViewController id="HTb-MT-MtM" customClass="LoadedDetailsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="297" sectionHeaderHeight="10" sectionFooterHeight="10" id="c3r-EO-LHf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Nutritional Information" id="iP7-NR-KLV">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="297" id="OBR-UQ-iYw">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBR-UQ-iYw" id="jSG-0G-sIl">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="HTb-MT-MtM" id="B2s-ni-lXe"/>
-                            <outlet property="delegate" destination="HTb-MT-MtM" id="pez-cj-qbG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="8Qe-lL-NtN"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ac2-0b-r2n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4536" y="-343"/>
+            <point key="canvasLocation" x="7719.375" y="-359.15492957746477"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="W98-UI-VG6">
@@ -148,44 +121,71 @@
                         <viewControllerLayoutGuide type="bottom" id="e2Z-gv-dIi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zAq-RB-GzM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uy-Br-pkH">
-                                <rect key="frame" x="62" y="379" width="197" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uy-Br-pkH">
+                                <rect key="frame" x="202" y="401" width="197" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Soft Taco">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="102" y="324" width="197" height="0.0"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="102" y="379" width="197" height="271"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="142" y="184" width="197" height="60"/>
+                                </variation>
                                 <connections>
                                     <action selector="softPressed" destination="9M5-rO-xtA" eventType="touchUpInside" id="0I0-zh-40e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-1A-AFh">
-                                <rect key="frame" x="109" y="179" width="102" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-1A-AFh">
+                                <rect key="frame" x="249" y="201" width="102" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Bowl">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="149" y="146" width="102" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="149" y="179" width="102" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="189" y="108" width="102" height="18"/>
+                                </variation>
                                 <connections>
                                     <action selector="bowlPressed" destination="9M5-rO-xtA" eventType="touchUpInside" id="lmm-jW-Yry"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URS-Hk-jt9">
-                                <rect key="frame" x="54" y="278" width="213" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URS-Hk-jt9">
+                                <rect key="frame" x="194" y="300" width="213" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Hard Taco">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="94" y="234" width="213" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="94" y="278" width="213" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="134" y="154" width="213" height="0.0"/>
+                                </variation>
                                 <connections>
                                     <action selector="hardPressed" destination="9M5-rO-xtA" eventType="touchUpInside" id="Hgi-EY-aV5"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Apj-QW-q4c">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="Apj-QW-q4c">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Calories: 0" id="RvA-Mz-nyh">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="eOj-Ci-1fX">
@@ -195,52 +195,65 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Next" id="sTj-DA-rJG">
                                             <connections>
-                                                <segue destination="Wfi-aV-Wi7" kind="modal" identifier="mealTypeSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="Cb4-ev-ubC"/>
+                                                <segue destination="Wfi-aV-Wi7" kind="presentation" identifier="mealTypeSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="Cb4-ev-ubC"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="436" width="400" height="44"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="756" width="400" height="44"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="9M5-rO-xtA" id="5mK-J1-99I"/>
                                 </connections>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq2-EL-I5N">
-                                <rect key="frame" x="94" y="78" width="133" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq2-EL-I5N">
+                                <rect key="frame" x="234" y="100" width="133" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Burrito">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="134" y="78" width="133" height="38"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="134" y="78" width="133" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="174" y="78" width="133" height="0.0"/>
+                                </variation>
                                 <connections>
                                     <action selector="burritoPressed" destination="9M5-rO-xtA" eventType="touchUpInside" id="H9Q-eh-ws8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxd-a8-eTp">
-                                <rect key="frame" x="97" y="494" width="126" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxd-a8-eTp">
+                                <rect key="frame" x="237" y="511" width="126" height="30"/>
                                 <state key="normal" title="View Current Meal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="137" y="368" width="126" height="0.0"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="137" y="694" width="126" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="177" y="288" width="126" height="0.0"/>
+                                </variation>
                                 <connections>
-                                    <segue destination="aUC-jw-dqr" kind="modal" identifier="editMealSegue" id="lSa-pq-wTV"/>
+                                    <segue destination="aUC-jw-dqr" kind="presentation" identifier="editMealSegue" id="lSa-pq-wTV"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rq2-EL-I5N" firstAttribute="top" secondItem="oYU-Du-8F3" secondAttribute="bottom" constant="58" id="3yj-60-s26"/>
-                            <constraint firstItem="e2Z-gv-dIi" firstAttribute="top" secondItem="Apj-QW-q4c" secondAttribute="bottom" id="4yc-8Y-2UG"/>
-                            <constraint firstAttribute="centerX" secondItem="URS-Hk-jt9" secondAttribute="centerX" id="GWV-fZ-IOS"/>
-                            <constraint firstItem="lxd-a8-eTp" firstAttribute="top" secondItem="4uy-Br-pkH" secondAttribute="bottom" constant="44" id="H0l-FW-sWx"/>
-                            <constraint firstAttribute="centerX" secondItem="4uy-Br-pkH" secondAttribute="centerX" id="V6F-8y-FyA"/>
-                            <constraint firstItem="Apj-QW-q4c" firstAttribute="leading" secondItem="zAq-RB-GzM" secondAttribute="leadingMargin" constant="-16" id="Vcb-wx-G4J"/>
-                            <constraint firstItem="HkF-1A-AFh" firstAttribute="top" secondItem="rq2-EL-I5N" secondAttribute="bottom" constant="30" id="aWC-bH-nnu"/>
-                            <constraint firstAttribute="centerX" secondItem="HkF-1A-AFh" secondAttribute="centerX" id="avg-7L-hCU"/>
-                            <constraint firstItem="4uy-Br-pkH" firstAttribute="top" secondItem="URS-Hk-jt9" secondAttribute="bottom" constant="30" id="dCQ-4t-eqx"/>
-                            <constraint firstAttribute="centerX" secondItem="rq2-EL-I5N" secondAttribute="centerX" id="dba-3e-mQV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Apj-QW-q4c" secondAttribute="trailing" constant="-16" id="jcG-3l-tIa"/>
-                            <constraint firstAttribute="centerX" secondItem="lxd-a8-eTp" secondAttribute="centerX" id="pF3-q2-HOJ"/>
-                            <constraint firstItem="Apj-QW-q4c" firstAttribute="top" secondItem="lxd-a8-eTp" secondAttribute="bottom" id="tod-y5-j77"/>
-                            <constraint firstItem="URS-Hk-jt9" firstAttribute="top" secondItem="HkF-1A-AFh" secondAttribute="bottom" constant="28" id="zyv-lQ-fme"/>
+                            <constraint firstItem="Apj-QW-q4c" firstAttribute="leading" secondItem="zAq-RB-GzM" secondAttribute="leading" id="8Kb-FF-NQZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Apj-QW-q4c" secondAttribute="trailing" id="q18-sD-boK"/>
+                            <constraint firstItem="e2Z-gv-dIi" firstAttribute="top" secondItem="Apj-QW-q4c" secondAttribute="bottom" id="sXN-1W-D5t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dh8-Ez-xzY">
@@ -261,14 +274,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbq-0B-tob" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xdf-Il-g6M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3624" y="-1297"/>
+            <point key="canvasLocation" x="6795" y="-1370.0704225352113"/>
         </scene>
         <!--Edit Menu Table View Controller-->
         <scene sceneID="edv-LK-jXU">
             <objects>
                 <tableViewController id="0A5-Qb-exM" customClass="EditMenuTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nmL-BP-esB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -295,7 +308,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRL-xX-wUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4391" y="-1944"/>
+            <point key="canvasLocation" x="8233.125" y="-2053.5211267605632"/>
         </scene>
         <!--Meat View Controller-->
         <scene sceneID="TgY-BP-h2b">
@@ -306,55 +319,91 @@
                         <viewControllerLayoutGuide type="bottom" id="HU9-fJ-kOz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bz5-gO-ebl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-wE-HqL">
-                                <rect key="frame" x="75" y="278" width="170" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-wE-HqL">
+                                <rect key="frame" x="215" y="278" width="170" height="103"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Carnitas">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="115" y="278" width="170" height="103"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="115" y="278" width="170" height="103"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="155" y="278" width="170" height="103"/>
+                                </variation>
                                 <connections>
                                     <action selector="carnitasPressed" destination="Wfi-aV-Wi7" eventType="touchUpInside" id="Gzp-CI-FnS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNB-bC-0ef">
-                                <rect key="frame" x="60" y="378" width="201" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNB-bC-0ef">
+                                <rect key="frame" x="200" y="410" width="201" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Barbacoa">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="100" y="410" width="201" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="100" y="410" width="201" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="140" y="410" width="201" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="barbacoaPressed" destination="Wfi-aV-Wi7" eventType="touchUpInside" id="4ic-bD-o97"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZE-1c-gwO">
-                                <rect key="frame" x="101" y="78" width="118" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZE-1c-gwO">
+                                <rect key="frame" x="241" y="78" width="118" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Steak">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="141" y="78" width="118" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="141" y="78" width="118" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="181" y="78" width="118" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="steakPressed" destination="Wfi-aV-Wi7" eventType="touchUpInside" id="CRe-JS-02Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie2-Ss-vAU">
-                                <rect key="frame" x="76" y="178" width="170" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie2-Ss-vAU">
+                                <rect key="frame" x="216" y="178" width="170" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Chicken">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="116" y="178" width="170" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="116" y="178" width="170" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="156" y="178" width="170" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="chickenPressed" destination="Wfi-aV-Wi7" eventType="touchUpInside" id="OkW-BI-toE"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1m-tL-2XC">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <navigationItem id="A5Z-A5-7wV">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="yeU-pc-Shv">
@@ -364,7 +413,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Next" id="9QQ-7X-ZX5">
                                             <connections>
-                                                <segue destination="tYo-8N-MJL" kind="modal" identifier="meatItemSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="eTk-71-8CD"/>
+                                                <segue destination="tYo-8N-MJL" kind="presentation" identifier="meatItemSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="eTk-71-8CD"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -374,12 +423,12 @@
                                 </connections>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04B-7l-3pF">
-                                <rect key="frame" x="97" y="494" width="126" height="30"/>
+                                <rect key="frame" x="237" y="526" width="126" height="30"/>
                                 <state key="normal" title="View Current Meal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aUC-jw-dqr" kind="modal" identifier="editMeatSegue" id="9R2-zc-a1n"/>
+                                    <segue destination="aUC-jw-dqr" kind="presentation" identifier="editMeatSegue" id="9R2-zc-a1n"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -421,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6V-cZ-4qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4018" y="-1297"/>
+            <point key="canvasLocation" x="7533.75" y="-1370.0704225352113"/>
         </scene>
         <!--Salsa View Controller-->
         <scene sceneID="n2U-nn-YaV">
@@ -432,55 +481,91 @@
                         <viewControllerLayoutGuide type="bottom" id="ATX-1U-8Y2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dfO-78-ajA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fh-Hv-tmD">
-                                <rect key="frame" x="1" y="278" width="320" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fh-Hv-tmD">
+                                <rect key="frame" x="141" y="278" width="320" height="103"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Tomatillo Green">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="41" y="278" width="320" height="103"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="41" y="278" width="320" height="103"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="81" y="278" width="320" height="103"/>
+                                </variation>
                                 <connections>
                                     <action selector="tGreenPressed" destination="jjj-Jx-pnZ" eventType="touchUpInside" id="xZD-6l-dcQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cq-V2-OcH">
-                                <rect key="frame" x="24" y="379" width="274" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cq-V2-OcH">
+                                <rect key="frame" x="164" y="411" width="274" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Roasted Chili">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="64" y="411" width="274" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="64" y="411" width="274" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="104" y="411" width="274" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="chiliPressed" destination="jjj-Jx-pnZ" eventType="touchUpInside" id="hc5-rU-RfE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZn-0L-jpN">
-                                <rect key="frame" x="84" y="78" width="152" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZn-0L-jpN">
+                                <rect key="frame" x="224" y="78" width="152" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Tomato">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="124" y="78" width="152" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="124" y="78" width="152" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="164" y="78" width="152" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="tomatoPressed" destination="jjj-Jx-pnZ" eventType="touchUpInside" id="ojM-8L-05w"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCW-5u-PWR">
-                                <rect key="frame" x="22" y="179" width="277" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCW-5u-PWR">
+                                <rect key="frame" x="162" y="179" width="277" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Tomatillo Red">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="62" y="179" width="277" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="62" y="179" width="277" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="102" y="179" width="277" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="tRedPressed" destination="jjj-Jx-pnZ" eventType="touchUpInside" id="nb5-2v-76j"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYP-Wa-4Oz">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HYP-Wa-4Oz">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <navigationItem id="L7y-M4-ocr">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="4AH-Sw-Wyl">
@@ -490,22 +575,40 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Next" id="aeb-tc-1Zp">
                                             <connections>
-                                                <segue destination="1Sw-m2-a7W" kind="modal" identifier="salsaItemSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="r79-YB-NxT"/>
+                                                <segue destination="1Sw-m2-a7W" kind="presentation" identifier="salsaItemSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="r79-YB-NxT"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="356" width="400" height="0.0"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="556" width="400" height="44"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="276" width="480" height="44"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="jjj-Jx-pnZ" id="m2G-XC-04e"/>
                                 </connections>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-H2-HJv">
-                                <rect key="frame" x="97" y="494" width="126" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-H2-HJv">
+                                <rect key="frame" x="237" y="526" width="126" height="30"/>
                                 <state key="normal" title="View Current Meal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="137" y="526" width="126" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="137" y="526" width="126" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="177" y="526" width="126" height="30"/>
+                                </variation>
                                 <connections>
-                                    <segue destination="aUC-jw-dqr" kind="modal" identifier="editSalsaSegue" id="Wzd-w9-Zmm"/>
+                                    <segue destination="aUC-jw-dqr" kind="presentation" identifier="editSalsaSegue" id="Wzd-w9-Zmm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -538,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kag-Wv-7zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4841" y="-1304"/>
+            <point key="canvasLocation" x="9076.875" y="-1377.4647887323943"/>
         </scene>
         <!--Beans View Controller-->
         <scene sceneID="3iN-CI-dY0">
@@ -549,66 +652,111 @@
                         <viewControllerLayoutGuide type="bottom" id="IrI-db-o2r"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KBp-vl-KhI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-nO-hLH">
-                                <rect key="frame" x="30" y="327" width="261" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-nO-hLH">
+                                <rect key="frame" x="170" y="359" width="261" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Black Beans">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="70" y="359" width="261" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="70" y="359" width="261" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="110" y="359" width="261" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="bBeansPressed" destination="tYo-8N-MJL" eventType="touchUpInside" id="cEK-BD-072"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPQ-Je-qfI">
-                                <rect key="frame" x="96" y="78" width="129" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPQ-Je-qfI">
+                                <rect key="frame" x="236" y="78" width="129" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Fajitas">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="136" y="78" width="129" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="136" y="78" width="129" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="176" y="78" width="129" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="fajitasPressed" destination="tYo-8N-MJL" eventType="touchUpInside" id="i5U-63-Y2d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ia-ru-lFJ">
-                                <rect key="frame" x="49" y="169" width="223" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ia-ru-lFJ">
+                                <rect key="frame" x="189" y="169" width="223" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="White Rice">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="89" y="169" width="223" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="89" y="169" width="223" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="129" y="169" width="223" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="wRicePressed" destination="tYo-8N-MJL" eventType="touchUpInside" id="47I-aY-rcl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVN-KG-6r2">
-                                <rect key="frame" x="35" y="407" width="250" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVN-KG-6r2">
+                                <rect key="frame" x="175" y="439" width="250" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Pinto Beans">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="75" y="439" width="250" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="75" y="439" width="250" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="115" y="439" width="250" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="pBeansPressed" destination="tYo-8N-MJL" eventType="touchUpInside" id="Kd9-eI-5rm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jis-GG-iti">
-                                <rect key="frame" x="41" y="248" width="239" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jis-GG-iti">
+                                <rect key="frame" x="181" y="248" width="239" height="103"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Brown Rice">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="81" y="248" width="239" height="103"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="81" y="248" width="239" height="103"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="121" y="248" width="239" height="103"/>
+                                </variation>
                                 <connections>
                                     <action selector="bRicePressed" destination="tYo-8N-MJL" eventType="touchUpInside" id="MSK-79-gQK"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gM9-vC-Hco">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <navigationItem id="xjC-p6-hyn">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="V3V-vo-1uO">
@@ -618,7 +766,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Next" id="reC-w5-Y0Y">
                                             <connections>
-                                                <segue destination="jjj-Jx-pnZ" kind="modal" identifier="beanItemSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="4HF-Tg-ir1"/>
+                                                <segue destination="jjj-Jx-pnZ" kind="presentation" identifier="beanItemSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="4HF-Tg-ir1"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -628,12 +776,12 @@
                                 </connections>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88K-qf-mvi">
-                                <rect key="frame" x="97" y="494" width="126" height="30"/>
+                                <rect key="frame" x="237" y="526" width="126" height="30"/>
                                 <state key="normal" title="View Current Meal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aUC-jw-dqr" kind="modal" identifier="editRiceSegue" id="zDm-AN-HHl"/>
+                                    <segue destination="aUC-jw-dqr" kind="presentation" identifier="editRiceSegue" id="zDm-AN-HHl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -672,7 +820,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIK-bB-m8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4420" y="-1304"/>
+            <point key="canvasLocation" x="8287.5" y="-1377.4647887323943"/>
         </scene>
         <!--Condiment View Controller-->
         <scene sceneID="8pH-av-ZEI">
@@ -683,66 +831,111 @@
                         <viewControllerLayoutGuide type="bottom" id="8Hf-yg-IVJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IQY-R1-5Wq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63t-Qg-3Rs">
-                                <rect key="frame" x="41" y="228" width="240" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63t-Qg-3Rs">
+                                <rect key="frame" x="181" y="228" width="240" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Guacamole">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="81" y="228" width="240" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="81" y="228" width="240" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="121" y="228" width="240" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="guacPressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="Eq4-Ac-Mj8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hr-Oo-XbJ">
-                                <rect key="frame" x="84" y="303" width="154" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hr-Oo-XbJ">
+                                <rect key="frame" x="224" y="303" width="154" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Lettuce">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="124" y="303" width="154" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="124" y="303" width="154" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="164" y="303" width="154" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="lettucePressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="z18-YU-VXg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-M2-4QG">
-                                <rect key="frame" x="78" y="78" width="164" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-M2-4QG">
+                                <rect key="frame" x="218" y="78" width="164" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Cheese">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="118" y="78" width="164" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="118" y="78" width="164" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="158" y="78" width="164" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="cheesePressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="lUE-A8-ihl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74i-NR-WdO">
-                                <rect key="frame" x="110" y="154" width="102" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74i-NR-WdO">
+                                <rect key="frame" x="250" y="154" width="102" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Corn">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="150" y="154" width="102" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="150" y="154" width="102" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="190" y="154" width="102" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="cornPressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="fTa-N1-dOL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7d-oc-Juc">
-                                <rect key="frame" x="34" y="377" width="252" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7d-oc-Juc">
+                                <rect key="frame" x="174" y="377" width="252" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <size key="titleShadowOffset" width="-1" height="1"/>
                                 <state key="normal" title="Sour Cream">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="74" y="377" width="252" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="74" y="377" width="252" height="71"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="114" y="377" width="252" height="71"/>
+                                </variation>
                                 <connections>
                                     <action selector="sourCreamPressed" destination="1Sw-m2-a7W" eventType="touchUpInside" id="qLa-Dq-YOL"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDj-By-1mf">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fDj-By-1mf">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <navigationItem id="V1Y-Mc-0Qu">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="ypq-EP-gee">
@@ -752,22 +945,40 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Results" id="iTg-J6-RPC">
                                             <connections>
-                                                <segue destination="3DP-Kf-hXe" kind="modal" identifier="condimentItemSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="ySV-cN-YSW"/>
+                                                <segue destination="3DP-Kf-hXe" kind="presentation" identifier="condimentItemSelected" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="ySV-cN-YSW"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="356" width="400" height="0.0"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="556" width="400" height="44"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="276" width="480" height="44"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="1Sw-m2-a7W" id="Zur-Uh-Mh9"/>
                                 </connections>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywq-Ge-JWl">
-                                <rect key="frame" x="97" y="494" width="126" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywq-Ge-JWl">
+                                <rect key="frame" x="237" y="494" width="126" height="62"/>
                                 <state key="normal" title="View Current Meal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="137" y="494" width="126" height="62"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="137" y="494" width="126" height="62"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="177" y="494" width="126" height="62"/>
+                                </variation>
                                 <connections>
-                                    <segue destination="aUC-jw-dqr" kind="modal" identifier="editCondimentSegue" id="uIR-2c-Gpl"/>
+                                    <segue destination="aUC-jw-dqr" kind="presentation" identifier="editCondimentSegue" id="uIR-2c-Gpl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -803,14 +1014,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65H-W2-jYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5227" y="-1304"/>
+            <point key="canvasLocation" x="9800.625" y="-1377.4647887323943"/>
         </scene>
         <!--Summary View Controller-->
         <scene sceneID="KbV-tf-mtb">
             <objects>
                 <tableViewController id="3DP-Kf-hXe" customClass="SummaryViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="2" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="mim-yu-ted">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -885,13 +1096,13 @@
                     </navigationItem>
                     <connections>
                         <segue destination="xdf-Il-g6M" kind="unwind" identifier="startOverSegue" unwindAction="unwindToRootVC:" id="wdu-vs-1Gr"/>
-                        <segue destination="aUC-jw-dqr" kind="modal" identifier="editSummarySegue" id="KdC-mJ-mHb"/>
+                        <segue destination="aUC-jw-dqr" kind="presentation" identifier="editSummarySegue" id="KdC-mJ-mHb"/>
                         <segue destination="W5c-xm-jdA" kind="unwind" identifier="beginningUnwind" unwindAction="beginningUnwind:" id="YbC-93-NeN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHl-2M-iVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5680" y="-1304"/>
+            <point key="canvasLocation" x="10650" y="-1377.4647887323943"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W0W-Xk-42X">
@@ -909,7 +1120,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ThG-9K-ycQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3859" y="-1944"/>
+            <point key="canvasLocation" x="7235.625" y="-2053.5211267605632"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8I1-yY-mPU">
@@ -927,16 +1138,40 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCD-n4-fA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3585" y="-340"/>
+            <point key="canvasLocation" x="6721.875" y="-359.15492957746477"/>
+        </scene>
+        <!--Loaded Details Table View Controller-->
+        <scene sceneID="WSU-AH-ivp">
+            <objects>
+                <tableViewController id="uje-9Q-CqK" customClass="LoadedDetailsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="2" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uUw-ta-Xfd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="vEJ-KW-Qgm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vEJ-KW-Qgm" id="fFr-of-BEr">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="uje-9Q-CqK" id="ODi-JA-8LN"/>
+                            <outlet property="delegate" destination="uje-9Q-CqK" id="V3r-fJ-TAl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gGr-iS-9v2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Un9-0O-ydr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8568.75" y="-359.15492957746477"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KdC-mJ-mHb"/>
+        <segue reference="lSa-pq-wTV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

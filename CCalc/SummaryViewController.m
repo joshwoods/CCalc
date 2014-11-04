@@ -8,7 +8,9 @@
 
 #import "SummaryViewController.h"
 #import "EditMenuTableViewController.h"
+#import "CCIngredientItem.h"
 #import "SavedMenuItems.h"
+#import "Ingredients.h"
 #import "TableViewCell.h"
 #import "UIColor+FlatUI.h"
 #import "UITableViewCell+FlatUI.h"
@@ -174,15 +176,21 @@
                                              inManagedObjectContext:context];
                 savedInfo.menuName = self.menuItemName;
                 savedInfo.calories = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.calories];
-                savedInfo.totalFat = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.totalFat];
-                savedInfo.saturatedFat = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.saturatedFat];
+                savedInfo.totalFat = [NSString stringWithFormat:@"%ld g",(long)self.menuItem.nutritionTotal.totalFat];
+                savedInfo.saturatedFat = [NSString stringWithFormat:@"%ld g",(long)self.menuItem.nutritionTotal.saturatedFat];
                 savedInfo.transFat = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.transFat];
-                savedInfo.cholesterol = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.cholesterol];
-                savedInfo.sodium = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.sodium];
-                savedInfo.totalCarbs = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.totalCarbs];
-                savedInfo.dietaryFiber = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.dietaryFiber];
-                savedInfo.sugar = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.sugar];
-                savedInfo.protein = [NSString stringWithFormat:@"%ld",(long)self.menuItem.nutritionTotal.protein];
+                savedInfo.cholesterol = [NSString stringWithFormat:@"%ld mg",(long)self.menuItem.nutritionTotal.cholesterol];
+                savedInfo.sodium = [NSString stringWithFormat:@"%ld mg",(long)self.menuItem.nutritionTotal.sodium];
+                savedInfo.totalCarbs = [NSString stringWithFormat:@"%ld g",(long)self.menuItem.nutritionTotal.totalCarbs];
+                savedInfo.dietaryFiber = [NSString stringWithFormat:@"%ld g",(long)self.menuItem.nutritionTotal.dietaryFiber];
+                savedInfo.sugar = [NSString stringWithFormat:@"%ld g",(long)self.menuItem.nutritionTotal.sugar];
+                savedInfo.protein = [NSString stringWithFormat:@"%ld g",(long)self.menuItem.nutritionTotal.protein];
+                for (CCIngredientItem *item in self.menuItem.items) {
+                    Ingredients *ingredient = [NSEntityDescription insertNewObjectForEntityForName:@"Ingredients" inManagedObjectContext:context];
+                    ingredient.ingredientName = item.nutrition.name;
+                    ingredient.info = savedInfo;
+                    [savedInfo addDetailsObject:ingredient];
+                }
                 
                 NSError *error;
                 if (![context save:&error]) {

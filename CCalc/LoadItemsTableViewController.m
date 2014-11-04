@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor cloudsColor];
     self.navigationController.navigationBar.barTintColor = [UIColor cloudsColor];
     if ([self.savedItems count] > 0) {
         self.navigationItem.rightBarButtonItem.enabled = YES;
@@ -71,12 +72,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if ([self.savedItems count] > 0) {
         SavedMenuItems *item = self.savedItems[indexPath.row];
-        [cell configureFlatCellWithColor:[UIColor whiteColor] selectedColor:[UIColor pumpkinColor]];
+        cell.backgroundColor = [UIColor cloudsColor];
+        [cell configureFlatCellWithColor:[UIColor cloudsColor] selectedColor:[UIColor pumpkinColor]];
         cell.textLabel.text = item.menuName;
         cell.textLabel.textColor = [UIColor pumpkinColor];
-        // Configure the cell...
+        
         return cell;
     } else {
+        cell.backgroundColor = [UIColor cloudsColor];
         cell.textLabel.text = @"There are no saved items.";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.textColor = [UIColor pumpkinColor];

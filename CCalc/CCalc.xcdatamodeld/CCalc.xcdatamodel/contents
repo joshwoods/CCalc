@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Ingredients" representedClassName="Ingredients" syncable="YES">
+        <attribute name="ingredientName" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SavedMenuItems" inverseName="details" inverseEntity="SavedMenuItems" syncable="YES"/>
+    </entity>
     <entity name="SavedMenuItems" representedClassName="SavedMenuItems" syncable="YES">
-        <attribute name="calories" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="cholesterol" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="dietaryFiber" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="menuName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="protein" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="saturatedFat" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sodium" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sugar" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="totalCarbs" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="totalFat" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="transFat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="calories" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="cholesterol" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="dietaryFiber" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="menuName" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="protein" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="saturatedFat" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="sodium" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="sugar" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="totalCarbs" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="totalFat" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <attribute name="transFat" optional="YES" attributeType="String" defaultValueString="N/A" syncable="YES"/>
+        <relationship name="details" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Ingredients" inverseName="info" inverseEntity="Ingredients" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SavedMenuItems" positionX="-36" positionY="9" width="128" height="210"/>
+        <element name="Ingredients" positionX="-36" positionY="90" width="128" height="73"/>
+        <element name="SavedMenuItems" positionX="-281" positionY="-97" width="128" height="223"/>
     </elements>
 </model>

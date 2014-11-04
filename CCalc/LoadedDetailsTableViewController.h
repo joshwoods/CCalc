@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "SavedMenuItems.h"
+#import "Ingredients.h"
 
 @interface LoadedDetailsTableViewController : UITableViewController
 
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) SavedMenuItems *menuItem;
+@property (nonatomic, strong) NSArray *ingredients;
 
 @end
