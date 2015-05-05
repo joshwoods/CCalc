@@ -36,7 +36,6 @@
 		F742A2E01AF51BDD00CB1988 /* Load Meals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F742A2DF1AF51BDD00CB1988 /* Load Meals.storyboard */; };
 		F742A2E41AF6A4E000CB1988 /* CreateMealsRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F742A2E31AF6A4E000CB1988 /* CreateMealsRoot.storyboard */; };
 		F742A2E71AF6A9E400CB1988 /* CreateMealsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F742A2E61AF6A9E400CB1988 /* CreateMealsRootViewController.m */; };
-		F742A2EA1AF7CA1400CB1988 /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F742A2E91AF7CA1400CB1988 /* ItemTableViewCell.m */; };
 		F7DFC0FE1A0538C70011B349 /* SavedMenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC0FD1A0538C70011B349 /* SavedMenuItems.m */; };
 		F7DFC1011A0538C70011B349 /* Ingredients.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC1001A0538C70011B349 /* Ingredients.m */; };
 /* End PBXBuildFile section */
@@ -106,8 +105,6 @@
 		F742A2E31AF6A4E000CB1988 /* CreateMealsRoot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateMealsRoot.storyboard; sourceTree = "<group>"; };
 		F742A2E51AF6A9E300CB1988 /* CreateMealsRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateMealsRootViewController.h; sourceTree = "<group>"; };
 		F742A2E61AF6A9E400CB1988 /* CreateMealsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateMealsRootViewController.m; sourceTree = "<group>"; };
-		F742A2E81AF7CA1400CB1988 /* ItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableViewCell.h; sourceTree = "<group>"; };
-		F742A2E91AF7CA1400CB1988 /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
 		F7DFC0FC1A0538C70011B349 /* SavedMenuItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedMenuItems.h; sourceTree = "<group>"; };
 		F7DFC0FD1A0538C70011B349 /* SavedMenuItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedMenuItems.m; sourceTree = "<group>"; };
 		F7DFC0FF1A0538C70011B349 /* Ingredients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredients.h; sourceTree = "<group>"; };
@@ -297,8 +294,6 @@
 				F728F5F619FF4D9E00BB7AC1 /* TableViewCell.m */,
 				F728F5F719FF4D9E00BB7AC1 /* TableViewCell.xib */,
 				F728F58619FF4CA500BB7AC1 /* Images.xcassets */,
-				F742A2E81AF7CA1400CB1988 /* ItemTableViewCell.h */,
-				F742A2E91AF7CA1400CB1988 /* ItemTableViewCell.m */,
 			);
 			name = Visuals;
 			sourceTree = "<group>";
@@ -413,7 +408,6 @@
 				F7DFC0FE1A0538C70011B349 /* SavedMenuItems.m in Sources */,
 				F728F57C19FF4CA500BB7AC1 /* AppDelegate.m in Sources */,
 				F728F5FC19FF4D9E00BB7AC1 /* BeansViewController.m in Sources */,
-				F742A2EA1AF7CA1400CB1988 /* ItemTableViewCell.m in Sources */,
 				F728F60119FF4D9E00BB7AC1 /* TableViewCell.m in Sources */,
 				F728F5A719FF4D1500BB7AC1 /* CCNutrition.m in Sources */,
 				F7DFC1011A0538C70011B349 /* Ingredients.m in Sources */,

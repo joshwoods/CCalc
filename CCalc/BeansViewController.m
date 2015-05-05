@@ -21,7 +21,11 @@
 @property (nonatomic, strong) CCIngredientItem *bBeans;
 
 @property (nonatomic, strong) UIColor *color;
-@property (nonatomic, strong) UIColor *previousColor;
+@property (nonatomic, strong) UIColor *first;
+@property (nonatomic, strong) UIColor *second;
+@property (nonatomic, strong) UIColor *third;
+@property (nonatomic, strong) UIColor *fourth;
+@property (nonatomic, strong) UIColor *fifth;
 
 @property (nonatomic, strong) NSArray *arrayOfIngredients;
 
@@ -71,7 +75,7 @@
 - (void)removeBeanIngredient:(CCIngredientItem *)ingredient {
     if ([_delegate respondsToSelector:@selector(removeBeanIngredient:)])
     {
-        [_delegate selectIngredient:ingredient];
+        [_delegate removeBeanIngredient:ingredient];
     }
 }
 
@@ -81,6 +85,26 @@
         return _color;
     } else {
         _color = [self darkerColorForColor:_color];
+        
+        switch (index) {
+            case 0:
+                _first = _color;
+                break;
+            case 1:
+                _second = _color;
+                break;
+            case 2:
+                _third = _color;
+                break;
+            case 3:
+                _fourth = _color;
+                break;
+            case 4:
+                _fifth = _color;
+                break;
+            default:
+                break;
+        }
         return _color;
     }
 }
@@ -96,27 +120,41 @@
     return nil;
 }
 
-//- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return YES;
-//}
-//
-//- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    cell.contentView.backgroundColor = [UIColor pumpkinColor];
-//}
-//
-//- (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    cell.contentView.backgroundColor = _previousColor;
-//}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [UIView animateWithDuration:0.25 animations:^{
+        cell.backgroundColor = [UIColor pumpkinColor];
+    }];
     [self selectIngredient:_arrayOfIngredients[indexPath.row]];
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [UIView animateWithDuration:0.25 animations:^{
+        switch (indexPath.row) {
+            case 0:
+                cell.backgroundColor = _first;
+                break;
+            case 1:
+                cell.backgroundColor = _second;
+                break;
+            case 2:
+                cell.backgroundColor = _third;
+                break;
+            case 3:
+                cell.backgroundColor = _fourth;
+                break;
+            case 4:
+                cell.backgroundColor = _fifth;
+                break;
+            default:
+                break;
+        }
+    }];
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+    [self removeBeanIngredient:_arrayOfIngredients[indexPath.row]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
