@@ -23,6 +23,8 @@
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, strong) UIColor *previousColor;
 
+@property (nonatomic, strong) NSArray *arrayOfCondiments;
+
 @end
 
 @implementation CondimentViewController
@@ -41,6 +43,8 @@
     _guac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeGuac];
     _lettuce = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeLettuce];
     _sourCream = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSourCream];
+    
+    _arrayOfCondiments = @[_cheese, _corn, _guac, _lettuce, _sourCream];
     
     _color = [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:1];
 }

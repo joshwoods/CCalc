@@ -12,6 +12,7 @@
 #import "BeansViewController.h"
 #import "SalsaViewController.h"
 #import "CondimentViewController.h"
+#import "CCMenuItem.h"
 
 @interface CreateMealsRootViewController : UIViewController <MealViewDelegate, MeatViewDelegate, BeanViewDelegate, SalsaViewDelegate>
 
