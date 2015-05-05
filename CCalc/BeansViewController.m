@@ -64,7 +64,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Meat Delegate
+#pragma mark - Bean Delegate
 - (void)selectIngredient:(CCIngredientItem *)ingredient {
     if ([_delegate respondsToSelector:@selector(selectIngredient:)])
     {

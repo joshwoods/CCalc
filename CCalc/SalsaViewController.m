@@ -22,6 +22,8 @@
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, strong) UIColor *previousColor;
 
+@property (nonatomic, strong) NSArray *arrayOfSalsa;
+
 @end
 
 @implementation SalsaViewController
@@ -35,18 +37,14 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor cloudsColor];
     
-    self.tomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTomato];
-    self.tRed = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTRed];
-    self.tGreen = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTGreen];
-    self.chili = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChili];
+    _tomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTomato];
+    _tRed = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTRed];
+    _tGreen = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeTGreen];
+    _chili = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChili];
+    
+    _arrayOfSalsa = @[_tomato, _tRed, _tGreen, _chili];
     
     _color = [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:1];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:YES];
-    NSLog(@"There are %lu items in this menu so far", (unsigned long)[self.menuItem.items count]);
 }
 
 - (IBAction)goBack:(UIStoryboardSegue *)segue
@@ -54,17 +52,18 @@
     //just unwinding here
 }
 
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
-{
-    if([segue.identifier isEqualToString:@"salsaItemSelected"])
+#pragma mark - Salsa Delegate
+- (void)selectSalsaIngredient:(CCIngredientItem *)ingredient {
+    if ([_delegate respondsToSelector:@selector(selectSalsaIngredient:)])
     {
-        CondimentViewController *transferViewController = segue.destinationViewController;
-        transferViewController.menuItem = self.menuItem;
-    }else if ([segue.identifier isEqualToString:@"editSalsaSegue"]){
-        UINavigationController *navController = segue.destinationViewController;
-        EditMenuTableViewController *transferViewController = (EditMenuTableViewController *)navController.topViewController;
-        transferViewController.menuItem = self.menuItem;
+        [_delegate selectSalsaIngredient:ingredient];
+    }
+}
+
+- (void)removeSalsaIngredient:(CCIngredientItem *)ingredient {
+    if ([_delegate respondsToSelector:@selector(removeSalsaIngredient:)])
+    {
+        [_delegate removeSalsaIngredient:ingredient];
     }
 }
 
@@ -96,22 +95,7 @@
         cell.contentView.backgroundColor = _previousColor;
     }];
     
-    switch (indexPath.row) {
-        case 0:
-            [_menuItem removeIngredientItem:_tomato];
-            break;
-        case 1:
-            [_menuItem removeIngredientItem:_tRed];
-            break;
-        case 2:
-            [_menuItem removeIngredientItem:_tGreen];
-            break;
-        case 3:
-            [_menuItem removeIngredientItem:_chili];
-            break;
-        default:
-            break;
-    }
+    [self removeSalsaIngredient:_arrayOfSalsa[indexPath.row]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -122,22 +106,7 @@
         cell.contentView.backgroundColor = [UIColor pumpkinColor];
     }];
     
-    switch (indexPath.row) {
-        case 0:
-            [_menuItem addIngredientItem:_tomato];
-            break;
-        case 1:
-            [_menuItem addIngredientItem:_tRed];
-            break;
-        case 2:
-            [_menuItem addIngredientItem:_tGreen];
-            break;
-        case 3:
-            [_menuItem addIngredientItem:_chili];
-            break;
-        default:
-            break;
-    }
+    [self selectSalsaIngredient:_arrayOfSalsa[indexPath.row]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

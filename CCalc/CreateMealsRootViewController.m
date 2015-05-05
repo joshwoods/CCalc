@@ -240,6 +240,7 @@
         
         _salsaViewController = [createStoryboard instantiateViewControllerWithIdentifier:@"SalsaViewController"];
         [UIViewController addChildViewController:_salsaViewController toParentViewController:self andAddToView:_salsaContainer keepPreviousChildren:nil andRemoveAllOtherChildren:NO withAutoLayout:YES];
+        _salsaViewController.delegate = self;
         _leadingSalsaConstraint.constant = self.view.bounds.size.width;
         
         _condimentViewController = [createStoryboard instantiateViewControllerWithIdentifier:@"MiscViewController"];
@@ -291,6 +292,22 @@
 {
     [_menuItem removeIngredientItem:ingredient];
     _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
+}
+
+- (void)selectSalsaIngredient:(CCIngredientItem *)ingredient
+{
+    [_menuItem addIngredientItem:ingredient];
+    _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
+    _segmentControl.selectedSegmentIndex = 4;
+    [self toggleControllers];
+}
+
+- (void)removeSalsaIngredient:(CCIngredientItem *)ingredient
+{
+    [_menuItem removeIngredientItem:ingredient];
+    _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
+    _segmentControl.selectedSegmentIndex = 4;
+    [self toggleControllers];
 }
 
 - (void)didReceiveMemoryWarning {

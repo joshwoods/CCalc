@@ -13,7 +13,7 @@
 #import "SalsaViewController.h"
 #import "CondimentViewController.h"
 
-@interface CreateMealsRootViewController : UIViewController <MealViewDelegate, MeatViewDelegate, BeanViewDelegate>
+@interface CreateMealsRootViewController : UIViewController <MealViewDelegate, MeatViewDelegate, BeanViewDelegate, SalsaViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *sectionContainer;
 

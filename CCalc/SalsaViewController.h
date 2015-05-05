@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCMenuItem.h"
+#import "CCIngredientItem.h"
 
-@interface SalsaViewController : UITableViewController
+@protocol SalsaViewDelegate
 
-@property (nonatomic, strong) CCMenuItem *menuItem;
+- (void)selectSalsaIngredient:(CCIngredientItem *)ingredient;
+- (void)removeSalsaIngredient:(CCIngredientItem *)ingredient;
+
+@end
+
+@interface SalsaViewController : UITableViewController <SalsaViewDelegate>
+
+// Delegate
+@property (weak, nonatomic) NSObject <SalsaViewDelegate> *delegate;
 
 @end
