@@ -19,6 +19,8 @@
 @property (nonatomic, strong) SalsaViewController *salsaViewController;
 @property (nonatomic, strong) CondimentViewController *condimentViewController;
 
+@property (nonatomic, weak) IBOutlet UIButton *summaryButton;
+
 //Toggle Indexes
 @property (nonatomic, assign) NSInteger previousIndex;
 @property (nonatomic, assign) NSInteger currentIndex;
@@ -33,6 +35,12 @@
 
 - (void)toggleControllers {
     _currentIndex = _segmentControl.selectedSegmentIndex;
+    
+    if (_currentIndex != 4) {
+        _summaryButton.hidden = YES;
+    } else {
+        _summaryButton.hidden = NO;
+    }
     
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     
@@ -219,6 +227,13 @@
 }
 
 - (void)loadChildViewControllers {
+    
+    if (_currentIndex != 4) {
+        _summaryButton.hidden = YES;
+    } else {
+        _summaryButton.hidden = NO;
+    }
+    
     UIStoryboard *createStoryboard = [UIStoryboard storyboardWithName:@"CreateMealsRoot" bundle:nil];
     
     if (createStoryboard != nil)
@@ -243,7 +258,7 @@
         _salsaViewController.delegate = self;
         _leadingSalsaConstraint.constant = self.view.bounds.size.width;
         
-        _condimentViewController = [createStoryboard instantiateViewControllerWithIdentifier:@"MiscViewController"];
+        _condimentViewController = [createStoryboard instantiateViewControllerWithIdentifier:@"CondimentViewController"];
         [UIViewController addChildViewController:_condimentViewController toParentViewController:self andAddToView:_miscContainer keepPreviousChildren:nil andRemoveAllOtherChildren:NO withAutoLayout:YES];
         _leadingMiscConstraint.constant = self.view.bounds.size.width;
     }
@@ -308,6 +323,18 @@
     _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
     _segmentControl.selectedSegmentIndex = 4;
     [self toggleControllers];
+}
+
+- (void)selectCondimentIngredient:(CCIngredientItem *)ingredient
+{
+    [_menuItem addIngredientItem:ingredient];
+    _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
+}
+
+- (void)removeCondimentIngredient:(CCIngredientItem *)ingredient
+{
+    [_menuItem removeIngredientItem:ingredient];
+    _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
 }
 
 - (void)didReceiveMemoryWarning {

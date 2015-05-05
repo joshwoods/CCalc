@@ -14,7 +14,7 @@
 #import "CondimentViewController.h"
 #import "CCMenuItem.h"
 
-@interface CreateMealsRootViewController : UIViewController <MealViewDelegate, MeatViewDelegate, BeanViewDelegate, SalsaViewDelegate>
+@interface CreateMealsRootViewController : UIViewController <MealViewDelegate, MeatViewDelegate, BeanViewDelegate, SalsaViewDelegate, CondimentViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *sectionContainer;
 

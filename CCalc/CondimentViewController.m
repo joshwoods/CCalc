@@ -21,7 +21,12 @@
 @property (nonatomic, strong) CCIngredientItem *sourCream;
 
 @property (nonatomic, strong) UIColor *color;
-@property (nonatomic, strong) UIColor *previousColor;
+
+@property (nonatomic, strong) UIColor *first;
+@property (nonatomic, strong) UIColor *second;
+@property (nonatomic, strong) UIColor *third;
+@property (nonatomic, strong) UIColor *fourth;
+@property (nonatomic, strong) UIColor *fifth;
 
 @property (nonatomic, strong) NSArray *arrayOfCondiments;
 
@@ -49,12 +54,6 @@
     _color = [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:1];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:YES];
-    NSLog(@"There are %lu items in this menu so far", (unsigned long)[self.menuItem.items count]);
-}
-
 - (IBAction)goBack:(UIStoryboardSegue *)segue
 {
     //just unwinding here
@@ -64,16 +63,18 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
-{
-    if([segue.identifier isEqualToString:@"condimentItemSelected"])
+#pragma mark - Condiment Delegate
+- (void)selectCondimentIngredient:(CCIngredientItem *)ingredient {
+    if ([_delegate respondsToSelector:@selector(selectCondimentIngredient:)])
     {
-        SummaryViewController *transferViewController = segue.destinationViewController;
-        transferViewController.menuItem = _menuItem;
-    }else if ([segue.identifier isEqualToString:@"editCondimentSegue"]){
-        UINavigationController *navController = segue.destinationViewController;
-        EditMenuTableViewController *transferViewController = (EditMenuTableViewController *)navController.topViewController;
-        transferViewController.menuItem = _menuItem;
+        [_delegate selectCondimentIngredient:ingredient];
+    }
+}
+
+- (void)removeCondimentIngredient:(CCIngredientItem *)ingredient {
+    if ([_delegate respondsToSelector:@selector(removeCondimentIngredient:)])
+    {
+        [_delegate removeCondimentIngredient:ingredient];
     }
 }
 
@@ -82,8 +83,32 @@
     if (index == 0) {
         return _color;
     } else {
-        _color = [self darkerColorForColor:_color];
-        return _color;
+        if (index != 5) {
+            _color = [self darkerColorForColor:_color];
+            
+            switch (index) {
+                case 0:
+                    _first = _color;
+                    break;
+                case 1:
+                    _second = _color;
+                    break;
+                case 2:
+                    _third = _color;
+                    break;
+                case 3:
+                    _fourth = _color;
+                    break;
+                case 4:
+                    _fifth = _color;
+                    break;
+                default:
+                    break;
+            }
+            return _color;
+        } else {
+            return _fifth;
+        }
     }
 }
 
@@ -98,61 +123,47 @@
     return nil;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [UIView animateWithDuration:0.15 animations:^{
-        cell.contentView.backgroundColor = _previousColor;
-    }];
-    
-    switch (indexPath.row) {
-        case 0:
-            [_menuItem removeIngredientItem:_cheese];
-            break;
-        case 1:
-            [_menuItem removeIngredientItem:_guac];
-            break;
-        case 2:
-            [_menuItem removeIngredientItem:_corn];
-            break;
-        case 3:
-            [_menuItem removeIngredientItem:_lettuce];
-            break;
-        case 4:
-            [_menuItem removeIngredientItem:_sourCream];
-            break;
-        default:
-            break;
-    }
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.contentView.backgroundColor = _previousColor;
-    [UIView animateWithDuration:0.15 animations:^{
-        cell.contentView.backgroundColor = [UIColor pumpkinColor];
-    }];
-    
-    switch (indexPath.row) {
-        case 0:
-            [_menuItem addIngredientItem:_cheese];
-            break;
-        case 1:
-            [_menuItem addIngredientItem:_guac];
-            break;
-        case 2:
-            [_menuItem addIngredientItem:_corn];
-            break;
-        case 3:
-            [_menuItem addIngredientItem:_lettuce];
-            break;
-        case 4:
-            [_menuItem addIngredientItem:_sourCream];
-            break;
-        default:
-            break;
+    if (indexPath.row == 6) {
+        cell.userInteractionEnabled = NO;
     }
+    [UIView animateWithDuration:0.25 animations:^{
+        cell.backgroundColor = [UIColor pumpkinColor];
+    }];
+    [self selectCondimentIngredient:_arrayOfCondiments[indexPath.row]];
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (indexPath.row == 6) {
+        cell.userInteractionEnabled = NO;
+    }
+    [UIView animateWithDuration:0.25 animations:^{
+        switch (indexPath.row) {
+            case 0:
+                cell.backgroundColor = _first;
+                break;
+            case 1:
+                cell.backgroundColor = _second;
+                break;
+            case 2:
+                cell.backgroundColor = _third;
+                break;
+            case 3:
+                cell.backgroundColor = _fourth;
+                break;
+            case 4:
+                cell.backgroundColor = _fifth;
+                break;
+            default:
+                break;
+        }
+    }];
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+    [self removeCondimentIngredient:_arrayOfCondiments[indexPath.row]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
