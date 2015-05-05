@@ -64,6 +64,13 @@
 }
 
 #pragma mark - Condiment Delegate
+- (void)setSummaryColor:(UIColor *)color {
+    if ([_delegate respondsToSelector:@selector(setSummaryColor:)])
+    {
+        [_delegate setSummaryColor:color];
+    }
+}
+
 - (void)selectCondimentIngredient:(CCIngredientItem *)ingredient {
     if ([_delegate respondsToSelector:@selector(selectCondimentIngredient:)])
     {
@@ -83,32 +90,30 @@
     if (index == 0) {
         return _color;
     } else {
-        if (index != 5) {
-            _color = [self darkerColorForColor:_color];
-            
-            switch (index) {
-                case 0:
-                    _first = _color;
-                    break;
-                case 1:
-                    _second = _color;
-                    break;
-                case 2:
-                    _third = _color;
-                    break;
-                case 3:
-                    _fourth = _color;
-                    break;
-                case 4:
-                    _fifth = _color;
-                    break;
-                default:
-                    break;
-            }
-            return _color;
-        } else {
-            return _fifth;
+        _color = [self darkerColorForColor:_color];
+        
+        switch (index) {
+            case 0:
+                _first = _color;
+                break;
+            case 1:
+                _second = _color;
+                break;
+            case 2:
+                _third = _color;
+                break;
+            case 3:
+                _fourth = _color;
+                break;
+            case 4:
+                _fifth = _color;
+                [self setSummaryColor:_fifth];
+                break;
+            default:
+                break;
         }
+        
+        return _color;
     }
 }
 

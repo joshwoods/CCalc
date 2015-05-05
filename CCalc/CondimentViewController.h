@@ -11,6 +11,7 @@
 
 @protocol CondimentViewDelegate
 
+- (void)setSummaryColor:(UIColor *)color;
 - (void)selectCondimentIngredient:(CCIngredientItem *)ingredient;
 - (void)removeCondimentIngredient:(CCIngredientItem *)ingredient;
 

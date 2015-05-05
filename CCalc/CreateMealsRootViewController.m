@@ -8,6 +8,7 @@
 
 #import "CreateMealsRootViewController.h"
 #import "UIViewController+RRAdditions.h"
+#import "UIColor+FlatUI.h"
 
 @interface CreateMealsRootViewController ()
 
@@ -35,12 +36,6 @@
 
 - (void)toggleControllers {
     _currentIndex = _segmentControl.selectedSegmentIndex;
-    
-    if (_currentIndex != 4) {
-        _summaryButton.hidden = YES;
-    } else {
-        _summaryButton.hidden = NO;
-    }
     
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     
@@ -172,6 +167,12 @@
                      animations:^{
                          
                          [self.view layoutIfNeeded];
+                         
+                         if (_currentIndex != 4) {
+                             _summaryButton.alpha = 0.0;
+                         } else {
+                             _summaryButton.alpha = 1.0;
+                         }
                      }
                      completion:^(BOOL finished){
                          
@@ -223,15 +224,18 @@
     
     _caloriesLabel.text = @"Calories: 0";
     
+    _summaryButton.backgroundColor = [UIColor colorWithRed:0.125 green:0.141 blue:0.145 alpha:1];
+    _summaryButton.tintColor = [UIColor cloudsColor];
+    
     [self loadChildViewControllers];
 }
 
 - (void)loadChildViewControllers {
     
     if (_currentIndex != 4) {
-        _summaryButton.hidden = YES;
+        _summaryButton.alpha = 0.0;
     } else {
-        _summaryButton.hidden = NO;
+        _summaryButton.alpha = 0.0;
     }
     
     UIStoryboard *createStoryboard = [UIStoryboard storyboardWithName:@"CreateMealsRoot" bundle:nil];
@@ -260,6 +264,7 @@
         
         _condimentViewController = [createStoryboard instantiateViewControllerWithIdentifier:@"CondimentViewController"];
         [UIViewController addChildViewController:_condimentViewController toParentViewController:self andAddToView:_miscContainer keepPreviousChildren:nil andRemoveAllOtherChildren:NO withAutoLayout:YES];
+        _condimentViewController.delegate = self;
         _leadingMiscConstraint.constant = self.view.bounds.size.width;
     }
     
@@ -335,6 +340,12 @@
 {
     [_menuItem removeIngredientItem:ingredient];
     _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
+}
+
+- (void)setSummaryColor:(UIColor *)color
+{
+    _summaryButton.backgroundColor = color;
+    _summaryButton.tintColor = [UIColor cloudsColor];
 }
 
 - (void)didReceiveMemoryWarning {
