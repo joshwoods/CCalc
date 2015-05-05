@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CCMenuItem.h"
 
-@interface SalsaViewController : UIViewController
+@interface SalsaViewController : UITableViewController
 
 @property (nonatomic, strong) CCMenuItem *menuItem;
 

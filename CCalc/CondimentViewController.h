@@ -10,7 +10,7 @@
 #import "CCMenuItem.h"
 
 
-@interface CondimentViewController : UIViewController
+@interface CondimentViewController : UITableViewController
 
 @property (nonatomic, strong) CCMenuItem *menuItem;
 

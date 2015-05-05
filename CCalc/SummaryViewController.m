@@ -15,7 +15,7 @@
 #import "UIColor+FlatUI.h"
 #import "UITableViewCell+FlatUI.h"
 
-@interface SummaryViewController ()
+@interface SummaryViewController () <UITextFieldDelegate>
 
 @end
 
@@ -202,6 +202,7 @@
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
                 [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+                textField.delegate = self;
                 textField.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:[NSDate date]]];
                 self.menuItemName = textField.text;
             }];
@@ -214,6 +215,14 @@
         }
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *str = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    NSLog(@"%@", str);
+    self.menuItemName = str;
+    return YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -42,7 +42,7 @@
         self.navigationItem.rightBarButtonItem.enabled = NO;
         ableToUpdate = NO;
     }
-    NSLog(@"%lu", [self.savedItems count]);
+    NSLog(@"%lu", (unsigned long)[self.savedItems count]);
     [self.tableView reloadData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

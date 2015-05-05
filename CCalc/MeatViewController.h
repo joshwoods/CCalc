@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCMenuItem.h"
+#import "CCIngredientItem.h"
 
-@interface MeatViewController : UIViewController
+@protocol MeatViewDelegate
 
-@property (nonatomic, strong) CCMenuItem *menuItem;
+- (void)selectMeatWithItem:(CCIngredientItem *)type;
+- (void)removeMeatWithItem:(CCIngredientItem *)type;
+
+@end
+
+@interface MeatViewController : UITableViewController <MeatViewDelegate>
+
+// Delegate
+@property (weak, nonatomic) NSObject <MeatViewDelegate> *delegate;
 
 @end

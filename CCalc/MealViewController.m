@@ -1,74 +1,78 @@
 //
-//  MeatViewController.m
+//  MainViewController.m
 //  CCalc
 //
 //  Created by Josh Woods on 9/16/14.
 //  Copyright (c) 2014 com.sdoowhsoj. All rights reserved.
 //
 
-#import "MeatViewController.h"
-#import "BeansViewController.h"
 #import "MealViewController.h"
-#import "EditMenuTableViewController.h"
+#import "CCMenuItem.h"
 #import "CCIngredientItem.h"
+#import "MeatViewController.h"
+#import "EditMenuTableViewController.h"
+
 #import "UIColor+FlatUI.h"
 
-@interface MeatViewController ()
+@interface MealViewController ()
 
-@property (nonatomic, strong) CCIngredientItem *steak;
-@property (nonatomic, strong) CCIngredientItem *chicken;
-@property (nonatomic, strong) CCIngredientItem *carnitas;
-@property (nonatomic, strong) CCIngredientItem *barbacoa;
+@property (nonatomic, strong) CCIngredientItem *burrito;
+@property (nonatomic, strong) CCIngredientItem *bowl;
+@property (nonatomic, strong) CCIngredientItem *softTaco;
+@property (nonatomic, strong) CCIngredientItem *hardTaco;
+
+@property (nonatomic, assign) int itemsAddedInView;
 
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, strong) UIColor *previousColor;
 
-@property (nonatomic, strong) NSArray *arrayOfMeats;
+@property (nonatomic, strong) NSArray *arrayOfItems;
 
 @end
 
-@implementation MeatViewController
+@implementation MealViewController
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _steak= [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSteak];
-    _chicken = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChicken];
-    _barbacoa = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBarbacoa];
-    _carnitas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeCarnitas];
+    _itemsAddedInView = 0;
     
-    _arrayOfMeats = @[_steak, _chicken, _carnitas, _barbacoa];
+    _burrito = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBurrito];
+    _bowl = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBowl];
+    _hardTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeHardTaco];
+    _softTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSoftTaco];
+    
+    _arrayOfItems = @[_burrito, _bowl, _hardTaco, _softTaco];
     
     _color = [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:1];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)goBack:(UIStoryboardSegue *)segue
+- (IBAction)unwindFromEditView:(UIStoryboardSegue *)segue
 {
-    //just unwinding here
+    NSLog(@"Unwinding!");
 }
 
-#pragma mark - Meat Delegate
-- (void)selectMeatWithItem:(CCIngredientItem *)type {
-    if ([_delegate respondsToSelector:@selector(selectMeatWithItem:)])
+#pragma mark - Meal Delegate
+- (void)selectMealTypeWithType:(CCIngredientItem *)type {
+    if ([_delegate respondsToSelector:@selector(selectMealTypeWithType:)])
     {
-        [_delegate selectMeatWithItem:type];
+        [_delegate selectMealTypeWithType:type];
     }
 }
 
-- (void)removeMeatWithItem:(CCIngredientItem *)type {
-    if ([_delegate respondsToSelector:@selector(selectMeatWithItem:)])
+- (void)removeMealWithType:(CCIngredientItem *)type {
+    if ([_delegate respondsToSelector:@selector(removeMealWithType:)])
     {
-        [_delegate removeMeatWithItem:type];
+        [_delegate removeMealWithType:type];
     }
 }
 
@@ -100,7 +104,7 @@
         cell.contentView.backgroundColor = _previousColor;
     }];
     
-    [self removeMeatWithItem:_arrayOfMeats[indexPath.row]];
+    [self removeMealWithType:_arrayOfItems[indexPath.row]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,7 +115,9 @@
         cell.contentView.backgroundColor = [UIColor pumpkinColor];
     }];
     
-    [self selectMeatWithItem:_arrayOfMeats[indexPath.row]];
+    [self selectMealTypeWithType:_arrayOfItems[indexPath.row]];
+    
+    _itemsAddedInView++;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,6 +138,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 4;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 @end

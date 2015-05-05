@@ -12,7 +12,7 @@
 #import "CCIngredientItem.h"
 #import "UIColor+FlatUI.h"
 
-@interface BeansViewController () <UINavigationBarDelegate>
+@interface BeansViewController ()
 
 @property (nonatomic, strong) CCIngredientItem *fajitas;
 @property (nonatomic, strong) CCIngredientItem *wRice;
@@ -20,13 +20,10 @@
 @property (nonatomic, strong) CCIngredientItem *pBeans;
 @property (nonatomic, strong) CCIngredientItem *bBeans;
 
-@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (nonatomic, strong) UIColor *color;
+@property (nonatomic, strong) UIColor *previousColor;
 
-@property (weak, nonatomic) IBOutlet UIButton *fajitasButton;
-@property (weak, nonatomic) IBOutlet UIButton *wRiceButton;
-@property (weak, nonatomic) IBOutlet UIButton *bRiceButton;
-@property (weak, nonatomic) IBOutlet UIButton *pBeansButton;
-@property (weak, nonatomic) IBOutlet UIButton *bBeansButton;
+@property (nonatomic, strong) NSArray *arrayOfIngredients;
 
 @property (nonatomic, assign) int itemsAddedInView;
 
@@ -37,69 +34,25 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _itemsAddedInView = 0;
-    self.navBar.delegate = self;
     
-    self.view.backgroundColor = [UIColor cloudsColor];
-    self.fajitasButton.tintColor = [UIColor pumpkinColor];
-    self.wRiceButton.tintColor = [UIColor pumpkinColor];
-    self.bRiceButton.tintColor = [UIColor pumpkinColor];
-    self.pBeansButton.tintColor = [UIColor pumpkinColor];
-    self.bBeansButton.tintColor = [UIColor pumpkinColor];
-    self.navBar.barTintColor = [UIColor pumpkinColor];
-    self.navBar.tintColor = [UIColor cloudsColor];
-    [self.navBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor cloudsColor]}];
+    _fajitas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeFajitas];
+    _wRice = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeWRice];
+    _bRice = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBRice];
+    _pBeans = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypePBeans];
+    _bBeans = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBBeans];
     
-    self.fajitas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeFajitas];
-    self.wRice = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeWRice];
-    self.bRice = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBRice];
-    self.pBeans = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypePBeans];
-    self.bBeans = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBBeans];
+    _arrayOfIngredients = @[_fajitas, _wRice, _bRice, _bBeans, _pBeans];
+    
+    _color = [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:1];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (IBAction)goBack:(UIStoryboardSegue *)segue
 {
-    [super viewDidAppear:YES];
-    NSLog(@"There are %lu items in this menu so far", [self.menuItem.items count]);
-}
-
--(IBAction)fajitasPressed
-{
-    [self.menuItem addIngredientItem:self.fajitas];
-    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
-}
-
--(IBAction)wRicePressed
-{
-    [self.menuItem addIngredientItem:self.wRice];
-    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
-}
-
--(IBAction)bRicePressed
-{
-    [self.menuItem addIngredientItem:self.bRice];
-    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
-}
-
--(IBAction)pBeansPressed
-{
-    [self.menuItem addIngredientItem:self.pBeans];
-    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
-}
-
--(IBAction)bBeansPressed
-{
-    [self.menuItem addIngredientItem:self.bBeans];
-    self.navBar.topItem.title = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
-}
-
-- (IBAction)goBack:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //just unwinding here
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,17 +60,83 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
-{
-    if([segue.identifier isEqualToString:@"beanItemSelected"])
+#pragma mark - Meat Delegate
+- (void)selectIngredient:(CCIngredientItem *)ingredient {
+    if ([_delegate respondsToSelector:@selector(selectIngredient:)])
     {
-        SalsaViewController *transferViewController = segue.destinationViewController;
-        transferViewController.menuItem = self.menuItem;
-    }else if ([segue.identifier isEqualToString:@"editRiceSegue"]){
-        UINavigationController *navController = segue.destinationViewController;
-        EditMenuTableViewController *transferViewController = (EditMenuTableViewController *)navController.topViewController;
-        transferViewController.menuItem = self.menuItem;
+        [_delegate selectIngredient:ingredient];
     }
+}
+
+- (void)removeBeanIngredient:(CCIngredientItem *)ingredient {
+    if ([_delegate respondsToSelector:@selector(removeBeanIngredient:)])
+    {
+        [_delegate selectIngredient:ingredient];
+    }
+}
+
+#pragma mark - Table View Delegate Methods
+-(UIColor*)colorForIndex:(NSInteger)index {
+    if (index == 0) {
+        return _color;
+    } else {
+        _color = [self darkerColorForColor:_color];
+        return _color;
+    }
+}
+
+- (UIColor *)darkerColorForColor:(UIColor *)c
+{
+    CGFloat r, g, b, a;
+    if ([c getRed:&r green:&g blue:&b alpha:&a])
+        return [UIColor colorWithRed:MAX(r - 0.1, 0.0)
+                               green:MAX(g - 0.1, 0.0)
+                                blue:MAX(b - 0.1, 0.0)
+                               alpha:a];
+    return nil;
+}
+
+//- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return YES;
+//}
+//
+//- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    cell.contentView.backgroundColor = [UIColor pumpkinColor];
+//}
+//
+//- (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    cell.contentView.backgroundColor = _previousColor;
+//}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self selectIngredient:_arrayOfIngredients[indexPath.row]];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.view.bounds.size.height/5;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = [self colorForIndex:indexPath.row];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
 }
 
 @end

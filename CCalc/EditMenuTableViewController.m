@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor cloudsColor];
     self.navigationController.navigationBar.barTintColor = [UIColor cloudsColor];
     if ([self.menuItem.items count] > 0) {
         self.navigationItem.rightBarButtonItem.enabled = YES;
@@ -31,7 +32,7 @@
         self.navigationItem.rightBarButtonItem.enabled = NO;
         ableToUpdate = NO;
     }
-    NSLog(@"%lu", [self.menuItem.items count]);
+    NSLog(@"%lu", (unsigned long)[self.menuItem.items count]);
     [self.tableView reloadData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -63,12 +64,12 @@
     }
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (self.menuItem.items.count > 0) {
         CCIngredientItem *item = self.menuItem.items[indexPath.row];
+        cell.backgroundColor = [UIColor cloudsColor];
         cell.textLabel.text = item.nutrition.name;
         cell.textLabel.textColor = [UIColor pumpkinColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -76,6 +77,7 @@
         return cell;
     } else{
         cell.textLabel.text = @"No Items Available";
+        cell.backgroundColor = [UIColor cloudsColor];
         cell.textLabel.textColor = [UIColor pumpkinColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
