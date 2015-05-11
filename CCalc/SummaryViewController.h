@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "CCMenuItem.h"
+#import "EditMenuTableViewController.h"
 @import CoreData;
 
-@interface SummaryViewController : UITableViewController
+@interface SummaryViewController : UITableViewController <EditSummaryDelegate>
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSString *menuItemName;

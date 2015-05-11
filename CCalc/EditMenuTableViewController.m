@@ -108,4 +108,12 @@
     }
 }
 
+#pragma mark - Meal Delegate
+- (void)updateMenuItemWithMenuItem:(CCMenuItem *)menuItem {
+    if ([_delegate respondsToSelector:@selector(updateMenuItemWithMenuItem:)])
+    {
+        [_delegate updateMenuItemWithMenuItem:_menuItem];
+    }
+}
+
 @end

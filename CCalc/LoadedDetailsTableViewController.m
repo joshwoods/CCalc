@@ -29,11 +29,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.delegate = self;
-    self.ingredients = [self.menuItem.details allObjects];
+    
+    _ingredients = [_menuItem.details allObjects];
+    
     self.tableView.backgroundColor = [UIColor cloudsColor];
-    self.title = self.menuItem.menuName;
-    NSLog(@"%@", self.menuItem.calories);
+    
+    self.title = _menuItem.menuName;
+    
+    NSLog(@"%@", _menuItem.calories);
 }
 
 #pragma mark - Table view data source
@@ -66,7 +69,7 @@
     if (section == 0) {
         return 1;
     } else {
-        return [self.ingredients count];
+        return [_ingredients count];
     }
 }
 

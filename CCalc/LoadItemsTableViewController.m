@@ -131,9 +131,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"SelectedItemDetail"]) {
-        self.savedMenuItem = [self.savedItems objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        LoadedDetailsTableViewController *controller = segue.destinationViewController;
-        controller.menuItem = self.savedMenuItem;
+        _savedMenuItem = [_savedItems objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        LoadedDetailsTableViewController *controller = (LoadedDetailsTableViewController *)[segue destinationViewController];
+        controller.menuItem = _savedMenuItem;
     }
 }
 
