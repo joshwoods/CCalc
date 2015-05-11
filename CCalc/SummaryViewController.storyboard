@@ -112,7 +112,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="xda-KM-Tog">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="8Rc-mg-cch"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="8Rc-mg-cch">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiQ-lq-68h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,4 +140,5 @@
             <point key="canvasLocation" x="5594" y="-1253"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

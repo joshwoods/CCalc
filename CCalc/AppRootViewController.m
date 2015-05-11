@@ -37,24 +37,6 @@
     self.createButton.tintColor = [UIColor pumpkinColor];
     self.loadButton.tintColor = [UIColor pumpkinColor];
     self.view.backgroundColor = [UIColor cloudsColor];
-    
-    _adBanner.alpha = 0.0;
-    
-    [self loadChildViewControllers];
-}
-
-- (void)loadChildViewControllers {
-    
-    UIStoryboard *loadStoryboard = [UIStoryboard storyboardWithName:@"Load Meals" bundle:nil];
-    
-    if (loadStoryboard != nil)
-    {
-        UINavigationController *navigationController = [loadStoryboard instantiateInitialViewController];
-        [UIViewController addChildViewController:navigationController toParentViewController:self andAddToView:_loadSaveMealsContainer keepPreviousChildren:nil andRemoveAllOtherChildren:NO withAutoLayout:YES];
-        _leadingSaveMealsConstraint.constant = -self.view.bounds.size.width;
-    }
-    
-    [self.view layoutIfNeeded];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -63,7 +45,7 @@
     NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"SavedMenuItems"];
     self.savedItems = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    NSLog(@"%lu", (unsigned long)[self.savedItems count]);
+    NSLog(@"%lu", (unsigned long)[_savedItems count]);
 }
 
 - (IBAction)beginningUnwind:(UIStoryboardSegue *)segue
@@ -80,61 +62,27 @@
 //    [self.imageView addSubview:visualEffectView];
 //}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"loadSavedItemsSegue"]) {
-        UINavigationController *navController = segue.destinationViewController;
-        LoadItemsTableViewController *controller = (LoadItemsTableViewController *)navController.topViewController;
-        controller.savedItems = self.savedItems;
-    }
-}
-
 #pragma mark - Actions
 - (IBAction)loadButtonPressed:(id)sender {
-    _leadingSaveMealsConstraint.constant = 0.0;
+    UIStoryboard *load = [UIStoryboard storyboardWithName:@"Load Meals" bundle:nil];
     
-    [UIView animateWithDuration:0.35
-                          delay: 0.0
-                        options: (UIViewAnimationOptionCurveEaseOut)
-                     animations:^{
-                         
-                         [self.view layoutIfNeeded];
-                         
-                     } completion:nil];
+    if (load != nil)
+    {
+        LoadItemsTableViewController *loadController = [load instantiateViewControllerWithIdentifier:@"LoadItemsTableViewController"];
+        loadController.savedItems = _savedItems;
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loadController];
+        [self presentViewController:navController animated:YES completion:nil];
+    }
 }
 
 - (IBAction)newMealPressed:(id)sender {
     UIStoryboard *createStoryboard = [UIStoryboard storyboardWithName:@"CreateMealsRoot" bundle:nil];
-    CreateMealsRootViewController *createViewController = [createStoryboard instantiateInitialViewController];
+    if (createStoryboard != nil) {
+        CreateMealsRootViewController *createViewController = [createStoryboard instantiateInitialViewController];
+        
+        [self presentViewController:createViewController animated:YES completion:nil];
+    }
     
-    [self presentViewController:createViewController animated:YES completion:nil];
-}
-
-#pragma mark - Ad Delegate Methods
--(void)bannerViewWillLoadAd:(ADBannerView *)banner{
-    NSLog(@"Ad Banner will load ad.");
-}
-
--(void)bannerViewDidLoadAd:(ADBannerView *)banner{
-    NSLog(@"Ad Banner did load ad.");
-    
-    [UIView animateWithDuration:0.35 animations:^{
-        _adBanner.alpha = 1.0;
-    }];
-}
-
--(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
-    NSLog(@"Ad Banner action is about to begin.");
-    
-    return YES;
-}
-
--(void)bannerViewActionDidFinish:(ADBannerView *)banner{
-    NSLog(@"Ad Banner action did finish");
-}
-
--(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
-    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
 }
 
 - (void)didReceiveMemoryWarning {

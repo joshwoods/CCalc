@@ -45,16 +45,9 @@
                                             <action selector="loadButtonPressed:" destination="uLL-ca-dtL" eventType="touchUpInside" id="25Y-5B-8an"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FD6-f2-cbv" userLabel="Load Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="FD6-f2-cbv" firstAttribute="leading" secondItem="rVh-f4-dcr" secondAttribute="leading" id="Al4-zM-ySc"/>
-                                    <constraint firstItem="FD6-f2-cbv" firstAttribute="top" secondItem="rVh-f4-dcr" secondAttribute="top" id="Phz-pI-hl4"/>
-                                    <constraint firstAttribute="bottom" secondItem="FD6-f2-cbv" secondAttribute="bottom" id="Zrt-oH-LqJ"/>
                                     <constraint firstItem="C7p-hk-mil" firstAttribute="top" secondItem="Brr-xe-dVD" secondAttribute="bottom" constant="16" id="e68-93-HEd"/>
                                     <constraint firstItem="Brr-xe-dVD" firstAttribute="top" secondItem="rVh-f4-dcr" secondAttribute="top" constant="193" id="gay-9F-CFJ"/>
                                     <constraint firstAttribute="centerX" secondItem="C7p-hk-mil" secondAttribute="centerX" id="wwT-5R-IjJ"/>
@@ -67,7 +60,6 @@
                         <constraints>
                             <constraint firstItem="IBE-10-usL" firstAttribute="top" secondItem="rVh-f4-dcr" secondAttribute="bottom" id="1Tu-Ma-YjI"/>
                             <constraint firstItem="rVh-f4-dcr" firstAttribute="top" secondItem="O0T-su-bmy" secondAttribute="top" constant="20" id="4ld-5g-ktS"/>
-                            <constraint firstItem="FD6-f2-cbv" firstAttribute="width" secondItem="O0T-su-bmy" secondAttribute="width" id="NLy-ay-1Nc"/>
                             <constraint firstAttribute="trailing" secondItem="rVh-f4-dcr" secondAttribute="trailing" id="opZ-d6-M53"/>
                             <constraint firstItem="rVh-f4-dcr" firstAttribute="leading" secondItem="O0T-su-bmy" secondAttribute="leading" id="qHe-mB-4iM"/>
                         </constraints>
@@ -75,9 +67,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="createButton" destination="Brr-xe-dVD" id="8Vu-dz-5E7"/>
-                        <outlet property="leadingSaveMealsConstraint" destination="Al4-zM-ySc" id="lWh-rx-LuQ"/>
                         <outlet property="loadButton" destination="C7p-hk-mil" id="zYj-7Z-zfU"/>
-                        <outlet property="loadSaveMealsContainer" destination="FD6-f2-cbv" id="Wny-2m-SzT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UG5-iN-xdU" userLabel="First Responder" sceneMemberID="firstResponder"/>

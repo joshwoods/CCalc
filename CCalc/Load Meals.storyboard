@@ -38,7 +38,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="gwH-2N-ZIL">
-                        <barButtonItem key="leftBarButtonItem" title="Save" id="AMA-Rp-4pi">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="AMA-Rp-4pi">
                             <connections>
                                 <action selector="goBack:" destination="H50-ho-xZh" id="Gex-H3-92i"/>
                             </connections>
@@ -53,7 +53,6 @@
         <!--Navigation Controller-->
         <scene sceneID="MtW-zJ-v2e">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HHO-28-j4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a17-9M-Pi8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -66,6 +65,7 @@
                         <segue destination="H50-ho-xZh" kind="relationship" relationship="rootViewController" id="GVo-eW-xk0"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HHO-28-j4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6880" y="-360"/>
         </scene>

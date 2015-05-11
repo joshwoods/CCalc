@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CCIngredientItem.h"
+#import "CCMenuItem.h"
 
 @protocol CondimentViewDelegate
 

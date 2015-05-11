@@ -335,7 +335,9 @@
 
 - (void)selectSalsaIngredient:(CCIngredientItem *)ingredient
 {
-    [_menuItem addIngredientItem:ingredient];
+    if (![_menuItem.items containsObject:ingredient]) {
+        [_menuItem addIngredientItem:ingredient];
+    }
     _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
     _segmentControl.selectedSegmentIndex = 4;
     [self toggleControllers];
@@ -365,6 +367,11 @@
 {
     _summaryButton.backgroundColor = color;
     _summaryButton.tintColor = [UIColor cloudsColor];
+}
+
+- (void)viewSummaryWithMenuItem:(CCMenuItem *)menuItem
+{
+    
 }
 
 #pragma mark - Ad Delegate Methods
@@ -398,8 +405,10 @@
 
 - (IBAction)summaryAction:(id)sender {
     UIStoryboard *summary = [UIStoryboard storyboardWithName:@"SummaryViewController" bundle:nil];
-    SummaryViewController *summaryView = [summary instantiateInitialViewController];
-    [self presentViewController:summaryView animated:YES completion:nil];
+    SummaryViewController *summaryController = [summary instantiateViewControllerWithIdentifier:@"SummaryViewController"];
+    summaryController.menuItem = _menuItem;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:summaryController];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

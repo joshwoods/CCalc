@@ -54,11 +54,6 @@
     _color = [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:1];
 }
 
-- (IBAction)goBack:(UIStoryboardSegue *)segue
-{
-    //just unwinding here
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

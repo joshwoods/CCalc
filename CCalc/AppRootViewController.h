@@ -14,18 +14,10 @@
 
 @interface AppRootViewController : UIViewController
 
-//Ad
-@property (nonatomic, weak) IBOutlet ADBannerView *adBanner;
-
 //Array of saved meals
 @property (nonatomic, strong) NSMutableArray *savedItems;
 
 //Core Data
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
-//Load Items Container
-@property (nonatomic, weak) LoadItemsTableViewController *loadItemsController;
-@property (nonatomic, weak) IBOutlet UIView *loadSaveMealsContainer;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leadingSaveMealsConstraint;
 
 @end

@@ -40,12 +40,6 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
-    [self.tableView reloadData];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -198,7 +192,6 @@
                 if (![context save:&error]) {
                     NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
                 }
-                [self performSegueWithIdentifier:@"beginningUnwind" sender:self];
             }];
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

@@ -34,7 +34,7 @@
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor cloudsColor];
     self.navigationController.navigationBar.barTintColor = [UIColor cloudsColor];
-    if ([self.savedItems count] > 0) {
+    if ([_savedItems count] > 0) {
         self.navigationItem.rightBarButtonItem.enabled = YES;
         self.navigationItem.rightBarButtonItem = self.editButtonItem;
         ableToUpdate = YES;
@@ -42,7 +42,7 @@
         self.navigationItem.rightBarButtonItem.enabled = NO;
         ableToUpdate = NO;
     }
-    NSLog(@"%lu", (unsigned long)[self.savedItems count]);
+    NSLog(@"%lu", (unsigned long)[_savedItems count]);
     [self.tableView reloadData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -71,6 +71,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if ([self.savedItems count] > 0) {
+        tableView.userInteractionEnabled = YES;
         SavedMenuItems *item = self.savedItems[indexPath.row];
         cell.backgroundColor = [UIColor cloudsColor];
         [cell configureFlatCellWithColor:[UIColor cloudsColor] selectedColor:[UIColor pumpkinColor]];
@@ -79,6 +80,7 @@
         
         return cell;
     } else {
+        tableView.userInteractionEnabled = NO;
         cell.backgroundColor = [UIColor cloudsColor];
         cell.textLabel.text = @"There are no saved items.";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
