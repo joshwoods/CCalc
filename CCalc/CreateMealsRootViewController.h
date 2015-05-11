@@ -13,8 +13,13 @@
 #import "SalsaViewController.h"
 #import "CondimentViewController.h"
 #import "CCMenuItem.h"
+@import iAd;
 
-@interface CreateMealsRootViewController : UIViewController <MealViewDelegate, MeatViewDelegate, BeanViewDelegate, SalsaViewDelegate, CondimentViewDelegate>
+
+@interface CreateMealsRootViewController : UIViewController <MealViewDelegate, MeatViewDelegate, BeanViewDelegate, SalsaViewDelegate, CondimentViewDelegate, ADBannerViewDelegate>
+
+//Ad
+@property (nonatomic, weak) IBOutlet ADBannerView *adBanner;
 
 @property (nonatomic, weak) IBOutlet UIView *sectionContainer;
 

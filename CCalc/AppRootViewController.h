@@ -12,7 +12,7 @@
 @import CoreData;
 @import iAd;
 
-@interface AppRootViewController : UIViewController <ADBannerViewDelegate>
+@interface AppRootViewController : UIViewController
 
 //Ad
 @property (nonatomic, weak) IBOutlet ADBannerView *adBanner;
@@ -27,10 +27,5 @@
 @property (nonatomic, weak) LoadItemsTableViewController *loadItemsController;
 @property (nonatomic, weak) IBOutlet UIView *loadSaveMealsContainer;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *leadingSaveMealsConstraint;
-
-//Create Meal Container
-@property (nonatomic, weak) IBOutlet UIView *createMealContainer;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leadingCreateMealsConstraint;
-@property (nonatomic, strong) CreateMealsRootViewController *createMealsController;
 
 @end

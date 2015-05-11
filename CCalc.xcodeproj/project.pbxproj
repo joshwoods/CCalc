@@ -36,6 +36,7 @@
 		F742A2E01AF51BDD00CB1988 /* Load Meals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F742A2DF1AF51BDD00CB1988 /* Load Meals.storyboard */; };
 		F742A2E41AF6A4E000CB1988 /* CreateMealsRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F742A2E31AF6A4E000CB1988 /* CreateMealsRoot.storyboard */; };
 		F742A2E71AF6A9E400CB1988 /* CreateMealsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F742A2E61AF6A9E400CB1988 /* CreateMealsRootViewController.m */; };
+		F7A8EC0A1B011F6B00265A72 /* SummaryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A8EC091B011F6B00265A72 /* SummaryViewController.storyboard */; };
 		F7DFC0FE1A0538C70011B349 /* SavedMenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC0FD1A0538C70011B349 /* SavedMenuItems.m */; };
 		F7DFC1011A0538C70011B349 /* Ingredients.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC1001A0538C70011B349 /* Ingredients.m */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,7 @@
 		F742A2E31AF6A4E000CB1988 /* CreateMealsRoot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateMealsRoot.storyboard; sourceTree = "<group>"; };
 		F742A2E51AF6A9E300CB1988 /* CreateMealsRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateMealsRootViewController.h; sourceTree = "<group>"; };
 		F742A2E61AF6A9E400CB1988 /* CreateMealsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateMealsRootViewController.m; sourceTree = "<group>"; };
+		F7A8EC091B011F6B00265A72 /* SummaryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SummaryViewController.storyboard; sourceTree = "<group>"; };
 		F7DFC0FC1A0538C70011B349 /* SavedMenuItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedMenuItems.h; sourceTree = "<group>"; };
 		F7DFC0FD1A0538C70011B349 /* SavedMenuItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedMenuItems.m; sourceTree = "<group>"; };
 		F7DFC0FF1A0538C70011B349 /* Ingredients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredients.h; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				F742A2DE1AF51BC900CB1988 /* Helper */,
 				F742A2DD1AF51BBA00CB1988 /* Load Meals */,
 				F742A2E21AF6A4B400CB1988 /* Create Meal */,
+				F7A8EC081B011F4600265A72 /* Summary View */,
 				F7C368711A2C0F4600E8E64F /* Visuals */,
 				F7C368701A2C0E8700E8E64F /* View Controllers */,
 				F728F5E319FF4D5C00BB7AC1 /* FlatUIKit */,
@@ -266,6 +269,18 @@
 			name = "Create Meal";
 			sourceTree = "<group>";
 		};
+		F7A8EC081B011F4600265A72 /* Summary View */ = {
+			isa = PBXGroup;
+			children = (
+				F7A8EC091B011F6B00265A72 /* SummaryViewController.storyboard */,
+				F728F5F119FF4D9E00BB7AC1 /* SummaryViewController.h */,
+				F728F5F219FF4D9E00BB7AC1 /* SummaryViewController.m */,
+				F728F5F319FF4D9E00BB7AC1 /* EditMenuTableViewController.h */,
+				F728F5F419FF4D9E00BB7AC1 /* EditMenuTableViewController.m */,
+			);
+			name = "Summary View";
+			sourceTree = "<group>";
+		};
 		F7C368701A2C0E8700E8E64F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,10 +294,6 @@
 				F728F5EE19FF4D9E00BB7AC1 /* SalsaViewController.m */,
 				F728F5EF19FF4D9E00BB7AC1 /* CondimentViewController.h */,
 				F728F5F019FF4D9E00BB7AC1 /* CondimentViewController.m */,
-				F728F5F119FF4D9E00BB7AC1 /* SummaryViewController.h */,
-				F728F5F219FF4D9E00BB7AC1 /* SummaryViewController.m */,
-				F728F5F319FF4D9E00BB7AC1 /* EditMenuTableViewController.h */,
-				F728F5F419FF4D9E00BB7AC1 /* EditMenuTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -379,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A8EC0A1B011F6B00265A72 /* SummaryViewController.storyboard in Resources */,
 				F728F5F819FF4D9E00BB7AC1 /* Main.storyboard in Resources */,
 				F728F60219FF4D9E00BB7AC1 /* TableViewCell.xib in Resources */,
 				F742A2E01AF51BDD00CB1988 /* Load Meals.storyboard in Resources */,

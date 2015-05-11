@@ -49,6 +49,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"Nutritional Information";
+    
     self.tableView.backgroundColor = [UIColor cloudsColor];
     self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
     // Do any additional setup after loading the view.
@@ -211,7 +213,7 @@
             alertController.view.tintColor = [UIColor pumpkinColor];
             [self presentViewController:alertController animated:YES completion:nil];
         } else {
-            [self performSegueWithIdentifier:@"startOverSegue" sender:self];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
@@ -228,8 +230,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"editSummarySegue"]) {
-        UINavigationController *navController = segue.destinationViewController;
-        EditMenuTableViewController *transferViewController = (EditMenuTableViewController *)navController.topViewController;
+        EditMenuTableViewController *transferViewController = segue.destinationViewController;
         transferViewController.menuItem = self.menuItem;
     }
 }

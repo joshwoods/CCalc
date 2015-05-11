@@ -9,6 +9,7 @@
 #import "CreateMealsRootViewController.h"
 #import "UIViewController+RRAdditions.h"
 #import "UIColor+FlatUI.h"
+#import "SummaryViewController.h"
 
 @interface CreateMealsRootViewController ()
 
@@ -30,6 +31,7 @@
 
 @implementation CreateMealsRootViewController
 
+#pragma mark - Toggle Controllers
 - (IBAction)toggleSegment:(id)sender {
     [self toggleControllers];
 }
@@ -222,6 +224,10 @@
 
     _menuItem = [[CCMenuItem alloc] init];
     
+    self.view.backgroundColor = [UIColor cloudsColor];
+    
+    _adBanner.delegate = self;
+    
     _caloriesLabel.text = @"Calories: 0";
     
     _summaryButton.backgroundColor = [UIColor colorWithRed:0.125 green:0.141 blue:0.145 alpha:1];
@@ -230,6 +236,14 @@
     [self loadChildViewControllers];
 }
 
+#pragma mark - Create Delegate
+- (IBAction)closeAction:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - Load Child Controllers
 - (void)loadChildViewControllers {
     
     if (_currentIndex != 4) {
@@ -271,9 +285,12 @@
     [self.view layoutIfNeeded];
 }
 
+#pragma mark - Delegate Methods
 - (void)selectMealTypeWithType:(CCIngredientItem *)type
 {
-    [_menuItem addIngredientItem:type];
+    if (![_menuItem.items containsObject:type]) {
+        [_menuItem addIngredientItem:type];
+    }
     _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
     _segmentControl.selectedSegmentIndex = 1;
     [self toggleControllers];
@@ -289,7 +306,9 @@
 
 - (void)selectMeatWithItem:(CCIngredientItem *)type
 {
-    [_menuItem addIngredientItem:type];
+    if (![_menuItem.items containsObject:type]) {
+        [_menuItem addIngredientItem:type];
+    }
     _caloriesLabel.text = [NSString stringWithFormat:@"Calories: %ld", (long)_menuItem.nutritionTotal.calories];
     _segmentControl.selectedSegmentIndex = 2;
     [self toggleControllers];
@@ -346,6 +365,41 @@
 {
     _summaryButton.backgroundColor = color;
     _summaryButton.tintColor = [UIColor cloudsColor];
+}
+
+#pragma mark - Ad Delegate Methods
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner will load ad.");
+}
+
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner did load ad.");
+    
+    [UIView animateWithDuration:0.35 animations:^{
+        _adBanner.alpha = 1.0;
+    }];
+}
+
+-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
+    NSLog(@"Ad Banner action is about to begin.");
+    
+    return YES;
+}
+
+
+
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner{
+    NSLog(@"Ad Banner action did finish");
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
+}
+
+- (IBAction)summaryAction:(id)sender {
+    UIStoryboard *summary = [UIStoryboard storyboardWithName:@"SummaryViewController" bundle:nil];
+    SummaryViewController *summaryView = [summary instantiateInitialViewController];
+    [self presentViewController:summaryView animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

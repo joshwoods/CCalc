@@ -38,8 +38,6 @@
     self.loadButton.tintColor = [UIColor pumpkinColor];
     self.view.backgroundColor = [UIColor cloudsColor];
     
-    _adBanner.delegate = self;
-    
     _adBanner.alpha = 0.0;
     
     [self loadChildViewControllers];
@@ -54,16 +52,6 @@
         UINavigationController *navigationController = [loadStoryboard instantiateInitialViewController];
         [UIViewController addChildViewController:navigationController toParentViewController:self andAddToView:_loadSaveMealsContainer keepPreviousChildren:nil andRemoveAllOtherChildren:NO withAutoLayout:YES];
         _leadingSaveMealsConstraint.constant = -self.view.bounds.size.width;
-    }
-    
-    
-    UIStoryboard *createStoryboard = [UIStoryboard storyboardWithName:@"CreateMealsRoot" bundle:nil];
-    
-    if (createStoryboard != nil)
-    {
-        _createMealsController = [createStoryboard instantiateInitialViewController];
-        [UIViewController addChildViewController:_createMealsController toParentViewController:self andAddToView:_createMealContainer keepPreviousChildren:nil andRemoveAllOtherChildren:NO withAutoLayout:YES];
-        _leadingCreateMealsConstraint.constant = self.view.bounds.size.width;
     }
     
     [self.view layoutIfNeeded];
@@ -116,16 +104,10 @@
 }
 
 - (IBAction)newMealPressed:(id)sender {
-    _leadingCreateMealsConstraint.constant = 0.0;
+    UIStoryboard *createStoryboard = [UIStoryboard storyboardWithName:@"CreateMealsRoot" bundle:nil];
+    CreateMealsRootViewController *createViewController = [createStoryboard instantiateInitialViewController];
     
-    [UIView animateWithDuration:0.35
-                          delay: 0.0
-                        options: (UIViewAnimationOptionCurveEaseOut)
-                     animations:^{
-                         
-                         [self.view layoutIfNeeded];
-                         
-                     } completion:nil];
+    [self presentViewController:createViewController animated:YES completion:nil];
 }
 
 #pragma mark - Ad Delegate Methods
