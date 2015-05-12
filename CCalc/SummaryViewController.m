@@ -55,6 +55,8 @@
     NSLog(@"%lu", (unsigned long)[self.menuItem.items count]);
 }
 
+
+
 #pragma mark - TableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -192,6 +194,8 @@
                 if (![context save:&error]) {
                     NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
                 }
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
             }];
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -224,10 +228,16 @@
 {
     if ([segue.identifier isEqualToString:@"editSummarySegue"]) {
         EditMenuTableViewController *transferViewController = segue.destinationViewController;
-        transferViewController.menuItem = self.menuItem;
+        transferViewController.delegate = self;
+        transferViewController.menuItem = _menuItem;
     }
 }
 
+- (void)updateMenuItemWithMenuItem:(CCMenuItem *)menuItem
+{
+    _menuItem = menuItem;
+    [self.tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -23,8 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor cloudsColor];
+    
     self.navigationController.navigationBar.barTintColor = [UIColor cloudsColor];
-    if ([self.menuItem.items count] > 0) {
+    
+    if ([_menuItem.items count] > 0) {
         self.navigationItem.rightBarButtonItem.enabled = YES;
         self.navigationItem.rightBarButtonItem = self.editButtonItem;
         ableToUpdate = YES;
@@ -32,13 +34,16 @@
         self.navigationItem.rightBarButtonItem.enabled = NO;
         ableToUpdate = NO;
     }
-    NSLog(@"%lu", (unsigned long)[self.menuItem.items count]);
-    [self.tableView reloadData];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"%lu", (unsigned long)[_menuItem.items count]);
+    
+    [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [self updateMenuItemWithMenuItem:_menuItem];
 }
 
 - (IBAction)goBack:(id)sender {
@@ -57,8 +62,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.menuItem.items.count > 0) {
-        return [self.menuItem.items count];
+    if (_menuItem.items.count > 0) {
+        return [_menuItem.items count];
     } else {
         return 1;
     }
@@ -67,8 +72,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    if (self.menuItem.items.count > 0) {
-        CCIngredientItem *item = self.menuItem.items[indexPath.row];
+    if (_menuItem.items.count > 0) {
+        CCIngredientItem *item = _menuItem.items[indexPath.row];
         cell.backgroundColor = [UIColor cloudsColor];
         cell.textLabel.text = item.nutrition.name;
         cell.textLabel.textColor = [UIColor pumpkinColor];
@@ -93,9 +98,9 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [tableView beginUpdates];
-        [self.menuItem.items removeObjectAtIndex:indexPath.row];
+        [_menuItem.items removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        if ([self.menuItem.items count] == 0) {
+        if ([_menuItem.items count] == 0) {
             ableToUpdate = NO;
             self.navigationItem.rightBarButtonItem.enabled = NO;
             [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -104,15 +109,14 @@
         [tableView endUpdates];
         [tableView reloadData];
         
-        NSLog(@"There are %lu items in this menu", (unsigned long)[self.menuItem.items count]);
+        NSLog(@"There are %lu items in this menu", (unsigned long)[_menuItem.items count]);
     }
 }
 
-#pragma mark - Meal Delegate
 - (void)updateMenuItemWithMenuItem:(CCMenuItem *)menuItem {
     if ([_delegate respondsToSelector:@selector(updateMenuItemWithMenuItem:)])
     {
-        [_delegate updateMenuItemWithMenuItem:_menuItem];
+        [_delegate updateMenuItemWithMenuItem:menuItem];
     }
 }
 
