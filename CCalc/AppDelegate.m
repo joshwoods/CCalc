@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [[UITableViewCell appearance] setTintColor:[UIColor blackColor]];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     
     // This section is for testing core data. Leave it here in case any future testing needs to be done!
 //    NSManagedObjectContext *context = [self managedObjectContext];

@@ -33,6 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor cloudsColor];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
+    
     self.navigationController.navigationBar.barTintColor = [UIColor cloudsColor];
     if ([_savedItems count] > 0) {
         self.navigationItem.rightBarButtonItem.enabled = YES;

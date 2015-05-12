@@ -47,6 +47,11 @@
     
     self.tableView.backgroundColor = [UIColor cloudsColor];
     self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor cloudsColor];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    self.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
+    
     // Do any additional setup after loading the view.
     CCNutrition *nutrition = [CCNutrition new];
     nutrition = self.menuItem.nutritionTotal;
@@ -195,7 +200,8 @@
                     NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
                 }
                 
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:^{
+                }];
             }];
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -210,7 +216,8 @@
             alertController.view.tintColor = [UIColor pumpkinColor];
             [self presentViewController:alertController animated:YES completion:nil];
         } else {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:^{
+            }];
         }
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }

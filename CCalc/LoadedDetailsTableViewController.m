@@ -31,7 +31,7 @@
     [super viewDidLoad];
     
     _ingredients = [_menuItem.details allObjects];
-    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor darkGrayColor]};
     self.tableView.backgroundColor = [UIColor cloudsColor];
     
     self.title = _menuItem.menuName;

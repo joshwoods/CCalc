@@ -24,6 +24,7 @@
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor cloudsColor];
     
+    self.navigationItem.titleView.tintColor = [UIColor darkGrayColor];
     self.navigationController.navigationBar.barTintColor = [UIColor cloudsColor];
     
     if ([_menuItem.items count] > 0) {
