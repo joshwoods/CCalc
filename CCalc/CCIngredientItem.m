@@ -24,6 +24,7 @@
         case CCIngredientItemTypeBurrito:
         {
             item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 300;
             item.nutrition.totalFat = 10;
             item.nutrition.saturatedFat = 1;
@@ -38,6 +39,7 @@
         case CCIngredientItemTypeBowl:
         {
             item.nutrition.name = @"Bowl";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 0;
             item.nutrition.totalFat = 0;
             item.nutrition.saturatedFat = 0;
@@ -52,6 +54,7 @@
         case CCIngredientItemTypeHardTaco:
         {
             item.nutrition.name = @"Hard Taco";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 210;
             item.nutrition.totalFat = 8;
             item.nutrition.saturatedFat = 3;
@@ -66,6 +69,7 @@
         case CCIngredientItemTypeSoftTaco:
         {
             item.nutrition.name = @"Soft Taco";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 210;
             item.nutrition.totalFat = 0;
             item.nutrition.saturatedFat = 0;
@@ -80,6 +84,7 @@
         case CCIngredientItemTypeSteak:
         {
             item.nutrition.name = @"Steak";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 190;
             item.nutrition.totalFat = 7;
             item.nutrition.saturatedFat = 2;
@@ -94,6 +99,7 @@
         case CCIngredientItemTypeChicken:
         {
             item.nutrition.name = @"Chicken";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 180;
             item.nutrition.totalFat = 7;
             item.nutrition.saturatedFat = 3;
@@ -108,6 +114,7 @@
         case CCIngredientItemTypeCarnitas:
         {
             item.nutrition.name = @"Carnitas";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 220;
             item.nutrition.totalFat = 13;
             item.nutrition.saturatedFat = 6;
@@ -122,6 +129,7 @@
         case CCIngredientItemTypeBarbacoa:
         {
             item.nutrition.name = @"Barbacoa";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 165;
             item.nutrition.totalFat = 7;
             item.nutrition.saturatedFat = 3;
@@ -136,6 +144,7 @@
         case CCIngredientItemTypeTomato:
         {
             item.nutrition.name = @"Tomato Salsa";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 20;
             item.nutrition.totalFat = 0;
             item.nutrition.saturatedFat = 0;
@@ -150,6 +159,7 @@
         case CCIngredientItemTypeTRed:
         {
             item.nutrition.name = @"Tomatillo-Red Salsa";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 25;
             item.nutrition.totalFat = 1;
             item.nutrition.saturatedFat = 0;
@@ -164,6 +174,7 @@
         case CCIngredientItemTypeTGreen:
         {
             item.nutrition.name = @"Tomatillo-Green Salsa";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 20;
             item.nutrition.totalFat = 0;
             item.nutrition.saturatedFat = 0;
@@ -178,6 +189,7 @@
         case CCIngredientItemTypeChili:
         {
             item.nutrition.name = @"Roasted Chili Salsa";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 80;
             item.nutrition.totalFat = 2;
             item.nutrition.saturatedFat = 0;
@@ -192,6 +204,7 @@
         case CCIngredientItemTypeWRice:
         {
             item.nutrition.name = @"White Rice";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 185;
             item.nutrition.totalFat = 4;
             item.nutrition.saturatedFat = 0;
@@ -206,6 +219,7 @@
         case CCIngredientItemTypeBRice:
         {
             item.nutrition.name = @"Brown Rice";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 200;
             item.nutrition.totalFat = 7;
             item.nutrition.saturatedFat = 0;
@@ -220,6 +234,7 @@
         case CCIngredientItemTypePBeans:
         {
             item.nutrition.name = @"Pinto Beans";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 115;
             item.nutrition.totalFat = 1;
             item.nutrition.saturatedFat = 0;
@@ -234,6 +249,7 @@
         case CCIngredientItemTypeBBeans:
         {
             item.nutrition.name = @"Black Beans";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 120;
             item.nutrition.totalFat = 1;
             item.nutrition.saturatedFat = 0;
@@ -248,6 +264,7 @@
         case CCIngredientItemTypeFajitas:
         {
             item.nutrition.name = @"Fajitas";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 20;
             item.nutrition.totalFat = 1;
             item.nutrition.saturatedFat = 0;
@@ -262,6 +279,7 @@
         case CCIngredientItemTypeCheese:
         {
             item.nutrition.name = @"Cheese";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 100;
             item.nutrition.totalFat = 8;
             item.nutrition.saturatedFat = 5;
@@ -276,6 +294,7 @@
         case CCIngredientItemTypeCorn:
         {
             item.nutrition.name = @"Corn";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 330;
             item.nutrition.totalFat = 4;
             item.nutrition.saturatedFat = 1;
@@ -290,6 +309,7 @@
         case CCIngredientItemTypeGuac:
         {
             item.nutrition.name = @"Guacamole";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 170;
             item.nutrition.totalFat = 16;
             item.nutrition.saturatedFat = 3;
@@ -304,6 +324,7 @@
         case CCIngredientItemTypeLettuce:
         {
             item.nutrition.name = @"Lettuce";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 5;
             item.nutrition.totalFat = 0;
             item.nutrition.saturatedFat = 0;
@@ -319,6 +340,7 @@
         case CCIngredientItemTypeSourCream:
         {
             item.nutrition.name = @"Sour Cream";
+            item.ingredientName = item.nutrition.name;
             item.nutrition.calories = 115;
             item.nutrition.totalFat =  10;
             item.nutrition.saturatedFat = 7;

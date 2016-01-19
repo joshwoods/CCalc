@@ -39,6 +39,19 @@
     [self.items removeAllObjects];
 }
 
+- (BOOL)isIngredientInMenu:(CCIngredientItem *)item
+{
+    if (self.items.count > 0) {
+        for (CCIngredientItem *ingredient in self.items) {
+            if ([item.ingredientName isEqualToString:ingredient.ingredientName]) {
+                return YES;
+            }
+        }
+    }
+    
+    return NO;
+}
+
 -(id)init
 {
     self = [super init];

@@ -16,6 +16,8 @@
 @property (readonly) CCNutrition *nutritionTotal;
 @property (readonly) CCNutrition *aboutNutrition;
 
+- (BOOL)isIngredientInMenu:(CCIngredientItem *)item;
+
 -(void)addIngredientItem:(CCIngredientItem *)ingredient;
 -(void)removeIngredientItem:(CCIngredientItem *)ingredient;
 -(void)addAboutItem:(CCIngredientItem *)ingredient;

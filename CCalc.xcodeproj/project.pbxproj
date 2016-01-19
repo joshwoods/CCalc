@@ -42,6 +42,8 @@
 		F7DFC0FE1A0538C70011B349 /* SavedMenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC0FD1A0538C70011B349 /* SavedMenuItems.m */; };
 		F7DFC1011A0538C70011B349 /* Ingredients.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC1001A0538C70011B349 /* Ingredients.m */; };
 		F7EF536A1C4EC8AD00467559 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53691C4EC8AD00467559 /* SettingsViewController.m */; };
+		F7EF536F1C4EDB6100467559 /* NewMealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF536E1C4EDB6100467559 /* NewMealViewController.m */; };
+		F7EF53721C4EDB7000467559 /* SavedMealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53711C4EDB7000467559 /* SavedMealsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,10 @@
 		F7DFC1001A0538C70011B349 /* Ingredients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredients.m; sourceTree = "<group>"; };
 		F7EF53681C4EC8AD00467559 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		F7EF53691C4EC8AD00467559 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		F7EF536D1C4EDB6100467559 /* NewMealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMealViewController.h; sourceTree = "<group>"; };
+		F7EF536E1C4EDB6100467559 /* NewMealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMealViewController.m; sourceTree = "<group>"; };
+		F7EF53701C4EDB7000467559 /* SavedMealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedMealsViewController.h; sourceTree = "<group>"; };
+		F7EF53711C4EDB7000467559 /* SavedMealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedMealsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,8 @@
 		F728F57519FF4CA500BB7AC1 /* CCalc */ = {
 			isa = PBXGroup;
 			children = (
+				F7EF536C1C4EDB4900467559 /* Saved Meals */,
+				F7EF536B1C4EDB4200467559 /* New Meal */,
 				F7EF53671C4EC89A00467559 /* Settings */,
 				F742A2E11AF51C7800CB1988 /* Root View */,
 				F742A2DE1AF51BC900CB1988 /* Helper */,
@@ -330,6 +338,24 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		F7EF536B1C4EDB4200467559 /* New Meal */ = {
+			isa = PBXGroup;
+			children = (
+				F7EF536D1C4EDB6100467559 /* NewMealViewController.h */,
+				F7EF536E1C4EDB6100467559 /* NewMealViewController.m */,
+			);
+			name = "New Meal";
+			sourceTree = "<group>";
+		};
+		F7EF536C1C4EDB4900467559 /* Saved Meals */ = {
+			isa = PBXGroup;
+			children = (
+				F7EF53701C4EDB7000467559 /* SavedMealsViewController.h */,
+				F7EF53711C4EDB7000467559 /* SavedMealsViewController.m */,
+			);
+			name = "Saved Meals";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,7 +400,7 @@
 		F728F56B19FF4CA500BB7AC1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = joshwoods;
 				TargetAttributes = {
 					F728F57219FF4CA500BB7AC1 = {
@@ -436,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F728F60B1A04527100BB7AC1 /* LoadedDetailsTableViewController.m in Sources */,
+				F7EF536F1C4EDB6100467559 /* NewMealViewController.m in Sources */,
 				F728F5E119FF4D5900BB7AC1 /* UITableViewCell+FlatUI.m in Sources */,
 				F728F5A519FF4D1500BB7AC1 /* CCMenuItem.m in Sources */,
 				F742A2DC1AF51BA300CB1988 /* UIViewController+RRAdditions.m in Sources */,
@@ -443,6 +470,7 @@
 				F77899591C4EAB95001841D4 /* NSString+RRAdditions.m in Sources */,
 				F728F57C19FF4CA500BB7AC1 /* AppDelegate.m in Sources */,
 				F728F5FC19FF4D9E00BB7AC1 /* BeansViewController.m in Sources */,
+				F7EF53721C4EDB7000467559 /* SavedMealsViewController.m in Sources */,
 				F728F60119FF4D9E00BB7AC1 /* TableViewCell.m in Sources */,
 				F728F5A719FF4D1500BB7AC1 /* CCNutrition.m in Sources */,
 				F7DFC1011A0538C70011B349 /* Ingredients.m in Sources */,
@@ -503,6 +531,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -568,6 +597,7 @@
 				INFOPLIST_FILE = CCalc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdoowhsoj.ccalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -581,6 +611,7 @@
 				INFOPLIST_FILE = CCalc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdoowhsoj.ccalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -599,6 +630,7 @@
 				);
 				INFOPLIST_FILE = CCalcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshwoods.ccalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCalc.app/CCalc";
 			};
@@ -614,6 +646,7 @@
 				);
 				INFOPLIST_FILE = CCalcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshwoods.ccalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCalc.app/CCalc";
 			};
