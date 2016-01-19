@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BAD562CE4B8EE4657634C953EF435D251F615206",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BAD562CE4B8EE4657634C953EF435D251F615206" : 0,
+    "2B6B7B775C8CD7606629F09BC5726E57B948A7B3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DA9123B8-2969-4DC1-83B0-9D9B71CDBF2D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BAD562CE4B8EE4657634C953EF435D251F615206" : "CCalc",
+    "2B6B7B775C8CD7606629F09BC5726E57B948A7B3" : "Rabble\/weber-otg-universal\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CCalc",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CCalc.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/rabbledev.git.beanstalkapp.com\/weber-otg-universal.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B6B7B775C8CD7606629F09BC5726E57B948A7B3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/joshwoods\/CCalc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BAD562CE4B8EE4657634C953EF435D251F615206"
+    }
+  ]
+}

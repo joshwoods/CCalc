@@ -21,7 +21,8 @@
     
     [[UITableViewCell appearance] setTintColor:[UIColor blackColor]];
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
-    
+    [[UITabBar appearance] setTintColor:[self colorWithHex:0xd35400 alpha:1.0]];
+
     // This section is for testing core data. Leave it here in case any future testing needs to be done!
 //    NSManagedObjectContext *context = [self managedObjectContext];
 //    SavedMenuItems *savedinfo = [NSEntityDescription
@@ -57,6 +58,15 @@
 //        }
 //    }
     return YES;
+}
+
+- (UIColor *)colorWithHex:(unsigned int)hex alpha:(CGFloat)alpha
+{
+    
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0
+                           green:((float)((hex & 0xFF00) >> 8)) / 255.0
+                            blue:((float)(hex & 0xFF)) / 255.0
+                           alpha:alpha];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -99,8 +109,10 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
+    
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CCalc" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    
     return _managedObjectModel;
 }
 
@@ -111,22 +123,20 @@
     }
     
     // Create the coordinator and store
-    
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CCalc.sqlite"];
     NSError *error = nil;
-    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
-        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
+        dict[NSLocalizedFailureReasonErrorKey] = @"There was an error creating or loading the application's saved data.";
         dict[NSUnderlyingErrorKey] = error;
         error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+        
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
     }
     
     return _persistentStoreCoordinator;
@@ -140,9 +150,11 @@
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    
     if (!coordinator) {
         return nil;
     }
+    
     _managedObjectContext = [[NSManagedObjectContext alloc] init];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
@@ -158,7 +170,6 @@
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
         }
     }
 }
