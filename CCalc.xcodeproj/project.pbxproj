@@ -44,6 +44,7 @@
 		F7EF536A1C4EC8AD00467559 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53691C4EC8AD00467559 /* SettingsViewController.m */; };
 		F7EF536F1C4EDB6100467559 /* NewMealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF536E1C4EDB6100467559 /* NewMealViewController.m */; };
 		F7EF53721C4EDB7000467559 /* SavedMealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53711C4EDB7000467559 /* SavedMealsViewController.m */; };
+		F7EF53761C4EF82F00467559 /* TotalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53751C4EF82F00467559 /* TotalsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		F7EF536E1C4EDB6100467559 /* NewMealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMealViewController.m; sourceTree = "<group>"; };
 		F7EF53701C4EDB7000467559 /* SavedMealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedMealsViewController.h; sourceTree = "<group>"; };
 		F7EF53711C4EDB7000467559 /* SavedMealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedMealsViewController.m; sourceTree = "<group>"; };
+		F7EF53741C4EF82F00467559 /* TotalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalsViewController.h; sourceTree = "<group>"; };
+		F7EF53751C4EF82F00467559 /* TotalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,7 @@
 		F728F57519FF4CA500BB7AC1 /* CCalc */ = {
 			isa = PBXGroup;
 			children = (
+				F7EF53731C4EF82300467559 /* Totals */,
 				F7EF536C1C4EDB4900467559 /* Saved Meals */,
 				F7EF536B1C4EDB4200467559 /* New Meal */,
 				F7EF53671C4EC89A00467559 /* Settings */,
@@ -356,6 +360,15 @@
 			name = "Saved Meals";
 			sourceTree = "<group>";
 		};
+		F7EF53731C4EF82300467559 /* Totals */ = {
+			isa = PBXGroup;
+			children = (
+				F7EF53741C4EF82F00467559 /* TotalsViewController.h */,
+				F7EF53751C4EF82F00467559 /* TotalsViewController.m */,
+			);
+			name = Totals;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F728F60B1A04527100BB7AC1 /* LoadedDetailsTableViewController.m in Sources */,
+				F7EF53761C4EF82F00467559 /* TotalsViewController.m in Sources */,
 				F7EF536F1C4EDB6100467559 /* NewMealViewController.m in Sources */,
 				F728F5E119FF4D5900BB7AC1 /* UITableViewCell+FlatUI.m in Sources */,
 				F728F5A519FF4D1500BB7AC1 /* CCMenuItem.m in Sources */,

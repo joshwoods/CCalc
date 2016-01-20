@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CCMenuItem.h"
+#import "TotalsViewController.h"
 
-@interface NewMealViewController : UITableViewController
+@interface NewMealViewController : UITableViewController <TotalsDelegate>
 
 @property (nonatomic, strong) CCMenuItem *menuItem;
 

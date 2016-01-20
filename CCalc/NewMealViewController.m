@@ -7,6 +7,7 @@
 //
 
 #import "NewMealViewController.h"
+#import "TotalsViewController.h"
 
 @interface NewMealViewController ()
 
@@ -104,9 +105,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
     
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
@@ -206,16 +207,41 @@
         
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     } else {
-        
+        [self performSegueWithIdentifier:@"TotalsSegue" sender:self];
     }
-    NSLog(@"%@", indexPath);
 }
 
 - (IBAction)refreshAction:(id)sender
 {
+    [self startOver];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"TotalsSegue"]) {
+        TotalsViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
+        vc.menuItem = self.menuItem;
+    }
+}
+
+- (void)startOver
+{
     [self.menuItem startOver];
     
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+}
+
+#pragma mark - Totals Delegate
+
+- (void)menuItemSaved
+{
+    [self startOver];
+}
+
+- (void)menuItemStartOver
+{
+    [self startOver];
 }
 
 @end
