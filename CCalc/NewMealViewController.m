@@ -180,13 +180,45 @@
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TotalsCell" forIndexPath:indexPath];
+
         return cell;
     }
+}
+
+- (UIColor *)colorWithHex:(unsigned int)hex alpha:(CGFloat)alpha
+{
+    
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0
+                           green:((float)((hex & 0xFF00) >> 8)) / 255.0
+                            blue:((float)(hex & 0xFF)) / 255.0
+                           alpha:alpha];
+}
+
+- (void)updateNavTitleWithCalories
+{
+    NSString *string = nil;
+
+    if (self.menuItem.items.count > 0) {
+        
+        string = [NSString stringWithFormat:@"Calories: %ld", (long)self.menuItem.nutritionTotal.calories];
+    } else {
+        string = @"Select Ingredients";
+    }
+    
+    self.navigationItem.title = string;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section != 5) {
+        
+        // If we have already added a meal type, advise the user they can only select one
+//        if (indexPath.section == 0) {
+//            if ([self.menuItem isIng]) {
+//                <#statements#>
+//            }
+//        }
+        
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
         NSArray *sectionArray = self.overallArray[indexPath.section];
@@ -204,6 +236,8 @@
             
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
+        
+        [self updateNavTitleWithCalories];
         
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     } else {
@@ -230,6 +264,10 @@
     [self.menuItem startOver];
     
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+    
+    [self.tableView reloadData];
+    
+    [self updateNavTitleWithCalories];
 }
 
 #pragma mark - Totals Delegate
