@@ -25,8 +25,6 @@
 		F728F5FC19FF4D9E00BB7AC1 /* BeansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5EC19FF4D9E00BB7AC1 /* BeansViewController.m */; };
 		F728F5FD19FF4D9E00BB7AC1 /* SalsaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5EE19FF4D9E00BB7AC1 /* SalsaViewController.m */; };
 		F728F5FE19FF4D9E00BB7AC1 /* CondimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5F019FF4D9E00BB7AC1 /* CondimentViewController.m */; };
-		F728F5FF19FF4D9E00BB7AC1 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5F219FF4D9E00BB7AC1 /* SummaryViewController.m */; };
-		F728F60019FF4D9E00BB7AC1 /* EditMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5F419FF4D9E00BB7AC1 /* EditMenuTableViewController.m */; };
 		F728F60119FF4D9E00BB7AC1 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5F619FF4D9E00BB7AC1 /* TableViewCell.m */; };
 		F728F60219FF4D9E00BB7AC1 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F728F5F719FF4D9E00BB7AC1 /* TableViewCell.xib */; };
 		F728F6081A0445F700BB7AC1 /* LoadItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F6071A0445F700BB7AC1 /* LoadItemsTableViewController.m */; };
@@ -38,13 +36,13 @@
 		F742A2E71AF6A9E400CB1988 /* CreateMealsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F742A2E61AF6A9E400CB1988 /* CreateMealsRootViewController.m */; };
 		F77899591C4EAB95001841D4 /* NSString+RRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F77899581C4EAB95001841D4 /* NSString+RRAdditions.m */; };
 		F778995E1C4EB47C001841D4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F778995D1C4EB47C001841D4 /* MainStoryboard.storyboard */; };
-		F7A8EC0A1B011F6B00265A72 /* SummaryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A8EC091B011F6B00265A72 /* SummaryViewController.storyboard */; };
 		F7DFC0FE1A0538C70011B349 /* SavedMenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC0FD1A0538C70011B349 /* SavedMenuItems.m */; };
 		F7DFC1011A0538C70011B349 /* Ingredients.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC1001A0538C70011B349 /* Ingredients.m */; };
 		F7EF536A1C4EC8AD00467559 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53691C4EC8AD00467559 /* SettingsViewController.m */; };
 		F7EF536F1C4EDB6100467559 /* NewMealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF536E1C4EDB6100467559 /* NewMealViewController.m */; };
 		F7EF53721C4EDB7000467559 /* SavedMealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53711C4EDB7000467559 /* SavedMealsViewController.m */; };
 		F7EF53761C4EF82F00467559 /* TotalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53751C4EF82F00467559 /* TotalsViewController.m */; };
+		F7EF53791C4F090100467559 /* EditMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53781C4F090100467559 /* EditMenuTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,10 +92,6 @@
 		F728F5EE19FF4D9E00BB7AC1 /* SalsaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalsaViewController.m; sourceTree = "<group>"; };
 		F728F5EF19FF4D9E00BB7AC1 /* CondimentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondimentViewController.h; sourceTree = "<group>"; };
 		F728F5F019FF4D9E00BB7AC1 /* CondimentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CondimentViewController.m; sourceTree = "<group>"; };
-		F728F5F119FF4D9E00BB7AC1 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
-		F728F5F219FF4D9E00BB7AC1 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
-		F728F5F319FF4D9E00BB7AC1 /* EditMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuTableViewController.h; sourceTree = "<group>"; };
-		F728F5F419FF4D9E00BB7AC1 /* EditMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuTableViewController.m; sourceTree = "<group>"; };
 		F728F5F519FF4D9E00BB7AC1 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		F728F5F619FF4D9E00BB7AC1 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		F728F5F719FF4D9E00BB7AC1 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -115,7 +109,6 @@
 		F77899571C4EAB95001841D4 /* NSString+RRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RRAdditions.h"; sourceTree = "<group>"; };
 		F77899581C4EAB95001841D4 /* NSString+RRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RRAdditions.m"; sourceTree = "<group>"; };
 		F778995D1C4EB47C001841D4 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		F7A8EC091B011F6B00265A72 /* SummaryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SummaryViewController.storyboard; sourceTree = "<group>"; };
 		F7DFC0FC1A0538C70011B349 /* SavedMenuItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedMenuItems.h; sourceTree = "<group>"; };
 		F7DFC0FD1A0538C70011B349 /* SavedMenuItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedMenuItems.m; sourceTree = "<group>"; };
 		F7DFC0FF1A0538C70011B349 /* Ingredients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredients.h; sourceTree = "<group>"; };
@@ -128,6 +121,8 @@
 		F7EF53711C4EDB7000467559 /* SavedMealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedMealsViewController.m; sourceTree = "<group>"; };
 		F7EF53741C4EF82F00467559 /* TotalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalsViewController.h; sourceTree = "<group>"; };
 		F7EF53751C4EF82F00467559 /* TotalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalsViewController.m; sourceTree = "<group>"; };
+		F7EF53771C4F090100467559 /* EditMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuTableViewController.h; sourceTree = "<group>"; };
+		F7EF53781C4F090100467559 /* EditMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +174,6 @@
 				F742A2DE1AF51BC900CB1988 /* Helper */,
 				F742A2DD1AF51BBA00CB1988 /* Load Meals */,
 				F742A2E21AF6A4B400CB1988 /* Create Meal */,
-				F7A8EC081B011F4600265A72 /* Summary View */,
 				F7C368711A2C0F4600E8E64F /* Visuals */,
 				F7C368701A2C0E8700E8E64F /* View Controllers */,
 				F728F5E319FF4D5C00BB7AC1 /* FlatUIKit */,
@@ -293,18 +287,6 @@
 			name = "Create Meal";
 			sourceTree = "<group>";
 		};
-		F7A8EC081B011F4600265A72 /* Summary View */ = {
-			isa = PBXGroup;
-			children = (
-				F7A8EC091B011F6B00265A72 /* SummaryViewController.storyboard */,
-				F728F5F119FF4D9E00BB7AC1 /* SummaryViewController.h */,
-				F728F5F219FF4D9E00BB7AC1 /* SummaryViewController.m */,
-				F728F5F319FF4D9E00BB7AC1 /* EditMenuTableViewController.h */,
-				F728F5F419FF4D9E00BB7AC1 /* EditMenuTableViewController.m */,
-			);
-			name = "Summary View";
-			sourceTree = "<group>";
-		};
 		F7C368701A2C0E8700E8E64F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +347,8 @@
 			children = (
 				F7EF53741C4EF82F00467559 /* TotalsViewController.h */,
 				F7EF53751C4EF82F00467559 /* TotalsViewController.m */,
+				F7EF53771C4F090100467559 /* EditMenuTableViewController.h */,
+				F7EF53781C4F090100467559 /* EditMenuTableViewController.m */,
 			);
 			name = Totals;
 			sourceTree = "<group>";
@@ -450,7 +434,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7A8EC0A1B011F6B00265A72 /* SummaryViewController.storyboard in Resources */,
 				F728F5F819FF4D9E00BB7AC1 /* Main.storyboard in Resources */,
 				F728F60219FF4D9E00BB7AC1 /* TableViewCell.xib in Resources */,
 				F778995E1C4EB47C001841D4 /* MainStoryboard.storyboard in Resources */,
@@ -480,6 +463,7 @@
 				F728F5E119FF4D5900BB7AC1 /* UITableViewCell+FlatUI.m in Sources */,
 				F728F5A519FF4D1500BB7AC1 /* CCMenuItem.m in Sources */,
 				F742A2DC1AF51BA300CB1988 /* UIViewController+RRAdditions.m in Sources */,
+				F7EF53791C4F090100467559 /* EditMenuTableViewController.m in Sources */,
 				F7DFC0FE1A0538C70011B349 /* SavedMenuItems.m in Sources */,
 				F77899591C4EAB95001841D4 /* NSString+RRAdditions.m in Sources */,
 				F728F57C19FF4CA500BB7AC1 /* AppDelegate.m in Sources */,
@@ -499,9 +483,7 @@
 				F728F5FD19FF4D9E00BB7AC1 /* SalsaViewController.m in Sources */,
 				F728F5D219FF4D5900BB7AC1 /* FUICellBackgroundView.m in Sources */,
 				F728F57919FF4CA500BB7AC1 /* main.m in Sources */,
-				F728F60019FF4D9E00BB7AC1 /* EditMenuTableViewController.m in Sources */,
 				F728F5FB19FF4D9E00BB7AC1 /* MeatViewController.m in Sources */,
-				F728F5FF19FF4D9E00BB7AC1 /* SummaryViewController.m in Sources */,
 				F7EF536A1C4EC8AD00467559 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

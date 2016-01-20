@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CCMenuItem.h"
+#import "EditMenuTableViewController.h"
 @import CoreData;
 
 @protocol TotalsDelegate
@@ -16,7 +17,7 @@
 - (void)menuItemStartOver;
 @end
 
-@interface TotalsViewController : UITableViewController <UITextFieldDelegate>
+@interface TotalsViewController : UITableViewController <UITextFieldDelegate, EditSummaryDelegate>
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSString *menuItemName;

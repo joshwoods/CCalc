@@ -155,6 +155,14 @@
     return YES;
 }
 
+#pragma mark - Edit Delegate
+
+- (void)updateMenuItemWithMenuItem:(CCMenuItem *)menuItem
+{
+    _menuItem = menuItem;
+    [self.tableView reloadData];
+}
+
 /*
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
