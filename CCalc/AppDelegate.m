@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "SavedMenuItems.h"
 #import "Ingredients.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +25,8 @@
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [[UITabBar appearance] setTintColor:[self colorWithHex:0xd35400 alpha:1.0]];
 
+    [Fabric with:@[[Crashlytics class]]];
+    
     // This section is for testing core data. Leave it here in case any future testing needs to be done!
 //    NSManagedObjectContext *context = [self managedObjectContext];
 //    SavedMenuItems *savedinfo = [NSEntityDescription
@@ -44,8 +48,8 @@
 //    if (![context save:&error]) {
 //        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
 //    }
-//    
-//    // Test listing all FailedBankInfos from the store
+////
+////    // Test listing all FailedBankInfos from the store
 //    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 //    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SavedMenuItems"
 //                                              inManagedObjectContext:context];
