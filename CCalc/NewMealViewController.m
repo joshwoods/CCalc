@@ -18,6 +18,8 @@
 @property (nonatomic, strong) CCIngredientItem *hardTaco;
 @property (nonatomic, strong) NSArray *arrayOfMeals;
 
+@property (nonatomic, strong) CCIngredientItem *selectedMealItem;
+
 // Meats
 @property (nonatomic, strong) CCIngredientItem *steak;
 @property (nonatomic, strong) CCIngredientItem *chicken;
@@ -212,29 +214,45 @@
 {
     if (indexPath.section != 5) {
         
-        // If we have already added a meal type, advise the user they can only select one
-//        if (indexPath.section == 0) {
-//            if ([self.menuItem isIng]) {
-//                <#statements#>
-//            }
-//        }
-        
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        
         NSArray *sectionArray = self.overallArray[indexPath.section];
         CCIngredientItem *ingredient = sectionArray[indexPath.row];
+        
+        // If we have already added a meal type, advise the user they can only select one
+        if (indexPath.section == 0) {
+            if (self.selectedMealItem != nil && ![self.selectedMealItem.ingredientName isEqualToString:ingredient.ingredientName])
+            {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Woops!" message:@"It looks like you've already selected a meal type.\n\nIf you wish to choose a different meal type, please remove the previous one and re-select" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                }];
+                [alert addAction:okay];
+                [self presentViewController:alert animated:YES completion:nil];
+                
+                return;
+            }
+        }
+        
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
         if ([self.menuItem isIngredientInMenu:ingredient]) {
             NSLog(@"Removed!");
             
             cell.accessoryType = UITableViewCellAccessoryNone;
             [self.menuItem removeIngredientItem:ingredient];
+            
+            if (indexPath.section == 0) {
+                self.selectedMealItem = nil;
+            }
         } else {
             NSLog(@"Adding!");
             
             [self.menuItem addIngredientItem:ingredient];
             
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            
+            if (indexPath.section == 0) {
+                self.selectedMealItem = ingredient;
+            }
         }
         
         [self updateNavTitleWithCalories];
@@ -280,6 +298,15 @@
 - (void)menuItemStartOver
 {
     [self startOver];
+}
+
+- (void)menuItemUpdated:(CCMenuItem *)menuItem
+{
+    self.menuItem = menuItem;
+
+    [self updateNavTitleWithCalories];
+    
+    [self.tableView reloadData];
 }
 
 @end
