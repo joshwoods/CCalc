@@ -13,6 +13,7 @@
 
 @protocol TotalsDelegate
 @optional
+- (void)menuItemUpdated:(CCMenuItem *)menuItem;
 - (void)menuItemSaved;
 - (void)menuItemStartOver;
 @end

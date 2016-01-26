@@ -9,6 +9,7 @@
 #import "TotalsViewController.h"
 #import "SavedMenuItems.h"
 #import "Ingredients.h"
+#import "EditMenuTableViewController.h"
 
 @interface TotalsViewController ()
 
@@ -22,6 +23,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *dietaryFiberLabel;
 @property (nonatomic, weak) IBOutlet UILabel *sugarLabel;
 @property (nonatomic, weak) IBOutlet UILabel *proteinLabel;
+
+@property (nonatomic, assign) BOOL firstLoad;
 
 @end
 
@@ -40,6 +43,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.firstLoad = YES;
+    
+    [self updateNutritionLabelText];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"View did appear");
+    
+    if (self.firstLoad) {
+        self.firstLoad = NO;
+    } else {
+        NSLog(@"Update");
+        if ([self.delegate respondsToSelector:@selector(menuItemUpdated:)]) {
+            [self.delegate menuItemUpdated:self.menuItem];
+        }
+
+    }
+}
+
+#pragma mark - Table view data source
+
+- (void)updateNutritionLabelText
+{
     self.caloriesLabel.text = [NSString stringWithFormat:@"%ld", (long)self.menuItem.nutritionTotal.calories];
     self.totalFatLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.totalFat];
     self.saturatedFatLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.saturatedFat];
@@ -50,21 +78,7 @@
     self.dietaryFiberLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.dietaryFiber];
     self.sugarLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.sugar];
     self.proteinLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.protein];
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -80,12 +94,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 1 && indexPath.row == 0) { // Edit
-        //
+        
+        if (self.menuItem.items.count == 0) {
+            [self presentNoItemsAlert];
+        } else {
+            [self performSegueWithIdentifier:@"EditSegue" sender:self];
+        }
     } else if (indexPath.section == 1 && indexPath.row == 1) { // Save
-        [self presentSaveAlert];
+        
+        if (self.menuItem.items.count == 0) {
+            [self presentNoItemsAlert];
+        } else {
+            [self presentSaveAlert];
+        }
     } else if (indexPath.section == 1 && indexPath.row == 2) { // Start Over
+        
         if ([self.delegate respondsToSelector:@selector(menuItemStartOver)]) {
             [self.delegate menuItemStartOver];
         }
@@ -145,6 +171,15 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+#pragma mark - Alert
+- (void)presentNoItemsAlert
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Woops!" message:@"You have no items in this meal. Please add some and then try again!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okay];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - Textfield
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -155,66 +190,27 @@
     return YES;
 }
 
-#pragma mark - Edit Delegate
+#pragma mark - Editing
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditSegue"]) {
+        UINavigationController *nav = [segue destinationViewController];
+        EditMenuTableViewController *vc = [[nav viewControllers] objectAtIndex:0];
+        vc.delegate = self;
+        vc.menuItem = self.menuItem;
+    }
+}
 
 - (void)updateMenuItemWithMenuItem:(CCMenuItem *)menuItem
 {
-    _menuItem = menuItem;
-    [self.tableView reloadData];
+    self.menuItem = menuItem;
+    [self updateNutritionLabelText];
 }
 
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
- }
- */
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

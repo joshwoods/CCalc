@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CC22D5E5A6A02B461502E51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4D07EE2B872390D3772CF6 /* libPods.a */; };
 		F728F57919FF4CA500BB7AC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F57819FF4CA500BB7AC1 /* main.m */; };
 		F728F57C19FF4CA500BB7AC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F57B19FF4CA500BB7AC1 /* AppDelegate.m */; };
 		F728F57F19FF4CA500BB7AC1 /* CCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F728F57D19FF4CA500BB7AC1 /* CCalc.xcdatamodeld */; };
@@ -15,27 +16,11 @@
 		F728F5A519FF4D1500BB7AC1 /* CCMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5A019FF4D1500BB7AC1 /* CCMenuItem.m */; };
 		F728F5A619FF4D1500BB7AC1 /* CCIngredientItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5A219FF4D1500BB7AC1 /* CCIngredientItem.m */; };
 		F728F5A719FF4D1500BB7AC1 /* CCNutrition.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5A419FF4D1500BB7AC1 /* CCNutrition.m */; };
-		F728F5D219FF4D5900BB7AC1 /* FUICellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5AF19FF4D5800BB7AC1 /* FUICellBackgroundView.m */; };
-		F728F5D819FF4D5900BB7AC1 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5BB19FF4D5800BB7AC1 /* UIColor+FlatUI.m */; };
-		F728F5E119FF4D5900BB7AC1 /* UITableViewCell+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5CD19FF4D5900BB7AC1 /* UITableViewCell+FlatUI.m */; };
-		F728F5F819FF4D9E00BB7AC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F728F5E419FF4D9E00BB7AC1 /* Main.storyboard */; };
-		F728F5F919FF4D9E00BB7AC1 /* AppRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5E619FF4D9E00BB7AC1 /* AppRootViewController.m */; };
-		F728F5FA19FF4D9E00BB7AC1 /* MealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5E819FF4D9E00BB7AC1 /* MealViewController.m */; };
-		F728F5FB19FF4D9E00BB7AC1 /* MeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5EA19FF4D9E00BB7AC1 /* MeatViewController.m */; };
-		F728F5FC19FF4D9E00BB7AC1 /* BeansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5EC19FF4D9E00BB7AC1 /* BeansViewController.m */; };
-		F728F5FD19FF4D9E00BB7AC1 /* SalsaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5EE19FF4D9E00BB7AC1 /* SalsaViewController.m */; };
-		F728F5FE19FF4D9E00BB7AC1 /* CondimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5F019FF4D9E00BB7AC1 /* CondimentViewController.m */; };
-		F728F60119FF4D9E00BB7AC1 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F5F619FF4D9E00BB7AC1 /* TableViewCell.m */; };
-		F728F60219FF4D9E00BB7AC1 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F728F5F719FF4D9E00BB7AC1 /* TableViewCell.xib */; };
-		F728F6081A0445F700BB7AC1 /* LoadItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F6071A0445F700BB7AC1 /* LoadItemsTableViewController.m */; };
-		F728F60B1A04527100BB7AC1 /* LoadedDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F60A1A04527100BB7AC1 /* LoadedDetailsTableViewController.m */; };
+		F7351F091C574AE900DE1098 /* DataMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F7351F081C574AE900DE1098 /* DataMigrationManager.m */; };
 		F742A2D91AF4A42E00CB1988 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F742A2D81AF4A42E00CB1988 /* iAd.framework */; };
-		F742A2DC1AF51BA300CB1988 /* UIViewController+RRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F742A2DB1AF51BA300CB1988 /* UIViewController+RRAdditions.m */; };
-		F742A2E01AF51BDD00CB1988 /* Load Meals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F742A2DF1AF51BDD00CB1988 /* Load Meals.storyboard */; };
-		F742A2E41AF6A4E000CB1988 /* CreateMealsRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F742A2E31AF6A4E000CB1988 /* CreateMealsRoot.storyboard */; };
-		F742A2E71AF6A9E400CB1988 /* CreateMealsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F742A2E61AF6A9E400CB1988 /* CreateMealsRootViewController.m */; };
 		F77899591C4EAB95001841D4 /* NSString+RRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F77899581C4EAB95001841D4 /* NSString+RRAdditions.m */; };
 		F778995E1C4EB47C001841D4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F778995D1C4EB47C001841D4 /* MainStoryboard.storyboard */; };
+		F7DC49501C52F1BE0049E5AB /* SavedMealsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DC494F1C52F1BE0049E5AB /* SavedMealsDetailViewController.m */; };
 		F7DFC0FE1A0538C70011B349 /* SavedMenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC0FD1A0538C70011B349 /* SavedMenuItems.m */; };
 		F7DFC1011A0538C70011B349 /* Ingredients.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DFC1001A0538C70011B349 /* Ingredients.m */; };
 		F7EF536A1C4EC8AD00467559 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EF53691C4EC8AD00467559 /* SettingsViewController.m */; };
@@ -56,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F745A6703A48973DB2B2EB7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DD4D07EE2B872390D3772CF6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2021798BF906B32EBDBF7F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F728F57319FF4CA500BB7AC1 /* CCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F728F57719FF4CA500BB7AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F728F57819FF4CA500BB7AC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,43 +60,14 @@
 		F728F5A219FF4D1500BB7AC1 /* CCIngredientItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCIngredientItem.m; sourceTree = "<group>"; };
 		F728F5A319FF4D1500BB7AC1 /* CCNutrition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNutrition.h; sourceTree = "<group>"; };
 		F728F5A419FF4D1500BB7AC1 /* CCNutrition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNutrition.m; sourceTree = "<group>"; };
-		F728F5A919FF4D5800BB7AC1 /* FlatUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatUIKit.h; sourceTree = "<group>"; };
-		F728F5AE19FF4D5800BB7AC1 /* FUICellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUICellBackgroundView.h; sourceTree = "<group>"; };
-		F728F5AF19FF4D5800BB7AC1 /* FUICellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUICellBackgroundView.m; sourceTree = "<group>"; };
-		F728F5BA19FF4D5800BB7AC1 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
-		F728F5BB19FF4D5800BB7AC1 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
-		F728F5CC19FF4D5900BB7AC1 /* UITableViewCell+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+FlatUI.h"; sourceTree = "<group>"; };
-		F728F5CD19FF4D5900BB7AC1 /* UITableViewCell+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FlatUI.m"; sourceTree = "<group>"; };
-		F728F5E419FF4D9E00BB7AC1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F728F5E519FF4D9E00BB7AC1 /* AppRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRootViewController.h; sourceTree = "<group>"; };
-		F728F5E619FF4D9E00BB7AC1 /* AppRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppRootViewController.m; sourceTree = "<group>"; };
-		F728F5E719FF4D9E00BB7AC1 /* MealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealViewController.h; sourceTree = "<group>"; };
-		F728F5E819FF4D9E00BB7AC1 /* MealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealViewController.m; sourceTree = "<group>"; };
-		F728F5E919FF4D9E00BB7AC1 /* MeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeatViewController.h; sourceTree = "<group>"; };
-		F728F5EA19FF4D9E00BB7AC1 /* MeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeatViewController.m; sourceTree = "<group>"; };
-		F728F5EB19FF4D9E00BB7AC1 /* BeansViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeansViewController.h; sourceTree = "<group>"; };
-		F728F5EC19FF4D9E00BB7AC1 /* BeansViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeansViewController.m; sourceTree = "<group>"; };
-		F728F5ED19FF4D9E00BB7AC1 /* SalsaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalsaViewController.h; sourceTree = "<group>"; };
-		F728F5EE19FF4D9E00BB7AC1 /* SalsaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalsaViewController.m; sourceTree = "<group>"; };
-		F728F5EF19FF4D9E00BB7AC1 /* CondimentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondimentViewController.h; sourceTree = "<group>"; };
-		F728F5F019FF4D9E00BB7AC1 /* CondimentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CondimentViewController.m; sourceTree = "<group>"; };
-		F728F5F519FF4D9E00BB7AC1 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		F728F5F619FF4D9E00BB7AC1 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		F728F5F719FF4D9E00BB7AC1 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		F728F6061A0445F700BB7AC1 /* LoadItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadItemsTableViewController.h; sourceTree = "<group>"; };
-		F728F6071A0445F700BB7AC1 /* LoadItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadItemsTableViewController.m; sourceTree = "<group>"; };
-		F728F6091A04527100BB7AC1 /* LoadedDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadedDetailsTableViewController.h; sourceTree = "<group>"; };
-		F728F60A1A04527100BB7AC1 /* LoadedDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadedDetailsTableViewController.m; sourceTree = "<group>"; };
+		F7351F071C574AE900DE1098 /* DataMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMigrationManager.h; sourceTree = "<group>"; };
+		F7351F081C574AE900DE1098 /* DataMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataMigrationManager.m; sourceTree = "<group>"; };
 		F742A2D81AF4A42E00CB1988 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		F742A2DA1AF51BA300CB1988 /* UIViewController+RRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RRAdditions.h"; sourceTree = "<group>"; };
-		F742A2DB1AF51BA300CB1988 /* UIViewController+RRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RRAdditions.m"; sourceTree = "<group>"; };
-		F742A2DF1AF51BDD00CB1988 /* Load Meals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Load Meals.storyboard"; sourceTree = "<group>"; };
-		F742A2E31AF6A4E000CB1988 /* CreateMealsRoot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateMealsRoot.storyboard; sourceTree = "<group>"; };
-		F742A2E51AF6A9E300CB1988 /* CreateMealsRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateMealsRootViewController.h; sourceTree = "<group>"; };
-		F742A2E61AF6A9E400CB1988 /* CreateMealsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateMealsRootViewController.m; sourceTree = "<group>"; };
 		F77899571C4EAB95001841D4 /* NSString+RRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RRAdditions.h"; sourceTree = "<group>"; };
 		F77899581C4EAB95001841D4 /* NSString+RRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RRAdditions.m"; sourceTree = "<group>"; };
 		F778995D1C4EB47C001841D4 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F7DC494E1C52F1BE0049E5AB /* SavedMealsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedMealsDetailViewController.h; sourceTree = "<group>"; };
+		F7DC494F1C52F1BE0049E5AB /* SavedMealsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedMealsDetailViewController.m; sourceTree = "<group>"; };
 		F7DFC0FC1A0538C70011B349 /* SavedMenuItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedMenuItems.h; sourceTree = "<group>"; };
 		F7DFC0FD1A0538C70011B349 /* SavedMenuItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedMenuItems.m; sourceTree = "<group>"; };
 		F7DFC0FF1A0538C70011B349 /* Ingredients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredients.h; sourceTree = "<group>"; };
@@ -131,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F742A2D91AF4A42E00CB1988 /* iAd.framework in Frameworks */,
+				4CC22D5E5A6A02B461502E51 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C0217EED0C2A5AE5946BAD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D07EE2B872390D3772CF6 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F728F56A19FF4CA500BB7AC1 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +119,8 @@
 				F728F59219FF4CA600BB7AC1 /* CCalcTests */,
 				F728F57419FF4CA500BB7AC1 /* Products */,
 				F742A2D81AF4A42E00CB1988 /* iAd.framework */,
+				FA6D7678A8B53187C820111D /* Pods */,
+				7C0217EED0C2A5AE5946BAD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,14 +140,11 @@
 				F7EF536C1C4EDB4900467559 /* Saved Meals */,
 				F7EF536B1C4EDB4200467559 /* New Meal */,
 				F7EF53671C4EC89A00467559 /* Settings */,
-				F742A2E11AF51C7800CB1988 /* Root View */,
-				F742A2DE1AF51BC900CB1988 /* Helper */,
-				F742A2DD1AF51BBA00CB1988 /* Load Meals */,
-				F742A2E21AF6A4B400CB1988 /* Create Meal */,
-				F7C368711A2C0F4600E8E64F /* Visuals */,
-				F7C368701A2C0E8700E8E64F /* View Controllers */,
-				F728F5E319FF4D5C00BB7AC1 /* FlatUIKit */,
+				F728F57A19FF4CA500BB7AC1 /* AppDelegate.h */,
+				F728F57B19FF4CA500BB7AC1 /* AppDelegate.m */,
+				F778995D1C4EB47C001841D4 /* MainStoryboard.storyboard */,
 				F728F5A819FF4D2000BB7AC1 /* Data Model */,
+				F728F58619FF4CA500BB7AC1 /* Images.xcassets */,
 				F728F57D19FF4CA500BB7AC1 /* CCalc.xcdatamodeld */,
 				F728F57619FF4CA500BB7AC1 /* Supporting Files */,
 			);
@@ -191,6 +158,8 @@
 				F77899581C4EAB95001841D4 /* NSString+RRAdditions.m */,
 				F728F57719FF4CA500BB7AC1 /* Info.plist */,
 				F728F57819FF4CA500BB7AC1 /* main.m */,
+				F7351F071C574AE900DE1098 /* DataMigrationManager.h */,
+				F7351F081C574AE900DE1098 /* DataMigrationManager.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -229,90 +198,13 @@
 			name = "Data Model";
 			sourceTree = "<group>";
 		};
-		F728F5E319FF4D5C00BB7AC1 /* FlatUIKit */ = {
+		F7DC494D1C52F1AE0049E5AB /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				F728F5A919FF4D5800BB7AC1 /* FlatUIKit.h */,
-				F728F5AE19FF4D5800BB7AC1 /* FUICellBackgroundView.h */,
-				F728F5AF19FF4D5800BB7AC1 /* FUICellBackgroundView.m */,
-				F728F5BA19FF4D5800BB7AC1 /* UIColor+FlatUI.h */,
-				F728F5BB19FF4D5800BB7AC1 /* UIColor+FlatUI.m */,
-				F728F5CC19FF4D5900BB7AC1 /* UITableViewCell+FlatUI.h */,
-				F728F5CD19FF4D5900BB7AC1 /* UITableViewCell+FlatUI.m */,
+				F7DC494E1C52F1BE0049E5AB /* SavedMealsDetailViewController.h */,
+				F7DC494F1C52F1BE0049E5AB /* SavedMealsDetailViewController.m */,
 			);
-			name = FlatUIKit;
-			sourceTree = "<group>";
-		};
-		F742A2DD1AF51BBA00CB1988 /* Load Meals */ = {
-			isa = PBXGroup;
-			children = (
-				F742A2DF1AF51BDD00CB1988 /* Load Meals.storyboard */,
-				F728F6061A0445F700BB7AC1 /* LoadItemsTableViewController.h */,
-				F728F6071A0445F700BB7AC1 /* LoadItemsTableViewController.m */,
-				F728F6091A04527100BB7AC1 /* LoadedDetailsTableViewController.h */,
-				F728F60A1A04527100BB7AC1 /* LoadedDetailsTableViewController.m */,
-			);
-			name = "Load Meals";
-			sourceTree = "<group>";
-		};
-		F742A2DE1AF51BC900CB1988 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				F742A2DA1AF51BA300CB1988 /* UIViewController+RRAdditions.h */,
-				F742A2DB1AF51BA300CB1988 /* UIViewController+RRAdditions.m */,
-			);
-			name = Helper;
-			sourceTree = "<group>";
-		};
-		F742A2E11AF51C7800CB1988 /* Root View */ = {
-			isa = PBXGroup;
-			children = (
-				F728F5E419FF4D9E00BB7AC1 /* Main.storyboard */,
-				F728F57A19FF4CA500BB7AC1 /* AppDelegate.h */,
-				F728F57B19FF4CA500BB7AC1 /* AppDelegate.m */,
-				F728F5E519FF4D9E00BB7AC1 /* AppRootViewController.h */,
-				F728F5E619FF4D9E00BB7AC1 /* AppRootViewController.m */,
-				F778995D1C4EB47C001841D4 /* MainStoryboard.storyboard */,
-			);
-			name = "Root View";
-			sourceTree = "<group>";
-		};
-		F742A2E21AF6A4B400CB1988 /* Create Meal */ = {
-			isa = PBXGroup;
-			children = (
-				F742A2E31AF6A4E000CB1988 /* CreateMealsRoot.storyboard */,
-				F742A2E51AF6A9E300CB1988 /* CreateMealsRootViewController.h */,
-				F742A2E61AF6A9E400CB1988 /* CreateMealsRootViewController.m */,
-			);
-			name = "Create Meal";
-			sourceTree = "<group>";
-		};
-		F7C368701A2C0E8700E8E64F /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				F728F5E719FF4D9E00BB7AC1 /* MealViewController.h */,
-				F728F5E819FF4D9E00BB7AC1 /* MealViewController.m */,
-				F728F5E919FF4D9E00BB7AC1 /* MeatViewController.h */,
-				F728F5EA19FF4D9E00BB7AC1 /* MeatViewController.m */,
-				F728F5EB19FF4D9E00BB7AC1 /* BeansViewController.h */,
-				F728F5EC19FF4D9E00BB7AC1 /* BeansViewController.m */,
-				F728F5ED19FF4D9E00BB7AC1 /* SalsaViewController.h */,
-				F728F5EE19FF4D9E00BB7AC1 /* SalsaViewController.m */,
-				F728F5EF19FF4D9E00BB7AC1 /* CondimentViewController.h */,
-				F728F5F019FF4D9E00BB7AC1 /* CondimentViewController.m */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		F7C368711A2C0F4600E8E64F /* Visuals */ = {
-			isa = PBXGroup;
-			children = (
-				F728F5F519FF4D9E00BB7AC1 /* TableViewCell.h */,
-				F728F5F619FF4D9E00BB7AC1 /* TableViewCell.m */,
-				F728F5F719FF4D9E00BB7AC1 /* TableViewCell.xib */,
-				F728F58619FF4CA500BB7AC1 /* Images.xcassets */,
-			);
-			name = Visuals;
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		F7EF53671C4EC89A00467559 /* Settings */ = {
@@ -336,6 +228,7 @@
 		F7EF536C1C4EDB4900467559 /* Saved Meals */ = {
 			isa = PBXGroup;
 			children = (
+				F7DC494D1C52F1AE0049E5AB /* Detail */,
 				F7EF53701C4EDB7000467559 /* SavedMealsViewController.h */,
 				F7EF53711C4EDB7000467559 /* SavedMealsViewController.m */,
 			);
@@ -353,6 +246,15 @@
 			name = Totals;
 			sourceTree = "<group>";
 		};
+		FA6D7678A8B53187C820111D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2021798BF906B32EBDBF7F0 /* Pods.debug.xcconfig */,
+				4F745A6703A48973DB2B2EB7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -360,9 +262,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F728F59919FF4CA600BB7AC1 /* Build configuration list for PBXNativeTarget "CCalc" */;
 			buildPhases = (
+				17208835B7D841F5AE479D55 /* Check Pods Manifest.lock */,
 				F728F56F19FF4CA500BB7AC1 /* Sources */,
 				F728F57019FF4CA500BB7AC1 /* Frameworks */,
 				F728F57119FF4CA500BB7AC1 /* Resources */,
+				BCF1A5B676FD71A4C370E34E /* Copy Pods Resources */,
+				F7DC494C1C52E4C10049E5AB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -434,11 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F728F5F819FF4D9E00BB7AC1 /* Main.storyboard in Resources */,
-				F728F60219FF4D9E00BB7AC1 /* TableViewCell.xib in Resources */,
 				F778995E1C4EB47C001841D4 /* MainStoryboard.storyboard in Resources */,
-				F742A2E01AF51BDD00CB1988 /* Load Meals.storyboard in Resources */,
-				F742A2E41AF6A4E000CB1988 /* CreateMealsRoot.storyboard in Resources */,
 				F728F58719FF4CA500BB7AC1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,38 +353,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17208835B7D841F5AE479D55 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BCF1A5B676FD71A4C370E34E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7DC494C1C52E4C10049E5AB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" c418eb0ea9d247cf9b78bb91c45d6721480a7e7b c2408da95744246e98d61208c1c64554670eadc629e61d9b73b306cb55c4d327";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F728F56F19FF4CA500BB7AC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F728F60B1A04527100BB7AC1 /* LoadedDetailsTableViewController.m in Sources */,
+				F7351F091C574AE900DE1098 /* DataMigrationManager.m in Sources */,
 				F7EF53761C4EF82F00467559 /* TotalsViewController.m in Sources */,
 				F7EF536F1C4EDB6100467559 /* NewMealViewController.m in Sources */,
-				F728F5E119FF4D5900BB7AC1 /* UITableViewCell+FlatUI.m in Sources */,
 				F728F5A519FF4D1500BB7AC1 /* CCMenuItem.m in Sources */,
-				F742A2DC1AF51BA300CB1988 /* UIViewController+RRAdditions.m in Sources */,
 				F7EF53791C4F090100467559 /* EditMenuTableViewController.m in Sources */,
 				F7DFC0FE1A0538C70011B349 /* SavedMenuItems.m in Sources */,
 				F77899591C4EAB95001841D4 /* NSString+RRAdditions.m in Sources */,
 				F728F57C19FF4CA500BB7AC1 /* AppDelegate.m in Sources */,
-				F728F5FC19FF4D9E00BB7AC1 /* BeansViewController.m in Sources */,
 				F7EF53721C4EDB7000467559 /* SavedMealsViewController.m in Sources */,
-				F728F60119FF4D9E00BB7AC1 /* TableViewCell.m in Sources */,
 				F728F5A719FF4D1500BB7AC1 /* CCNutrition.m in Sources */,
 				F7DFC1011A0538C70011B349 /* Ingredients.m in Sources */,
 				F728F57F19FF4CA500BB7AC1 /* CCalc.xcdatamodeld in Sources */,
-				F742A2E71AF6A9E400CB1988 /* CreateMealsRootViewController.m in Sources */,
-				F728F5FA19FF4D9E00BB7AC1 /* MealViewController.m in Sources */,
-				F728F5D819FF4D5900BB7AC1 /* UIColor+FlatUI.m in Sources */,
 				F728F5A619FF4D1500BB7AC1 /* CCIngredientItem.m in Sources */,
-				F728F5FE19FF4D9E00BB7AC1 /* CondimentViewController.m in Sources */,
-				F728F5F919FF4D9E00BB7AC1 /* AppRootViewController.m in Sources */,
-				F728F6081A0445F700BB7AC1 /* LoadItemsTableViewController.m in Sources */,
-				F728F5FD19FF4D9E00BB7AC1 /* SalsaViewController.m in Sources */,
-				F728F5D219FF4D5900BB7AC1 /* FUICellBackgroundView.m in Sources */,
 				F728F57919FF4CA500BB7AC1 /* main.m in Sources */,
-				F728F5FB19FF4D9E00BB7AC1 /* MeatViewController.m in Sources */,
+				F7DC49501C52F1BE0049E5AB /* SavedMealsDetailViewController.m in Sources */,
 				F7EF536A1C4EC8AD00467559 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,10 +521,12 @@
 		};
 		F728F59A19FF4CA600BB7AC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2021798BF906B32EBDBF7F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CCalc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -600,10 +537,12 @@
 		};
 		F728F59B19FF4CA600BB7AC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F745A6703A48973DB2B2EB7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CCalc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

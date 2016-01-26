@@ -1,0 +1,20 @@
+PODS:
+  - CJPAdController (1.7.1):
+    - Google-Mobile-Ads-SDK (~> 7.5)
+  - Crashlytics (3.6.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.4)
+  - Google-Mobile-Ads-SDK (7.6.0)
+
+DEPENDENCIES:
+  - CJPAdController
+  - Crashlytics
+  - Fabric
+
+SPEC CHECKSUMS:
+  CJPAdController: 25d41d3d306ab55dc3ffa64174830c00f731573d
+  Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
+  Fabric: ed41fd62173c6bdea24ab02c9d7707161eabb750
+  Google-Mobile-Ads-SDK: 0290020329c61183c4685304264b73382bc49fb4
+
+COCOAPODS: 0.38.2
