@@ -24,6 +24,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *sugarLabel;
 @property (nonatomic, weak) IBOutlet UILabel *proteinLabel;
 
+@property (nonatomic, strong) UIBarButtonItem *infoButton;
+
 @property (nonatomic, assign) BOOL firstLoad;
 
 @end
@@ -46,6 +48,17 @@
     self.firstLoad = YES;
     
     [self updateNutritionLabelText];
+    
+    self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"info-button"] style:UIBarButtonItemStylePlain target:self action:@selector(presentInfoAlert)];
+    [self.navigationItem setRightBarButtonItem:self.infoButton animated:YES];
+}
+
+- (void)presentInfoAlert
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"Nutritional content may vary because of variations in portion size or recipes or differences in the sources of the ingredients used.\n\nThe average person needs about 2000 calories (and less than 2300 mg sodium) per day.\n\nThe exact number of calories you need depends on your age, gender, body size and activity level."] message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okay];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
