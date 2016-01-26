@@ -16,6 +16,8 @@
 @property (nonatomic, strong) CCIngredientItem *bowl;
 @property (nonatomic, strong) CCIngredientItem *softTaco;
 @property (nonatomic, strong) CCIngredientItem *hardTaco;
+@property (nonatomic, strong) CCIngredientItem *salad;
+@property (nonatomic, strong) CCIngredientItem *softFlourTaco;
 @property (nonatomic, strong) NSArray *arrayOfMeals;
 
 @property (nonatomic, strong) CCIngredientItem *selectedMealItem;
@@ -25,6 +27,7 @@
 @property (nonatomic, strong) CCIngredientItem *chicken;
 @property (nonatomic, strong) CCIngredientItem *carnitas;
 @property (nonatomic, strong) CCIngredientItem *barbacoa;
+@property (nonatomic, strong) CCIngredientItem *sofritas;
 @property (nonatomic, strong) NSArray *arrayOfMeats;
 
 // Beans
@@ -48,6 +51,7 @@
 @property (nonatomic, strong) CCIngredientItem *guac;
 @property (nonatomic, strong) CCIngredientItem *corn;
 @property (nonatomic, strong) CCIngredientItem *sourCream;
+@property (nonatomic, strong) CCIngredientItem *vinagrette;
 @property (nonatomic, strong) NSArray *arrayOfCondiments;
 
 @property (nonatomic, strong) NSArray *overallArray;
@@ -56,7 +60,8 @@
 
 @implementation NewMealViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.menuItem = [[CCMenuItem alloc] init];
@@ -64,16 +69,19 @@
     // Setup Meals
     self.burrito = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBurrito];
     self.bowl = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBowl];
+    self.salad = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSalad];
     self.hardTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeHardTaco];
     self.softTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSoftTaco];
-    self.arrayOfMeals = @[self.burrito, self.bowl, self.hardTaco, self.softTaco];
+    self.softFlourTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSoftFlourTaco];
+    self.arrayOfMeals = @[self.burrito, self.bowl, self.salad, self.hardTaco, self.softTaco, self.softFlourTaco];
     
     // Setup Meats
     self.steak= [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSteak];
     self.chicken = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChicken];
     self.barbacoa = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBarbacoa];
     self.carnitas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeCarnitas];
-    self.arrayOfMeats = @[self.steak, self.chicken, self.carnitas, self.barbacoa];
+    self.sofritas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSofritas];
+    self.arrayOfMeats = @[self.steak, self.chicken, self.carnitas, self.barbacoa, self.sofritas];
     
     // Setup Beans
     self.fajitas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeFajitas];
@@ -96,15 +104,13 @@
     self.guac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeGuac];
     self.lettuce = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeLettuce];
     self.sourCream = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSourCream];
-    self.arrayOfCondiments = @[self.cheese, self.corn, self.guac, self.lettuce, self.sourCream];
+    self.vinagrette = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeVinagrette];
+    
+    self.arrayOfCondiments = @[self.cheese, self.corn, self.guac, self.lettuce, self.sourCream, self.vinagrette];
     
     self.overallArray = @[self.arrayOfMeals, self.arrayOfMeats, self.arrayOfBeans, self.arrayOfSalsas, self.arrayOfCondiments];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.clearsSelectionOnViewWillAppear = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated

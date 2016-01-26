@@ -21,12 +21,15 @@
 @property (nonatomic, strong) CCIngredientItem *bowl;
 @property (nonatomic, strong) CCIngredientItem *softTaco;
 @property (nonatomic, strong) CCIngredientItem *hardTaco;
+@property (nonatomic, strong) CCIngredientItem *salad;
+@property (nonatomic, strong) CCIngredientItem *softFlourTaco;
 
 // Meats
 @property (nonatomic, strong) CCIngredientItem *steak;
 @property (nonatomic, strong) CCIngredientItem *chicken;
 @property (nonatomic, strong) CCIngredientItem *carnitas;
 @property (nonatomic, strong) CCIngredientItem *barbacoa;
+@property (nonatomic, strong) CCIngredientItem *sofritas;
 
 // Beans
 @property (nonatomic, strong) CCIngredientItem *fajitas;
@@ -47,6 +50,7 @@
 @property (nonatomic, strong) CCIngredientItem *guac;
 @property (nonatomic, strong) CCIngredientItem *corn;
 @property (nonatomic, strong) CCIngredientItem *sourCream;
+@property (nonatomic, strong) CCIngredientItem *vinagrette;
 
 @end
 
@@ -96,16 +100,20 @@ return _sharedObject; \
 
 - (void)setupIngredients
 {
+    // Setup Meals
     self.burrito = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBurrito];
     self.bowl = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBowl];
+    self.salad = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSalad];
     self.hardTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeHardTaco];
     self.softTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSoftTaco];
+    self.softFlourTaco = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSoftFlourTaco];
     
     // Setup Meats
     self.steak= [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSteak];
     self.chicken = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChicken];
     self.barbacoa = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBarbacoa];
     self.carnitas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeCarnitas];
+    self.sofritas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSofritas];
     
     // Setup Beans
     self.fajitas = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeFajitas];
@@ -126,6 +134,7 @@ return _sharedObject; \
     self.guac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeGuac];
     self.lettuce = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeLettuce];
     self.sourCream = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSourCream];
+    self.vinagrette = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeVinagrette];
 }
 
 - (void)migrateData
@@ -183,8 +192,14 @@ return _sharedObject; \
                     [menuItem addIngredientItem:self.guac];
                 } else if ([ingredient.ingredientName isEqualToString:self.lettuce.oldIngredientName]) {
                     [menuItem addIngredientItem:self.lettuce];
-                } else if ([ingredient.ingredientName isEqualToString:self.sourCream.oldIngredientName]) {
-                    [menuItem addIngredientItem:self.sourCream];
+                } else if ([ingredient.ingredientName isEqualToString:self.salad.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.salad];
+                } else if ([ingredient.ingredientName isEqualToString:self.softFlourTaco.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.softFlourTaco];
+                } else if ([ingredient.ingredientName isEqualToString:self.sofritas.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.sofritas];
+                } else if ([ingredient.ingredientName isEqualToString:self.vinagrette.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.vinagrette];
                 }
                 
                 [savedItem removeDetailsObject:ingredient];
@@ -203,7 +218,7 @@ return _sharedObject; \
             savedItem.protein = [NSString stringWithFormat:@"%ld g",(long)menuItem.nutritionTotal.protein];
             for (CCIngredientItem *item in menuItem.items) {
                 Ingredients *ingredient = [NSEntityDescription insertNewObjectForEntityForName:@"Ingredients" inManagedObjectContext:self.managedObjectContext];
-                ingredient.ingredientName = item.nutrition.name;
+                ingredient.ingredientName = item.ingredientName;
                 ingredient.info = savedItem;
                 [savedItem addDetailsObject:ingredient];
             }
