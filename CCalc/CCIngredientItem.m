@@ -437,6 +437,134 @@
             item.nutrition.sugar = 12;
             item.nutrition.protein = 1;
         } break;
+        case CCIngredientItemTypeChips:
+        {
+            item.oldIngredientName = @"chips";
+            item.nutrition.name = @"Chips";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 570;
+            item.nutrition.totalFat =  27;
+            item.nutrition.saturatedFat = 4;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 420;
+            item.nutrition.totalCarbs = 73;
+            item.nutrition.dietaryFiber = 8;
+            item.nutrition.sugar = 4;
+            item.nutrition.protein = 8;
+        } break;
+        case CCIngredientItemTypeChipsGuac:
+        {
+            item.oldIngredientName = @"chipsguac";
+            item.nutrition.name = @"Chips and Guacamole";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 800;
+            item.nutrition.totalFat =  46;
+            item.nutrition.saturatedFat = 7;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 750;
+            item.nutrition.totalCarbs = 80;
+            item.nutrition.dietaryFiber = 13;
+            item.nutrition.sugar = 5;
+            item.nutrition.protein = 10;
+        } break;
+        case CCIngredientItemTypeChipsTomato:
+        {
+            item.oldIngredientName = @"chipstomato";
+            item.nutrition.name = @"Chips and Tomato Salsa";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 600;
+            item.nutrition.totalFat =  27;
+            item.nutrition.saturatedFat = 4;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 920;
+            item.nutrition.totalCarbs = 77;
+            item.nutrition.dietaryFiber = 9;
+            item.nutrition.sugar = 7;
+            item.nutrition.protein = 9;
+        } break;
+        case CCIngredientItemTypeChipsChiliCorn:
+        {
+            item.oldIngredientName = @"chipscorn";
+            item.nutrition.name = @"Chips and Roasted Chili-Corn Salsa";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 650;
+            item.nutrition.totalFat =  29;
+            item.nutrition.saturatedFat = 4;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 750;
+            item.nutrition.totalCarbs = 89;
+            item.nutrition.dietaryFiber = 11;
+            item.nutrition.sugar = 8;
+            item.nutrition.protein = 11;
+        } break;
+        case CCIngredientItemTypeChipsRedChili:
+        {
+            item.oldIngredientName = @"chipsred";
+            item.nutrition.name = @"Chips and Tomatillo Red-Chili Salsa";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 595;
+            item.nutrition.totalFat =  28;
+            item.nutrition.saturatedFat = 4;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 920;
+            item.nutrition.totalCarbs = 77;
+            item.nutrition.dietaryFiber = 10;
+            item.nutrition.sugar = 5;
+            item.nutrition.protein = 9;
+        } break;
+        case CCIngredientItemTypeChipsGreenChili:
+        {
+            item.oldIngredientName = @"chipsgreen";
+            item.nutrition.name = @"Chips and Tomatillo Green-Chili Salsa";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 590;
+            item.nutrition.totalFat =  27;
+            item.nutrition.saturatedFat = 4;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 670;
+            item.nutrition.totalCarbs = 77;
+            item.nutrition.dietaryFiber = 9;
+            item.nutrition.sugar = 6;
+            item.nutrition.protein = 9;
+        } break;
+        case CCIngredientItemTypePatronMarg:
+        {
+            item.oldIngredientName = @"patronmarg";
+            item.nutrition.name = @"Patron Margarita";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 240;
+            item.nutrition.totalFat =  0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 5;
+            item.nutrition.totalCarbs = 25;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 21;
+            item.nutrition.protein = 0;
+        } break;
+        case CCIngredientItemTypeSauzaMarg:
+        {
+            item.oldIngredientName = @"sauzamarg";
+            item.nutrition.name = @"Sauza Margarita";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 230;
+            item.nutrition.totalFat =  0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 10;
+            item.nutrition.sodium = 5;
+            item.nutrition.totalCarbs = 25;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 21;
+            item.nutrition.protein = 0;
+        } break;
     }
     
     return item;

@@ -54,6 +54,18 @@
 @property (nonatomic, strong) CCIngredientItem *vinagrette;
 @property (nonatomic, strong) NSArray *arrayOfCondiments;
 
+// Extras
+@property (nonatomic, strong) CCIngredientItem *chips;
+@property (nonatomic, strong) CCIngredientItem *chipsGuac;
+@property (nonatomic, strong) CCIngredientItem *chipsFreshTomato;
+@property (nonatomic, strong) CCIngredientItem *chipsChiliCorn;
+@property (nonatomic, strong) CCIngredientItem *chipsGreenChili;
+@property (nonatomic, strong) CCIngredientItem *chipsRedChili;
+@property (nonatomic, strong) CCIngredientItem *patronMargarita;
+@property (nonatomic, strong) CCIngredientItem *sauzaMargarita;
+@property (nonatomic, strong) NSArray *arrayOfExtras;
+
+
 @property (nonatomic, strong) NSArray *overallArray;
 
 @end
@@ -66,6 +78,15 @@
     
     self.menuItem = [[CCMenuItem alloc] init];
     
+    [self setupIngredients];
+    
+    self.overallArray = @[self.arrayOfMeals, self.arrayOfMeats, self.arrayOfBeans, self.arrayOfSalsas, self.arrayOfCondiments, self.arrayOfExtras];
+    
+    self.clearsSelectionOnViewWillAppear = YES;
+}
+
+- (void)setupIngredients
+{
     // Setup Meals
     self.burrito = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBurrito];
     self.bowl = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBowl];
@@ -105,12 +126,18 @@
     self.lettuce = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeLettuce];
     self.sourCream = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSourCream];
     self.vinagrette = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeVinagrette];
-    
     self.arrayOfCondiments = @[self.cheese, self.corn, self.guac, self.lettuce, self.sourCream, self.vinagrette];
     
-    self.overallArray = @[self.arrayOfMeals, self.arrayOfMeats, self.arrayOfBeans, self.arrayOfSalsas, self.arrayOfCondiments];
-    
-    self.clearsSelectionOnViewWillAppear = YES;
+    // Setup Extras
+    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
+    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+    self.chipsChiliCorn = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsChiliCorn];
+    self.chipsRedChili = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsRedChili];
+    self.chipsGreenChili = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGreenChili];
+    self.patronMargarita = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypePatronMarg];
+    self.sauzaMargarita = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSauzaMarg];
+    self.arrayOfExtras = @[self.chips, self.chipsFreshTomato, self.chipsGuac, self.chipsChiliCorn, self.chipsRedChili, self.chipsGreenChili, self.patronMargarita, self.sauzaMargarita];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -129,12 +156,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 6;
+    return 7;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 5) {
+    if (section == 6) {
         return 1;
     }
     
@@ -160,6 +187,9 @@
         case 4:
             return @"Condiments";
             break;
+        case 5:
+            return @"Extras";
+            break;
         default:
             break;
     }
@@ -168,7 +198,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section != 5) {
+    if (indexPath.section != 6) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
         
         NSArray *sectionArray = self.overallArray[indexPath.section];
@@ -218,7 +248,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section != 5) {
+    if (indexPath.section != 6) {
+        
+        if (indexPath.section != 0 && indexPath.section != 5) {
+            if (![self.menuItem isIngredientInMenu:self.burrito] && ![self.menuItem isIngredientInMenu:self.bowl] && ![self.menuItem isIngredientInMenu:self.salad] && ![self.menuItem isIngredientInMenu:self.hardTaco] && ![self.menuItem isIngredientInMenu:self.softTaco] && ![self.menuItem isIngredientInMenu:self.softFlourTaco]) {
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                [self presentSelectMealAlert];
+                return;
+            }
+        }
         
         NSArray *sectionArray = self.overallArray[indexPath.section];
         CCIngredientItem *ingredient = sectionArray[indexPath.row];
@@ -227,13 +265,8 @@
         if (indexPath.section == 0) {
             if (self.selectedMealItem != nil && ![self.selectedMealItem.ingredientName isEqualToString:ingredient.ingredientName])
             {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Woops!" message:@"It looks like you've already selected a meal type.\n\nIf you wish to choose a different meal type, please remove the previous one and re-select" preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-                }];
-                [alert addAction:okay];
-                [self presentViewController:alert animated:YES completion:nil];
-                
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                [self presentMealAlreadySelectedAlert];
                 return;
             }
         }
@@ -267,6 +300,22 @@
     } else {
         [self performSegueWithIdentifier:@"TotalsSegue" sender:self];
     }
+}
+
+- (void)presentMealAlreadySelectedAlert
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Woops!" message:@"It looks like you've already selected a meal type.\n\nIf you wish to choose a different meal type, please remove the previous one and re-select" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okay];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)presentSelectMealAlert
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Woops!" message:@"Please Select a Meal first!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okay];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)refreshAction:(id)sender

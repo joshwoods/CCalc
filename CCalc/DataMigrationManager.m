@@ -52,6 +52,16 @@
 @property (nonatomic, strong) CCIngredientItem *sourCream;
 @property (nonatomic, strong) CCIngredientItem *vinagrette;
 
+// Extras
+@property (nonatomic, strong) CCIngredientItem *chips;
+@property (nonatomic, strong) CCIngredientItem *chipsGuac;
+@property (nonatomic, strong) CCIngredientItem *chipsFreshTomato;
+@property (nonatomic, strong) CCIngredientItem *chipsChiliCorn;
+@property (nonatomic, strong) CCIngredientItem *chipsGreenChili;
+@property (nonatomic, strong) CCIngredientItem *chipsRedChili;
+@property (nonatomic, strong) CCIngredientItem *patronMargarita;
+@property (nonatomic, strong) CCIngredientItem *sauzaMargarita;
+
 @end
 
 // Singleton Macro
@@ -135,6 +145,16 @@ return _sharedObject; \
     self.lettuce = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeLettuce];
     self.sourCream = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSourCream];
     self.vinagrette = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeVinagrette];
+    
+    // Setup Extras
+    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
+    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+    self.chipsChiliCorn = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsChiliCorn];
+    self.chipsRedChili = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsRedChili];
+    self.chipsGreenChili = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGreenChili];
+    self.patronMargarita = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypePatronMarg];
+    self.sauzaMargarita = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSauzaMarg];
 }
 
 - (void)migrateData
@@ -198,8 +218,22 @@ return _sharedObject; \
                     [menuItem addIngredientItem:self.softFlourTaco];
                 } else if ([ingredient.ingredientName isEqualToString:self.sofritas.oldIngredientName]) {
                     [menuItem addIngredientItem:self.sofritas];
-                } else if ([ingredient.ingredientName isEqualToString:self.vinagrette.oldIngredientName]) {
-                    [menuItem addIngredientItem:self.vinagrette];
+                } else if ([ingredient.ingredientName isEqualToString:self.chips.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.chips];
+                } else if ([ingredient.ingredientName isEqualToString:self.chipsFreshTomato.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.chipsFreshTomato];
+                } else if ([ingredient.ingredientName isEqualToString:self.chipsGuac.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.chipsGuac];
+                } else if ([ingredient.ingredientName isEqualToString:self.chipsChiliCorn.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.chipsChiliCorn];
+                } else if ([ingredient.ingredientName isEqualToString:self.chipsRedChili.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.chipsRedChili];
+                } else if ([ingredient.ingredientName isEqualToString:self.chipsGreenChili.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.chipsGreenChili];
+                } else if ([ingredient.ingredientName isEqualToString:self.patronMargarita.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.patronMargarita];
+                } else if ([ingredient.ingredientName isEqualToString:self.sauzaMargarita.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.sauzaMargarita];
                 }
                 
                 [savedItem removeDetailsObject:ingredient];

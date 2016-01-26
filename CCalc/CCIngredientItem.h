@@ -36,7 +36,15 @@ typedef NS_ENUM(NSInteger, CCIngredientItemType)
     CCIngredientItemTypeGuac,
     CCIngredientItemTypeLettuce,
     CCIngredientItemTypeSourCream,
-    CCIngredientItemTypeVinagrette
+    CCIngredientItemTypeVinagrette,
+    CCIngredientItemTypeChips,
+    CCIngredientItemTypeChipsGuac,
+    CCIngredientItemTypeChipsTomato,
+    CCIngredientItemTypeChipsChiliCorn,
+    CCIngredientItemTypeChipsRedChili,
+    CCIngredientItemTypeChipsGreenChili,
+    CCIngredientItemTypePatronMarg,
+    CCIngredientItemTypeSauzaMarg,
 };
 
 @interface CCIngredientItem : NSObject
