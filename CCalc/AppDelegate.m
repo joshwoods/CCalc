@@ -29,9 +29,9 @@
     [Fabric with:@[[Crashlytics class]]];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:@"updateSavedItemsTest"]) {
+    if (![defaults boolForKey:@"updateSavedItemsTest2"]) {
         [[DataMigrationManager sharedInstance] migrateData];
-        [defaults setBool:YES forKey:@"updateSavedItemsTest"];
+        [defaults setBool:YES forKey:@"updateSavedItemsTest2"];
     }
     [defaults synchronize];
     
