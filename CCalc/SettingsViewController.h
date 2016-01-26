@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 @import SafariServices;
 @import MessageUI;
+@import StoreKit;
 
-@interface SettingsViewController : UITableViewController <SFSafariViewControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
+@interface SettingsViewController : UITableViewController <SFSafariViewControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @end
