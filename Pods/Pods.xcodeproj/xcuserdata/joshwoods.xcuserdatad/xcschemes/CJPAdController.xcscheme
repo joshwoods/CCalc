@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "385DF659377F4111A62F1FD0"
+               BlueprintIdentifier = "B4C0EBAE64D3358EDDAA8071"
                BuildableName = "libCJPAdController.a"
                BlueprintName = "CJPAdController"
                ReferencedContainer = "container:Pods.xcodeproj">

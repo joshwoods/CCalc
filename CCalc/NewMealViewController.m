@@ -8,6 +8,7 @@
 
 #import "NewMealViewController.h"
 #import "TotalsViewController.h"
+#import "Appirater.h"
 
 @interface NewMealViewController ()
 

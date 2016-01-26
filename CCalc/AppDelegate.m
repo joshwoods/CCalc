@@ -12,7 +12,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import "DataMigrationManager.h"
-
+#import "Appirater.h"
 @interface AppDelegate ()
 
 @end
@@ -28,10 +28,18 @@
 
     [Fabric with:@[[Crashlytics class]]];
     
+    [Appirater setAppId:@"848737175"];
+    [Appirater setDaysUntilPrompt:2];
+    [Appirater setUsesUntilPrompt:2];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:1];
+    [Appirater setDebug:NO];
+    [Appirater appLaunched:YES];
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:@"updateSavedItemsTest2"]) {
+    if (![defaults boolForKey:@"updateSavedItems"]) {
         [[DataMigrationManager sharedInstance] migrateData];
-        [defaults setBool:YES forKey:@"updateSavedItemsTest2"];
+        [defaults setBool:YES forKey:@"updateSavedItems"];
     }
     [defaults synchronize];
     
@@ -59,6 +67,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
