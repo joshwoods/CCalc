@@ -219,7 +219,6 @@ return _sharedObject; \
         {
             NSLog(@"Successfully Updated!");
         }
-
     }
 }
 
