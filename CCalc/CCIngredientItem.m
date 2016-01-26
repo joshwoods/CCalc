@@ -30,9 +30,9 @@
             item.nutrition.totalFat = 10;
             item.nutrition.saturatedFat = 1;
             item.nutrition.transFat = 0;
-            item.nutrition.cholesterol =0;
+            item.nutrition.cholesterol = 0;
             item.nutrition.sodium = 690;
-            item.nutrition.totalCarbs = 6;
+            item.nutrition.totalCarbs = 46;
             item.nutrition.dietaryFiber = 3;
             item.nutrition.sugar = 0;
             item.nutrition.protein = 7;
@@ -82,7 +82,7 @@
             item.nutrition.sodium = 30;
             item.nutrition.totalCarbs = 30;
             item.nutrition.dietaryFiber = 6;
-            item.nutrition.sugar = 3;
+            item.nutrition.sugar = 1;
             item.nutrition.protein = 3;
         } break;
         case CCIngredientItemTypeSoftTaco:
@@ -218,16 +218,16 @@
             item.oldIngredientName = @"Tomatillo-Red Salsa";
             item.nutrition.name = @"Tomatillo Red-Chili Salsa";
             item.ingredientName = item.nutrition.name;
-            item.nutrition.calories = 25;
-            item.nutrition.totalFat = 1;
+            item.nutrition.calories = 30;
+            item.nutrition.totalFat = 0;
             item.nutrition.saturatedFat = 0;
             item.nutrition.transFat = 0;
             item.nutrition.cholesterol = 0;
             item.nutrition.sodium = 500;
             item.nutrition.totalCarbs = 4;
             item.nutrition.dietaryFiber = 2;
-            item.nutrition.sugar = 1;
-            item.nutrition.protein = 1;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 0;
         } break;
         case CCIngredientItemTypeTGreen:
         {
