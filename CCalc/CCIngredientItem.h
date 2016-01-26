@@ -12,13 +12,16 @@
 typedef NS_ENUM(NSInteger, CCIngredientItemType)
 {
     CCIngredientItemTypeBurrito = 0,
+    CCIngredientItemTypeSalad,
     CCIngredientItemTypeBowl,
     CCIngredientItemTypeHardTaco,
     CCIngredientItemTypeSoftTaco,
+    CCIngredientItemTypeSoftFlourTaco,
     CCIngredientItemTypeSteak,
     CCIngredientItemTypeChicken,
     CCIngredientItemTypeCarnitas,
     CCIngredientItemTypeBarbacoa,
+    CCIngredientItemTypeSofritas,
     CCIngredientItemTypeTomato,
     CCIngredientItemTypeTRed,
     CCIngredientItemTypeTGreen,
@@ -32,7 +35,8 @@ typedef NS_ENUM(NSInteger, CCIngredientItemType)
     CCIngredientItemTypeCorn,
     CCIngredientItemTypeGuac,
     CCIngredientItemTypeLettuce,
-    CCIngredientItemTypeSourCream
+    CCIngredientItemTypeSourCream,
+    CCIngredientItemTypeVinagrette
 };
 
 @interface CCIngredientItem : NSObject
@@ -41,6 +45,7 @@ typedef NS_ENUM(NSInteger, CCIngredientItemType)
 
 @property (nonatomic, strong) CCNutrition *nutrition;
 @property (nonatomic, copy) NSString *ingredientName;
+@property (nonatomic, copy) NSString *oldIngredientName;
 @property (nonatomic, assign) NSInteger servingSize;
 
 @end
