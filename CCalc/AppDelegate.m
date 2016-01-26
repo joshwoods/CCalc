@@ -11,6 +11,7 @@
 #import "Ingredients.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "DataMigrationManager.h"
 
 @interface AppDelegate ()
 
@@ -27,40 +28,13 @@
 
     [Fabric with:@[[Crashlytics class]]];
     
-    // This section is for testing core data. Leave it here in case any future testing needs to be done!
-//    NSManagedObjectContext *context = [self managedObjectContext];
-//    SavedMenuItems *savedinfo = [NSEntityDescription
-//                                      insertNewObjectForEntityForName:@"SavedMenuItems"
-//                                      inManagedObjectContext:context];
-//    savedinfo.menuName = @"Test Bank";
-//    savedinfo.details = [[NSMutableSet alloc] init];
-//    Ingredients *ingredient = [NSEntityDescription insertNewObjectForEntityForName:@"Ingredients" inManagedObjectContext:context];
-//    ingredient.ingredientName = @"Test Ingredient";
-//    ingredient.info = savedinfo;
-//    [savedinfo addDetailsObject:ingredient];
-//    Ingredients *ingredient2 = [NSEntityDescription insertNewObjectForEntityForName:@"Ingredients" inManagedObjectContext:context];
-//    ingredient2.ingredientName = @"Test Ingredient 2";
-//    ingredient2.info = savedinfo;
-//    [savedinfo addDetailsObject:ingredient2];
-//    
-//    
-//    NSError *error;
-//    if (![context save:&error]) {
-//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//    }
-////
-////    // Test listing all FailedBankInfos from the store
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SavedMenuItems"
-//                                              inManagedObjectContext:context];
-//    [fetchRequest setEntity:entity];
-//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-//    for (SavedMenuItems *info in fetchedObjects) {
-//        NSLog(@"Name: %@", info.menuName);
-//        for (Ingredients *item in info.details) {
-//            NSLog(@"Ingredient Name: %@", item.ingredientName);
-//        }
-//    }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults boolForKey:@"updateSavedItemsTest"]) {
+        [[DataMigrationManager sharedInstance] migrateData];
+        [defaults setBool:YES forKey:@"updateSavedItemsTest"];
+    }
+    [defaults synchronize];
+    
     return YES;
 }
 

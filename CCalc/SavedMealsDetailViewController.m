@@ -171,7 +171,7 @@
 
             NSError *saveError;
             if (![self.managedObjectContext save:&saveError]) {
-                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+                NSLog(@"Whoops, couldn't save: %@", [saveError localizedDescription]);
             } else {
                 [self.tableView reloadData];
             }

@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 @import CoreData;
 
-@interface DataMigrationManager : NSObject
+@interface DataMigrationManager : NSObject <NSFetchedResultsControllerDelegate>
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+
+- (void)migrateData;
 
 + (DataMigrationManager *)sharedInstance;
 
