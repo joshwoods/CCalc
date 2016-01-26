@@ -10,10 +10,12 @@
 #import "SavedMenuItems.h"
 @import CoreData;
 
-@interface SavedMealsViewController : UITableViewController
+@interface SavedMealsViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) NSMutableArray *savedItems;
 @property (nonatomic, strong) SavedMenuItems *savedMenuItem;
+
+// Data
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end
