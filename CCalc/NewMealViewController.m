@@ -72,25 +72,33 @@
 @property (nonatomic, strong) NSArray *arrayOfKidsMeals;
 
 // Kids Meats
-@property (nonatomic, strong) NSArray *arrayOfKidsMeats;
+@property (nonatomic, strong) NSArray *arrayOfKidsFillings;
 // Kids Beans
-@property (nonatomic, strong) NSArray *arrayOfKidsBeans;
+@property (nonatomic, strong) NSArray *arrayOfKidsToppings;
 
 // Kids Salsas
-@property (nonatomic, strong) NSArray *arrayOfKidsSalsas;
-
-// Kids Ingredients
-@property (nonatomic, strong) NSArray *arrayOfKidsIngredients;
-
-// Kids Sides
 @property (nonatomic, strong) NSArray *arrayOfKidsSides;
 
-// Kids Drinks
+// Kids Ingredients
 @property (nonatomic, strong) NSArray *arrayOfKidsDrinks;
-
 
 @property (nonatomic, strong) NSArray *kidsOverallArray;
 
+// Kids Quesadilla Meals
+@property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaMeals;
+
+// Kids Quesadilla Meats
+@property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaFillings;
+// Kids Quesadilla Beans
+@property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaToppings;
+
+// Kids Quesadilla Salsas
+@property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaSides;
+
+// Kids Quesadilla Ingredients
+@property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaDrinks;
+
+@property (nonatomic, strong) NSArray *kidsQuesadillaOverallArray;
 
 @property (nonatomic, assign) NSInteger menuIndex;
 
@@ -108,9 +116,11 @@
     
     [self setupIngredients];
     [self setupKidsIngredients];
+    [self setupKidsQuesadillaIngredients];
     
     self.overallArray = @[self.arrayOfMeals, self.arrayOfMeats, self.arrayOfBeans, self.arrayOfSalsas, self.arrayOfCondiments, self.arrayOfExtras];
-    self.kidsOverallArray = @[self.arrayOfKidsMeals, self.arrayOfKidsMeats, self.arrayOfKidsBeans, self.arrayOfKidsSalsas, self.arrayOfKidsIngredients, self.arrayOfKidsSides, self.arrayOfKidsDrinks];
+    self.kidsOverallArray = @[self.arrayOfKidsMeals, self.arrayOfKidsFillings, self.arrayOfKidsToppings, self.arrayOfKidsSides, self.arrayOfKidsDrinks];
+    self.kidsQuesadillaOverallArray = @[self.arrayOfKidsQuesadillaMeals, self.arrayOfKidsQuesadillaFillings, self.arrayOfKidsQuesadillaToppings, self.arrayOfKidsQuesadillaSides, self.arrayOfKidsQuesadillaDrinks];
     
     self.clearsSelectionOnViewWillAppear = YES;
 }
@@ -176,6 +186,11 @@
     
 }
 
+- (void)setupKidsQuesadillaIngredients
+{
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -195,7 +210,7 @@
     if (self.menuIndex == 0) {
         return 7;
     } else {
-        return 8;
+        return 6;
     }
 }
 
@@ -208,12 +223,19 @@
         
         NSArray *array = [self.overallArray objectAtIndex:section];
         return array.count;
-    } else {
+    } else if (self.menuIndex == 1) {
         if (section == 5) {
             return 1;
         }
         
         NSArray *array = [self.kidsOverallArray objectAtIndex:section];
+        return array.count;
+    } else {
+        if (section == 5) {
+            return 1;
+        }
+        
+        NSArray *array = [self.kidsQuesadillaOverallArray objectAtIndex:section];
         return array.count;
     }
 }
@@ -243,13 +265,33 @@
             default:
                 break;
         }
+    } else if (self.menuIndex == 1){
+        switch (section) {
+            case 0:
+                return @"Tortilla";
+                break;
+            case 1:
+                return @"Fillings";
+                break;
+            case 2:
+                return @"Toppings";
+                break;
+            case 3:
+                return @"Sides";
+                break;
+            case 4:
+                return @"Drinks";
+                break;
+            default:
+                break;
+        }
     } else {
         switch (section) {
             case 0:
-                return @"Meal";
+                return @"Tortilla";
                 break;
             case 1:
-                return @"Meat";
+                return @"Fillings";
                 break;
             case 2:
                 return @"Beans/Rice";
@@ -497,14 +539,20 @@
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Which menu would you like to pick from?" message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *regular = [UIAlertAction actionWithTitle:@"Regular" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (self.menuIndex == 1) {
+        if (self.menuIndex == 1 || self.menuIndex == 2) {
             self.menuIndex = 0;
             [self startOver];
         }
     }];
-    UIAlertAction *kids = [UIAlertAction actionWithTitle:@"Kids" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (self.menuIndex == 0) {
+    UIAlertAction *kids = [UIAlertAction actionWithTitle:@"Kids Build Your Own" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (self.menuIndex == 0 || self.menuIndex == 2) {
             self.menuIndex = 1;
+            [self startOver];
+        }
+    }];
+    UIAlertAction *kidsQuesadilla = [UIAlertAction actionWithTitle:@"Kids Quesadilla" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (self.menuIndex == 0 || self.menuIndex == 1) {
+            self.menuIndex = 2;
             [self startOver];
         }
     }];
@@ -513,6 +561,7 @@
     }];
     [alert addAction:regular];
     [alert addAction:kids];
+    [alert addAction:kidsQuesadilla];
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
 }
