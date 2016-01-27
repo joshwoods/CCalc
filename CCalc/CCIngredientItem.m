@@ -570,4 +570,30 @@
     return item;
 }
 
++(instancetype)ingredientItemWithKidsType:(CCIngredientKidsItemType)type
+{
+    CCIngredientItem *item = [CCIngredientItem new];
+    switch (type) {
+        case CCIngredientKidsItemTypeSalad:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+    }
+    
+    return item;
+}
+
+
 @end

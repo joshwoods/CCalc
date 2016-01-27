@@ -47,9 +47,16 @@ typedef NS_ENUM(NSInteger, CCIngredientItemType)
     CCIngredientItemTypeSauzaMarg,
 };
 
+typedef NS_ENUM(NSInteger, CCIngredientKidsItemType)
+{
+    CCIngredientKidsItemTypeSalad = 0,
+};
+
+
 @interface CCIngredientItem : NSObject
 
 +(instancetype)ingredientItemWithType:(CCIngredientItemType)type;
++(instancetype)ingredientItemWithKidsType:(CCIngredientKidsItemType)type;
 
 @property (nonatomic, strong) CCNutrition *nutrition;
 @property (nonatomic, copy) NSString *ingredientName;
