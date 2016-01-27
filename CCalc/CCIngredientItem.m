@@ -574,7 +574,449 @@
 {
     CCIngredientItem *item = [CCIngredientItem new];
     switch (type) {
-        case CCIngredientKidsItemTypeSalad:
+        case CCIngredientKidsItemTypeSoftFlourTort:
+        {
+            item.oldIngredientName = @"softflourtort";
+            item.nutrition.name = @"2 Soft Flour Tortillas";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 170;
+            item.nutrition.totalFat = 5;
+            item.nutrition.saturatedFat = 2;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 380;
+            item.nutrition.totalCarbs = 26;
+            item.nutrition.dietaryFiber = 1;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 4;
+        } break;
+        case CCIngredientKidsItemTypeCrispyCornTort:
+        {
+            item.oldIngredientName = @"crispycorntort";
+            item.nutrition.name = @"2 Crispy Corn Tortillas";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 140;
+            item.nutrition.totalFat = 5;
+            item.nutrition.saturatedFat = 2;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 20;
+            item.nutrition.totalCarbs = 20;
+            item.nutrition.dietaryFiber = 4;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 2;
+        } break;
+        case CCIngredientKidsItemTypeSoftCornTort:
+        {
+            item.oldIngredientName = @"softcorntort";
+            item.nutrition.name = @"2 Soft Corn Tortillas";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsItemTypeChicken:
+        {
+            item.oldIngredientName = @"kidchicken";
+            item.nutrition.name = @"Chicken";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 90;
+            item.nutrition.totalFat = 3;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 63;
+            item.nutrition.sodium = 155;
+            item.nutrition.totalCarbs = 0;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 15;
+        } break;
+        case CCIngredientKidsItemTypeSteak:
+        {
+            item.oldIngredientName = @"kidsteak";
+            item.nutrition.name = @"Steak";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 90;
+            item.nutrition.totalFat = 3;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 30;
+            item.nutrition.sodium = 170;
+            item.nutrition.totalCarbs = 2;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 15;
+        } break;
+        case CCIngredientKidsItemTypeBarbacoa:
+        {
+            item.oldIngredientName = @"kidbarbacoa";
+            item.nutrition.name = @"Barbacoa";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 85;
+            item.nutrition.totalFat = 3;
+            item.nutrition.saturatedFat = 2;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 32;
+            item.nutrition.sodium = 260;
+            item.nutrition.totalCarbs = 2;
+            item.nutrition.dietaryFiber = 1;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 12;
+        } break;
+        case CCIngredientKidsItemTypeCarnitas:
+        {
+            item.oldIngredientName = @"kidcarnitas";
+            item.nutrition.name = @"Carnitas";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 110;
+            item.nutrition.totalFat = 6;
+            item.nutrition.saturatedFat = 3;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 32;
+            item.nutrition.sodium = 225;
+            item.nutrition.totalCarbs = 0;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 12;
+        } break;
+        case CCIngredientKidsItemTypeSofritas:
+        {
+            item.oldIngredientName = @"kidsofritas";
+            item.nutrition.name = @"Sofritas";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 70;
+            item.nutrition.totalFat = 5;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 275;
+            item.nutrition.totalCarbs = 5;
+            item.nutrition.dietaryFiber = 2;
+            item.nutrition.sugar = 2;
+            item.nutrition.protein = 4;
+        } break;
+        case CCIngredientKidsItemTypeGuac:
+        {
+            item.oldIngredientName = @"kidsguac";
+            item.nutrition.name = @"Guacamole";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 115;
+            item.nutrition.totalFat = 11;
+            item.nutrition.saturatedFat = 2;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 190;
+            item.nutrition.totalCarbs = 3;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 1;
+        } break;
+        case CCIngredientKidsItemTypeWhiteRice:
+        {
+            item.oldIngredientName = @"kidswhiterice";
+            item.nutrition.name = @"White Rice";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 105;
+            item.nutrition.totalFat = 2;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 175;
+            item.nutrition.totalCarbs = 20;
+            item.nutrition.dietaryFiber = 1;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 2;
+        } break;
+        case CCIngredientKidsItemTypeBrownRice:
+        {
+            item.oldIngredientName = @"kidsbrownrice";
+            item.nutrition.name = @"Brown Rice";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 105;
+            item.nutrition.totalFat = 3;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 95;
+            item.nutrition.totalCarbs = 18;
+            item.nutrition.dietaryFiber = 1;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 2;
+        } break;
+        case CCIngredientKidsItemTypeBlackBeans:
+        {
+            item.oldIngredientName = @"kidsblackbeans";
+            item.nutrition.name = @"Black Beans";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 90;
+            item.nutrition.totalFat = 1;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 200;
+            item.nutrition.totalCarbs = 17;
+            item.nutrition.dietaryFiber = 9;
+            item.nutrition.sugar = 1;
+            item.nutrition.protein = 5;
+        } break;
+        case CCIngredientKidsItemTypePintoBeans:
+        {
+            item.oldIngredientName = @"kidspintobeans";
+            item.nutrition.name = @"Pinto Beans";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 85;
+            item.nutrition.totalFat = 1;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 230;
+            item.nutrition.totalCarbs = 16;
+            item.nutrition.dietaryFiber = 7;
+            item.nutrition.sugar = 1;
+            item.nutrition.protein = 5;
+        } break;
+        case CCIngredientKidsItemTypeFajitas:
+        {
+            item.oldIngredientName = @"kidsfajitas";
+            item.nutrition.name = @"Fajitas";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 5;
+            item.nutrition.totalFat = 0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 60;
+            item.nutrition.totalCarbs = 1;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 1;
+            item.nutrition.protein = 0;
+        } break;
+        case CCIngredientKidsItemTypeFreshTomato:
+        {
+            item.oldIngredientName = @"kidsfreshtomato";
+            item.nutrition.name = @"Tomato Salsa";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 10;
+            item.nutrition.totalFat = 0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 285;
+            item.nutrition.totalCarbs = 2;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 2;
+            item.nutrition.protein = 0;
+        } break;
+        case CCIngredientKidsItemTypeRoastedChili:
+        {
+            item.oldIngredientName = @"kidsroastedchili";
+            item.nutrition.name = @"Roasted Chili-Corn Salsa";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 40;
+            item.nutrition.totalFat = 1;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 190;
+            item.nutrition.totalCarbs = 9;
+            item.nutrition.dietaryFiber = 2;
+            item.nutrition.sugar = 3;
+            item.nutrition.protein = 2;
+        } break;
+        case CCIngredientKidsItemTypeTomatilloGreen:
+        {
+            item.oldIngredientName = @"kidsgreensalsa";
+            item.nutrition.name = @"Tomatillo Green-Chili Salsa";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 15;
+            item.nutrition.totalFat = 0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 255;
+            item.nutrition.totalCarbs = 4;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 2;
+            item.nutrition.protein = 0;
+        } break;
+        case CCIngredientKidsItemTypeTomatilloRed:
+        {
+            item.oldIngredientName = @"kidsredsalsa";
+            item.nutrition.name = @"Tomatillo Red-Chili Salsa";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 30;
+            item.nutrition.totalFat = 0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 500;
+            item.nutrition.totalCarbs = 4;
+            item.nutrition.dietaryFiber = 2;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 0;
+        } break;
+        case CCIngredientKidsItemTypeSourCream:
+        {
+            item.oldIngredientName = @"kidssourcream";
+            item.nutrition.name = @"Sour Cream";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 55;
+            item.nutrition.totalFat = 5;
+            item.nutrition.saturatedFat = 4;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 19;
+            item.nutrition.sodium = 15;
+            item.nutrition.totalCarbs = 3;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 1;
+            item.nutrition.protein = 1;
+        } break;
+        case CCIngredientKidsItemTypeCheese:
+        {
+            item.oldIngredientName = @"kidscheese";
+            item.nutrition.name = @"Cheese";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 100;
+            item.nutrition.totalFat = 8;
+            item.nutrition.saturatedFat = 5;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 30;
+            item.nutrition.sodium = 190;
+            item.nutrition.totalCarbs = 1;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 6;
+        } break;
+        case CCIngredientKidsItemTypeLettuce:
+        {
+            item.oldIngredientName = @"kidslettuce";
+            item.nutrition.name = @"Romaine Lettuce";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 5;
+            item.nutrition.totalFat = 0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 0;
+            item.nutrition.totalCarbs = 1;
+            item.nutrition.dietaryFiber = 1;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 0;
+        } break;
+        case CCIngredientKidsItemTypeMandarins:
+        {
+            item.oldIngredientName = @"kidsmandarin";
+            item.nutrition.name = @"Mandarins";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 35;
+            item.nutrition.totalFat = 0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 0;
+            item.nutrition.totalCarbs = 9;
+            item.nutrition.dietaryFiber = 1;
+            item.nutrition.sugar = 7;
+            item.nutrition.protein = 1;
+        } break;
+        case CCIngredientKidsItemTypeGrapes:
+        {
+            item.oldIngredientName = @"kidsgrapes";
+            item.nutrition.name = @"Grapes";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 80;
+            item.nutrition.totalFat = 0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 0;
+            item.nutrition.totalCarbs = 20;
+            item.nutrition.dietaryFiber = 1;
+            item.nutrition.sugar = 17;
+            item.nutrition.protein = 1;
+        } break;
+        case CCIngredientKidsItemTypeChips:
+        {
+            item.oldIngredientName = @"kidschips";
+            item.nutrition.name = @"Chips";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 145;
+            item.nutrition.totalFat = 7;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 105;
+            item.nutrition.totalCarbs = 18;
+            item.nutrition.dietaryFiber = 2;
+            item.nutrition.sugar = 1;
+            item.nutrition.protein = 2;
+        } break;
+        case CCIngredientKidsItemTypeOrganicMilk:
+        {
+            item.oldIngredientName = @"kidsorganicmilk";
+            item.nutrition.name = @"Organic Milk";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 90;
+            item.nutrition.totalFat = 2;
+            item.nutrition.saturatedFat = 2;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 10;
+            item.nutrition.sodium = 105;
+            item.nutrition.totalCarbs = 10;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 10;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsItemTypeOrganicChocolateMilk:
+        {
+            item.oldIngredientName = @"kidschocolatemilk";
+            item.nutrition.name = @"Organic Chocolate Milk";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 130;
+            item.nutrition.totalFat = 2;
+            item.nutrition.saturatedFat = 2;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 10;
+            item.nutrition.sodium = 190;
+            item.nutrition.totalCarbs = 20;
+            item.nutrition.dietaryFiber = 1;
+            item.nutrition.sugar = 19;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsItemTypeOrganicAppleJuice:
+        {
+            item.oldIngredientName = @"kidsapplejuice";
+            item.nutrition.name = @"Organic Apple Juice";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 100;
+            item.nutrition.totalFat = 0;
+            item.nutrition.saturatedFat = 0;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 20;
+            item.nutrition.totalCarbs = 25;
+            item.nutrition.dietaryFiber = 0;
+            item.nutrition.sugar = 22;
+            item.nutrition.protein = 0;
+        } break;
+
+    }
+    
+    return item;
+}
+
++(instancetype)ingredientItemWithKidsQuesadillaType:(CCIngredientKidsQuesadillaItemType)type
+{
+    CCIngredientItem *item = [CCIngredientItem new];
+    switch (type) {
+        case CCIngredientKidsQuesadillaItemTypeFlourTort:
         {
             item.oldIngredientName = @"Burrito";
             item.nutrition.name = @"Burrito";
@@ -590,16 +1032,279 @@
             item.nutrition.sugar = 0;
             item.nutrition.protein = 7;
         } break;
-    }
-    
-    return item;
-}
-
-+(instancetype)ingredientItemWithKidsQuesadillaType:(CCIngredientKidsQuesadillaItemType)type
-{
-    CCIngredientItem *item = [CCIngredientItem new];
-    switch (type) {
-        case CCIngredientKidsQuesadillaItemTypeSalad:
+        case CCIngredientKidsQuesadillaItemTypeCornTort:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeCheese:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeChicken:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeSteak:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeBarbacoa:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeCarnitas:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeSofritas:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeGuac:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeWhiteRice:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeBrownRice:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeBlackBeans:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypePintoBeans:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeMandarins:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeGrapes:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeChips:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeOrganicMilk:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeOrganicChocolateMilk:
+        {
+            item.oldIngredientName = @"Burrito";
+            item.nutrition.name = @"Burrito";
+            item.ingredientName = item.nutrition.name;
+            item.nutrition.calories = 300;
+            item.nutrition.totalFat = 10;
+            item.nutrition.saturatedFat = 1;
+            item.nutrition.transFat = 0;
+            item.nutrition.cholesterol = 0;
+            item.nutrition.sodium = 690;
+            item.nutrition.totalCarbs = 46;
+            item.nutrition.dietaryFiber = 3;
+            item.nutrition.sugar = 0;
+            item.nutrition.protein = 7;
+        } break;
+        case CCIngredientKidsQuesadillaItemTypeOrganicAppleJuice:
         {
             item.oldIngredientName = @"Burrito";
             item.nutrition.name = @"Burrito";
