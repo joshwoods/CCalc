@@ -81,20 +81,129 @@
 
 - (void)updateNutritionLabelText
 {
-    self.caloriesLabel.text = [NSString stringWithFormat:@"%ld", (long)self.menuItem.nutritionTotal.calories];
-    self.totalFatLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.totalFat];
-    self.saturatedFatLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.saturatedFat];
-    self.transFatLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.transFat];
-    self.cholesterolLabel.text = [NSString stringWithFormat:@"%ld mg", (long)self.menuItem.nutritionTotal.cholesterol];
-    self.sodiumLabel.text = [NSString stringWithFormat:@"%ld mg", (long)self.menuItem.nutritionTotal.sodium];
-    self.totalCarbsLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.totalCarbs];
-    self.dietaryFiberLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.dietaryFiber];
-    self.sugarLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.sugar];
-    self.proteinLabel.text = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.protein];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nutritioncell" forIndexPath:indexPath];
+        
+        NSString *mainString = @"";
+        
+        switch (indexPath.row) {
+            case 0:
+                mainString = @"Calories";
+                break;
+            case 1:
+                mainString = @"Total Fat";
+                break;
+            case 2:
+                mainString = @"Saturated Fat";
+                break;
+            case 3:
+                mainString = @"Trans Fat";
+                break;
+            case 4:
+                mainString = @"Cholesterol";
+                break;
+            case 5:
+                mainString = @"Sodium";
+                break;
+            case 6:
+                mainString = @"Total Carbohydrates";
+                break;
+            case 7:
+                mainString = @"Dietary Fiber";
+                break;
+            case 8:
+                mainString = @"Sugar";
+                break;
+            case 9:
+                mainString = @"Protein";
+                break;
+            default:
+                break;
+        }
+        
+        cell.textLabel.text = mainString;
+        
+        NSString *detailString = @"";
+        
+        switch (indexPath.row) {
+            case 0:
+                detailString = [NSString stringWithFormat:@"%ld", (long)self.menuItem.nutritionTotal.calories];
+                break;
+            case 1:
+                detailString = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.totalFat];
+                break;
+            case 2:
+                detailString = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.saturatedFat];
+                break;
+            case 3:
+                detailString = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.transFat];
+                break;
+            case 4:
+                detailString = [NSString stringWithFormat:@"%ld mg", (long)self.menuItem.nutritionTotal.cholesterol];
+                break;
+            case 5:
+                detailString = [NSString stringWithFormat:@"%ld mg", (long)self.menuItem.nutritionTotal.sodium];
+                break;
+            case 6:
+                detailString = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.totalCarbs];
+                break;
+            case 7:
+                detailString = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.dietaryFiber];
+                break;
+            case 8:
+                detailString = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.sugar];
+                break;
+            case 9:
+                detailString = [NSString stringWithFormat:@"%ld g", (long)self.menuItem.nutritionTotal.protein];
+                break;
+            default:
+                break;
+        }
+        
+        cell.detailTextLabel.text = detailString;
+        cell.detailTextLabel.textColor = [self colorWithHex:0xD35400 alpha:1.0];
+        
+        return cell;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basiccell" forIndexPath:indexPath];
+        
+        NSString *mainString = @"";
+        
+        switch (indexPath.row) {
+            case 0:
+                mainString = @"Edit";
+                break;
+            case 1:
+                mainString = @"Save";
+                break;
+            case 2:
+                mainString = @"Start Over";
+                break;
+            default:
+                break;
+        }
+        
+        cell.textLabel.text = mainString;
+        
+        return cell;
+    }
+}
+
+- (UIColor *)colorWithHex:(unsigned int)hex alpha:(CGFloat)alpha
+{
+    
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0
+                           green:((float)((hex & 0xFF00) >> 8)) / 255.0
+                            blue:((float)(hex & 0xFF)) / 255.0
+                           alpha:alpha];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
