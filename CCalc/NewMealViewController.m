@@ -66,8 +66,33 @@
 @property (nonatomic, strong) CCIngredientItem *sauzaMargarita;
 @property (nonatomic, strong) NSArray *arrayOfExtras;
 
-
 @property (nonatomic, strong) NSArray *overallArray;
+
+// Kids Meals
+@property (nonatomic, strong) NSArray *arrayOfKidsMeals;
+
+// Kids Meats
+@property (nonatomic, strong) NSArray *arrayOfKidsMeats;
+// Kids Beans
+@property (nonatomic, strong) NSArray *arrayOfKidsBeans;
+
+// Kids Salsas
+@property (nonatomic, strong) NSArray *arrayOfKidsSalsas;
+
+// Kids Ingredients
+@property (nonatomic, strong) NSArray *arrayOfKidsIngredients;
+
+// Kids Sides
+@property (nonatomic, strong) NSArray *arrayOfKidsSides;
+
+// Kids Drinks
+@property (nonatomic, strong) NSArray *arrayOfKidsDrinks;
+
+
+@property (nonatomic, strong) NSArray *kidsOverallArray;
+
+
+@property (nonatomic, assign) NSInteger menuIndex;
 
 @end
 
@@ -77,11 +102,15 @@
 {
     [super viewDidLoad];
     
+    self.menuItem = 0;
+    
     self.menuItem = [[CCMenuItem alloc] init];
     
     [self setupIngredients];
+    [self setupKidsIngredients];
     
     self.overallArray = @[self.arrayOfMeals, self.arrayOfMeats, self.arrayOfBeans, self.arrayOfSalsas, self.arrayOfCondiments, self.arrayOfExtras];
+    self.kidsOverallArray = @[self.arrayOfKidsMeals, self.arrayOfKidsMeats, self.arrayOfKidsBeans, self.arrayOfKidsSalsas, self.arrayOfKidsIngredients, self.arrayOfKidsSides, self.arrayOfKidsDrinks];
     
     self.clearsSelectionOnViewWillAppear = YES;
 }
@@ -141,6 +170,12 @@
     self.arrayOfExtras = @[self.chips, self.chipsFreshTomato, self.chipsGuac, self.chipsChiliCorn, self.chipsRedChili, self.chipsGreenChili, self.patronMargarita, self.sauzaMargarita];
 }
 
+- (void)setupKidsIngredients
+
+{
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -157,70 +192,132 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 7;
+    if (self.menuIndex == 0) {
+        return 7;
+    } else {
+        return 8;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 6) {
-        return 1;
+    if (self.menuIndex == 0) {
+        if (section == 6) {
+            return 1;
+        }
+        
+        NSArray *array = [self.overallArray objectAtIndex:section];
+        return array.count;
+    } else {
+        if (section == 5) {
+            return 1;
+        }
+        
+        NSArray *array = [self.kidsOverallArray objectAtIndex:section];
+        return array.count;
     }
-    
-    NSArray *array = [self.overallArray objectAtIndex:section];
-    return array.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            return @"Meal";
-            break;
-        case 1:
-            return @"Meat";
-            break;
-        case 2:
-            return @"Beans";
-            break;
-        case 3:
-            return @"Salsa";
-            break;
-        case 4:
-            return @"Condiments";
-            break;
-        case 5:
-            return @"Extras";
-            break;
-        default:
-            break;
+    if (self.menuIndex == 0) {
+        switch (section) {
+            case 0:
+                return @"Meal";
+                break;
+            case 1:
+                return @"Meat";
+                break;
+            case 2:
+                return @"Beans/Rice";
+                break;
+            case 3:
+                return @"Salsa";
+                break;
+            case 4:
+                return @"Condiments";
+                break;
+            case 5:
+                return @"Extras";
+                break;
+            default:
+                break;
+        }
+    } else {
+        switch (section) {
+            case 0:
+                return @"Meal";
+                break;
+            case 1:
+                return @"Meat";
+                break;
+            case 2:
+                return @"Beans/Rice";
+                break;
+            case 3:
+                return @"Sides";
+                break;
+            case 4:
+                return @"Drinks";
+                break;
+            default:
+                break;
+        }
     }
+    
     
     return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section != 6) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-        
-        NSArray *sectionArray = self.overallArray[indexPath.section];
-        
-        CCIngredientItem *ingredient = sectionArray[indexPath.row];
-        cell.textLabel.text = ingredient.ingredientName;
-        
-        if ([self.menuItem isIngredientInMenu:ingredient]) {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    if (self.menuIndex == 0) {
+        if (indexPath.section != 6) {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
             
-            NSLog(@"MEEP");
+            NSArray *sectionArray = self.overallArray[indexPath.section];
+            
+            CCIngredientItem *ingredient = sectionArray[indexPath.row];
+            cell.textLabel.text = ingredient.ingredientName;
+            
+            if ([self.menuItem isIngredientInMenu:ingredient]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                
+                NSLog(@"MEEP");
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                
+            }
+            
+            return cell;
         } else {
-            cell.accessoryType = UITableViewCellAccessoryNone;
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TotalsCell" forIndexPath:indexPath];
             
+            return cell;
         }
-        
-        return cell;
     } else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TotalsCell" forIndexPath:indexPath];
-
-        return cell;
+        if (indexPath.section != 5) {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+            
+            NSArray *sectionArray = self.overallArray[indexPath.section];
+            
+            CCIngredientItem *ingredient = sectionArray[indexPath.row];
+            cell.textLabel.text = ingredient.ingredientName;
+            
+            if ([self.menuItem isIngredientInMenu:ingredient]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                
+                NSLog(@"MEEP");
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                
+            }
+            
+            return cell;
+        } else {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TotalsCell" forIndexPath:indexPath];
+            
+            return cell;
+        }
     }
 }
 
@@ -249,58 +346,89 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section != 6) {
-        
-        if (indexPath.section != 0 && indexPath.section != 5) {
-            if (![self.menuItem isIngredientInMenu:self.burrito] && ![self.menuItem isIngredientInMenu:self.bowl] && ![self.menuItem isIngredientInMenu:self.salad] && ![self.menuItem isIngredientInMenu:self.hardTaco] && ![self.menuItem isIngredientInMenu:self.softTaco] && ![self.menuItem isIngredientInMenu:self.softFlourTaco]) {
-                [tableView deselectRowAtIndexPath:indexPath animated:YES];
-                [self presentSelectMealAlert];
-                return;
-            }
-        }
-        
-        NSArray *sectionArray = self.overallArray[indexPath.section];
-        CCIngredientItem *ingredient = sectionArray[indexPath.row];
-        
-        // If we have already added a meal type, advise the user they can only select one
-        if (indexPath.section == 0) {
-            if (self.selectedMealItem != nil && ![self.selectedMealItem.ingredientName isEqualToString:ingredient.ingredientName])
-            {
-                [tableView deselectRowAtIndexPath:indexPath animated:YES];
-                [self presentMealAlreadySelectedAlert];
-                return;
-            }
-        }
-        
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        
-        if ([self.menuItem isIngredientInMenu:ingredient]) {
-            NSLog(@"Removed!");
+    if (self.menuIndex == 0)
+    {
+        if (indexPath.section != 6) {
             
-            cell.accessoryType = UITableViewCellAccessoryNone;
-            [self.menuItem removeIngredientItem:ingredient];
+            if (indexPath.section != 0 && indexPath.section != 5) {
+                if (![self.menuItem isIngredientInMenu:self.burrito] && ![self.menuItem isIngredientInMenu:self.bowl] && ![self.menuItem isIngredientInMenu:self.salad] && ![self.menuItem isIngredientInMenu:self.hardTaco] && ![self.menuItem isIngredientInMenu:self.softTaco] && ![self.menuItem isIngredientInMenu:self.softFlourTaco]) {
+                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                    [self presentSelectMealAlert];
+                    return;
+                }
+            }
             
+            NSArray *sectionArray = self.overallArray[indexPath.section];
+            CCIngredientItem *ingredient = sectionArray[indexPath.row];
+            
+            // If we have already added a meal type, advise the user they can only select one
             if (indexPath.section == 0) {
-                self.selectedMealItem = nil;
+                if (self.selectedMealItem != nil && ![self.selectedMealItem.ingredientName isEqualToString:ingredient.ingredientName])
+                {
+                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                    [self presentMealAlreadySelectedAlert];
+                    return;
+                }
             }
+            
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            
+            if ([self.menuItem isIngredientInMenu:ingredient]) {
+                NSLog(@"Removed!");
+                
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                [self.menuItem removeIngredientItem:ingredient];
+                
+                if (indexPath.section == 0) {
+                    self.selectedMealItem = nil;
+                }
+            } else {
+                NSLog(@"Adding!");
+                
+                [self.menuItem addIngredientItem:ingredient];
+                
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                
+                if (indexPath.section == 0) {
+                    self.selectedMealItem = ingredient;
+                }
+            }
+            
+            [self updateNavTitleWithCalories];
+            
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
         } else {
-            NSLog(@"Adding!");
             
-            [self.menuItem addIngredientItem:ingredient];
-            
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            
-            if (indexPath.section == 0) {
-                self.selectedMealItem = ingredient;
+            if (self.menuItem.items.count == 0) {
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                [self presentNoItemsAlert];
+            } else {
+                [self performSegueWithIdentifier:@"TotalsSegue" sender:self];
             }
         }
-        
-        [self updateNavTitleWithCalories];
-        
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    } else {
-        [self performSegueWithIdentifier:@"TotalsSegue" sender:self];
     }
+    else
+    {
+        if (indexPath.section != 5) {
+            //
+        } else {
+            if (self.menuItem.items.count == 0) {
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                [self presentNoItemsAlert];
+            } else {
+                [self performSegueWithIdentifier:@"TotalsSegue" sender:self];
+            }
+        }
+    }
+    
+}
+
+- (void)presentNoItemsAlert
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Woops!" message:@"You have no items in this meal. Please add some and then try again!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okay];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)presentMealAlreadySelectedAlert
@@ -363,6 +491,30 @@
     [self updateNavTitleWithCalories];
     
     [self.tableView reloadData];
+}
+
+- (IBAction)determineMealTypeAction:(id)sender
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Which menu would you like to pick from?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *regular = [UIAlertAction actionWithTitle:@"Regular" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (self.menuIndex == 1) {
+            self.menuIndex = 0;
+            [self startOver];
+        }
+    }];
+    UIAlertAction *kids = [UIAlertAction actionWithTitle:@"Kids" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (self.menuIndex == 0) {
+            self.menuIndex = 1;
+            [self startOver];
+        }
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        //
+    }];
+    [alert addAction:regular];
+    [alert addAction:kids];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
