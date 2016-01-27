@@ -69,33 +69,81 @@
 @property (nonatomic, strong) NSArray *overallArray;
 
 // Kids Meals
+@property (nonatomic, strong) CCIngredientItem *kidsSoftFlour;
+@property (nonatomic, strong) CCIngredientItem *kidsCrispyCorn;
+@property (nonatomic, strong) CCIngredientItem *kidsSoftCorn;
 @property (nonatomic, strong) NSArray *arrayOfKidsMeals;
 
-// Kids Meats
+// Kids Fillings
+@property (nonatomic, strong) CCIngredientItem *kidsChicken;
+@property (nonatomic, strong) CCIngredientItem *kidsSteak;
+@property (nonatomic, strong) CCIngredientItem *kidsBarbacoa;
+@property (nonatomic, strong) CCIngredientItem *kidsCarnitas;
+@property (nonatomic, strong) CCIngredientItem *kidsSofritas;
+@property (nonatomic, strong) CCIngredientItem *kidsGuacamole;
 @property (nonatomic, strong) NSArray *arrayOfKidsFillings;
-// Kids Beans
+
+// Kids Toppings
+@property (nonatomic, strong) CCIngredientItem *kidsWRice;
+@property (nonatomic, strong) CCIngredientItem *kidsBRice;
+@property (nonatomic, strong) CCIngredientItem *kidsBBeans;
+@property (nonatomic, strong) CCIngredientItem *kidsPBeans;
+@property (nonatomic, strong) CCIngredientItem *kidsFajitas;
+@property (nonatomic, strong) CCIngredientItem *kidsTomatoe;
+@property (nonatomic, strong) CCIngredientItem *kidsRoastedCorn;
+@property (nonatomic, strong) CCIngredientItem *kidsTGreen;
+@property (nonatomic, strong) CCIngredientItem *kidsTRed;
+@property (nonatomic, strong) CCIngredientItem *kidsSourCream;
+@property (nonatomic, strong) CCIngredientItem *kidsCheese;
+@property (nonatomic, strong) CCIngredientItem *kidsLettuce;
 @property (nonatomic, strong) NSArray *arrayOfKidsToppings;
 
-// Kids Salsas
+// Kids Sides
+@property (nonatomic, strong) CCIngredientItem *kidsMandarins;
+@property (nonatomic, strong) CCIngredientItem *kidsGrapes;
+@property (nonatomic, strong) CCIngredientItem *kidsChips;
 @property (nonatomic, strong) NSArray *arrayOfKidsSides;
 
-// Kids Ingredients
+// Kids Drinks
+@property (nonatomic, strong) CCIngredientItem *kidsOrgMilk;
+@property (nonatomic, strong) CCIngredientItem *kidsChocMilk;
+@property (nonatomic, strong) CCIngredientItem *kidsAppleJuice;
 @property (nonatomic, strong) NSArray *arrayOfKidsDrinks;
 
 @property (nonatomic, strong) NSArray *kidsOverallArray;
 
 // Kids Quesadilla Meals
+@property (nonatomic, strong) CCIngredientItem *quesFlourTort;
+@property (nonatomic, strong) CCIngredientItem *quesCornTort;
+@property (nonatomic, strong) CCIngredientItem *quesCheese;
 @property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaMeals;
 
 // Kids Quesadilla Meats
+@property (nonatomic, strong) CCIngredientItem *quesChicken;
+@property (nonatomic, strong) CCIngredientItem *quesSteak;
+@property (nonatomic, strong) CCIngredientItem *quesBarbacoa;
+@property (nonatomic, strong) CCIngredientItem *quesCarnitas;
+@property (nonatomic, strong) CCIngredientItem *quesSofritas;
+@property (nonatomic, strong) CCIngredientItem *quesGuac;
 @property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaFillings;
+
 // Kids Quesadilla Beans
+@property (nonatomic, strong) CCIngredientItem *quesWRice;
+@property (nonatomic, strong) CCIngredientItem *quesBRice;
+@property (nonatomic, strong) CCIngredientItem *quesBBeans;
+@property (nonatomic, strong) CCIngredientItem *quesPBeans;
 @property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaToppings;
 
-// Kids Quesadilla Salsas
+// Kids Quesadilla Sides
+@property (nonatomic, strong) CCIngredientItem *quesMandarins;
+@property (nonatomic, strong) CCIngredientItem *quesGrapes;
+@property (nonatomic, strong) CCIngredientItem *quesChips;
 @property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaSides;
 
-// Kids Quesadilla Ingredients
+// Kids Quesadilla Drinks
+@property (nonatomic, strong) CCIngredientItem *quesOrgMilk;
+@property (nonatomic, strong) CCIngredientItem *quesChocMilk;
+@property (nonatomic, strong) CCIngredientItem *quesAppleJuice;
 @property (nonatomic, strong) NSArray *arrayOfKidsQuesadillaDrinks;
 
 @property (nonatomic, strong) NSArray *kidsQuesadillaOverallArray;
@@ -181,14 +229,75 @@
 }
 
 - (void)setupKidsIngredients
-
 {
+    self.kidsSoftFlour = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSoftFlourTort];
+    self.kidsCrispyCorn = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeCrispyCornTort];
+    self.kidsSoftCorn = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSoftCornTort];
+    self.arrayOfKidsMeals = @[self.kidsSoftFlour, self.kidsCrispyCorn, self.kidsSoftCorn];
     
+    self.kidsChicken = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeChicken];
+    self.kidsSteak = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSteak];
+    self.kidsBarbacoa = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeBarbacoa];
+    self.kidsCarnitas = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeCarnitas];
+    self.kidsSofritas = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSofritas];
+    self.kidsGuacamole = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeGuac];
+    self.arrayOfKidsFillings = @[self.kidsChicken, self.kidsSteak, self.kidsBarbacoa, self.kidsCarnitas, self.kidsSofritas, self.kidsGuacamole];
+    
+    self.kidsWRice = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeWhiteRice];
+    self.kidsBRice = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeBrownRice];
+    self.kidsBBeans = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeBlackBeans];
+    self.kidsPBeans = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypePintoBeans];
+    self.kidsFajitas = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeFajitas];
+    self.kidsTomatoe = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeFreshTomato];
+    self.kidsRoastedCorn = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeRoastedChili];
+    self.kidsTGreen = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeTomatilloGreen];
+    self.kidsTRed = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeTomatilloRed];
+    self.kidsSourCream = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSourCream];
+    self.kidsCheese = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeCheese];
+    self.kidsLettuce = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeLettuce];
+    self.arrayOfKidsToppings = @[self.kidsWRice, self.kidsBRice, self.kidsBBeans, self.kidsPBeans, self.kidsFajitas, self.kidsTomatoe, self.kidsRoastedCorn, self.kidsTGreen, self.kidsTRed, self.kidsSourCream, self.kidsCheese, self.kidsLettuce];
+    
+    self.kidsMandarins = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeMandarins];
+    self.kidsGrapes = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeGrapes];
+    self.kidsChips = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeChips];
+    self.arrayOfKidsSides = @[self.kidsMandarins, self.kidsGrapes, self.kidsChips];
+    
+    self.kidsOrgMilk = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeOrganicMilk];
+    self.kidsChocMilk = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeOrganicChocolateMilk];
+    self.kidsAppleJuice = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeOrganicAppleJuice];
+    self.arrayOfKidsDrinks = @[self.kidsOrgMilk, self.kidsChocMilk, self.kidsAppleJuice];
 }
 
 - (void)setupKidsQuesadillaIngredients
 {
+    self.quesFlourTort = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeFlourTort];
+    self.quesCornTort = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeCornTort];
+    self.quesCheese = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeCheese];
+    self.arrayOfKidsQuesadillaMeals = @[self.quesFlourTort, self.quesCornTort, self.quesCheese];
+
+    self.quesChicken = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeChicken];
+    self.quesSteak = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeSteak];
+    self.quesBarbacoa = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeBarbacoa];
+    self.quesCarnitas = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeCarnitas];
+    self.quesSofritas = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeSofritas];
+    self.quesGuac = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeGuac];
+    self.arrayOfKidsQuesadillaFillings = @[self.quesChicken, self.quesSteak, self.quesBarbacoa, self.quesCarnitas, self.quesSofritas, self.quesGuac];
     
+    self.quesWRice = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeWhiteRice];
+    self.quesBRice = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeBrownRice];
+    self.quesBBeans = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeBlackBeans];
+    self.quesPBeans = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypePintoBeans];
+    self.arrayOfKidsQuesadillaToppings = @[self.quesWRice, self.quesBRice, self.quesBBeans, self.quesPBeans];
+
+    self.quesMandarins = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeMandarins];
+    self.quesGrapes = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeGrapes];
+    self.quesChips = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeChips];
+    self.arrayOfKidsQuesadillaSides = @[self.quesMandarins, self.quesGrapes, self.quesChips];
+
+    self.quesOrgMilk = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeOrganicMilk];
+    self.quesChocMilk = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeOrganicChocolateMilk];
+    self.quesAppleJuice = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeOrganicAppleJuice];
+    self.arrayOfKidsQuesadillaDrinks = @[self.quesOrgMilk, self.quesChocMilk, self.quesAppleJuice];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -336,11 +445,35 @@
             
             return cell;
         }
+    } else if (self.menuIndex == 1){
+        if (indexPath.section != 5) {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+            
+            NSArray *sectionArray = self.kidsOverallArray[indexPath.section];
+            
+            CCIngredientItem *ingredient = sectionArray[indexPath.row];
+            cell.textLabel.text = ingredient.ingredientName;
+            
+            if ([self.menuItem isIngredientInMenu:ingredient]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                
+                NSLog(@"MEEP");
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                
+            }
+            
+            return cell;
+        } else {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TotalsCell" forIndexPath:indexPath];
+            
+            return cell;
+        }
     } else {
         if (indexPath.section != 5) {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
             
-            NSArray *sectionArray = self.overallArray[indexPath.section];
+            NSArray *sectionArray = self.kidsQuesadillaOverallArray[indexPath.section];
             
             CCIngredientItem *ingredient = sectionArray[indexPath.row];
             cell.textLabel.text = ingredient.ingredientName;
@@ -449,10 +582,123 @@
             }
         }
     }
-    else
+    else if (self.menuIndex == 1)
     {
         if (indexPath.section != 5) {
-            //
+
+            if (indexPath.section != 0 && indexPath.section != 3 && indexPath.section != 4) {
+                if (![self.menuItem isIngredientInMenu:self.kidsSoftFlour]
+                    && ![self.menuItem isIngredientInMenu:self.kidsCrispyCorn]
+                    && ![self.menuItem isIngredientInMenu:self.kidsSoftCorn])
+                {
+                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                    [self presentSelectMealAlert];
+                    return;
+                }
+            }
+            
+            NSArray *sectionArray = self.kidsOverallArray[indexPath.section];
+            CCIngredientItem *ingredient = sectionArray[indexPath.row];
+            
+            // If we have already added a meal type, advise the user they can only select one
+            if (indexPath.section == 0) {
+                if (self.selectedMealItem != nil && ![self.selectedMealItem.ingredientName isEqualToString:ingredient.ingredientName])
+                {
+                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                    [self presentMealAlreadySelectedAlert];
+                    return;
+                }
+            }
+            
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            
+            if ([self.menuItem isIngredientInMenu:ingredient]) {
+                NSLog(@"Removed!");
+                
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                [self.menuItem removeIngredientItem:ingredient];
+                
+                if (indexPath.section == 0) {
+                    self.selectedMealItem = nil;
+                }
+            } else {
+                NSLog(@"Adding!");
+                
+                [self.menuItem addIngredientItem:ingredient];
+                
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                
+                if (indexPath.section == 0) {
+                    self.selectedMealItem = ingredient;
+                }
+            }
+            
+            [self updateNavTitleWithCalories];
+            
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            
+        } else {
+            if (self.menuItem.items.count == 0) {
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                [self presentNoItemsAlert];
+            } else {
+                [self performSegueWithIdentifier:@"TotalsSegue" sender:self];
+            }
+        }
+    } else {
+        if (indexPath.section != 5) {
+            
+            if (indexPath.section != 0 && indexPath.section != 3 && indexPath.section != 4) {
+                if (![self.menuItem isIngredientInMenu:self.quesFlourTort]
+                    && ![self.menuItem isIngredientInMenu:self.quesCornTort]
+                    && ![self.menuItem isIngredientInMenu:self.quesCheese])
+                {
+                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                    [self presentSelectMealAlert];
+                    return;
+                }
+            }
+            
+            NSArray *sectionArray = self.kidsQuesadillaOverallArray[indexPath.section];
+            CCIngredientItem *ingredient = sectionArray[indexPath.row];
+            
+            // If we have already added a meal type, advise the user they can only select one
+            if (indexPath.section == 0) {
+                if (self.selectedMealItem != nil && ![self.selectedMealItem.ingredientName isEqualToString:ingredient.ingredientName])
+                {
+                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                    [self presentMealAlreadySelectedAlert];
+                    return;
+                }
+            }
+            
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            
+            if ([self.menuItem isIngredientInMenu:ingredient]) {
+                NSLog(@"Removed!");
+                
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                [self.menuItem removeIngredientItem:ingredient];
+                
+                if (indexPath.section == 0) {
+                    self.selectedMealItem = nil;
+                }
+            } else {
+                NSLog(@"Adding!");
+                
+                [self.menuItem addIngredientItem:ingredient];
+                
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                
+                if (indexPath.section == 0) {
+                    self.selectedMealItem = ingredient;
+                }
+            }
+            
+            [self updateNavTitleWithCalories];
+            
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            
         } else {
             if (self.menuItem.items.count == 0) {
                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -462,7 +708,6 @@
             }
         }
     }
-    
 }
 
 - (void)presentNoItemsAlert
