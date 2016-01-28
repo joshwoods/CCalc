@@ -18,7 +18,7 @@
 
 @interface EditMenuTableViewController : UITableViewController
 
-@property (nonatomic, strong) CCMenuItem *menuItem;
+@property (nonatomic, weak) CCMenuItem *menuItem;
 
 // Delegate
 @property (weak, nonatomic) NSObject <EditSummaryDelegate> *delegate;

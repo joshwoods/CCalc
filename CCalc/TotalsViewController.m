@@ -13,20 +13,10 @@
 
 @interface TotalsViewController ()
 
-@property (nonatomic, weak) IBOutlet UILabel *caloriesLabel;
-@property (nonatomic, weak) IBOutlet UILabel *totalFatLabel;
-@property (nonatomic, weak) IBOutlet UILabel *saturatedFatLabel;
-@property (nonatomic, weak) IBOutlet UILabel *transFatLabel;
-@property (nonatomic, weak) IBOutlet UILabel *cholesterolLabel;
-@property (nonatomic, weak) IBOutlet UILabel *sodiumLabel;
-@property (nonatomic, weak) IBOutlet UILabel *totalCarbsLabel;
-@property (nonatomic, weak) IBOutlet UILabel *dietaryFiberLabel;
-@property (nonatomic, weak) IBOutlet UILabel *sugarLabel;
-@property (nonatomic, weak) IBOutlet UILabel *proteinLabel;
-
 @property (nonatomic, strong) UIBarButtonItem *infoButton;
 
 @property (nonatomic, assign) BOOL firstLoad;
+@property (nonatomic, assign) BOOL shouldUpdate;
 
 @end
 
@@ -55,7 +45,7 @@
 
 - (void)presentInfoAlert
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"Nutritional content may vary because of variations in portion size or recipes or differences in the sources of the ingredients used.\n\nThe average person needs about 2000 calories (and less than 2300 mg sodium) per day.\n\nThe exact number of calories you need depends on your age, gender, body size and activity level."] message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Nutritional content may vary"  message:[NSString stringWithFormat:@"Because of variations in portion size or recipes or differences in the sources of the ingredients used, the information provided here may be different.\n\nThe average person needs about 2000 calories (and less than 2300 mg sodium) per day.\n\nThe exact number of calories you need depends on your age, gender, body size and activity level."] preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:okay];
     [self presentViewController:alert animated:YES completion:nil];
@@ -69,11 +59,15 @@
     if (self.firstLoad) {
         self.firstLoad = NO;
     } else {
-        NSLog(@"Update");
-        if ([self.delegate respondsToSelector:@selector(menuItemUpdated:)]) {
-            [self.delegate menuItemUpdated:self.menuItem];
+        NSLog(@"Check for Update");
+        if (self.shouldUpdate) {
+            if ([self.delegate respondsToSelector:@selector(menuItemUpdated:)]) {
+                [self.delegate menuItemUpdated:self.menuItem];
+                self.shouldUpdate = NO;
+            }
+        } else {
+            NSLog(@"Don't update");
         }
-
     }
 }
 
@@ -85,6 +79,34 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"Nutritional Information";
+    } else {
+        return @"Options";
+    }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    // Background color
+    view.tintColor = [UIColor clearColor];
+    
+    // Text Color
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    [header.textLabel setTextColor:[self colorWithHex:0xD35400 alpha:1.0]];
+}
+
+- (UIColor *)colorWithHex:(unsigned int)hex alpha:(CGFloat)alpha
+{
+    
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0
+                           green:((float)((hex & 0xFF00) >> 8)) / 255.0
+                            blue:((float)(hex & 0xFF)) / 255.0
+                           alpha:alpha];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -195,15 +217,6 @@
         
         return cell;
     }
-}
-
-- (UIColor *)colorWithHex:(unsigned int)hex alpha:(CGFloat)alpha
-{
-    
-    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0
-                           green:((float)((hex & 0xFF00) >> 8)) / 255.0
-                            blue:((float)(hex & 0xFF)) / 255.0
-                           alpha:alpha];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -326,6 +339,7 @@
 
 - (void)updateMenuItemWithMenuItem:(CCMenuItem *)menuItem
 {
+    self.shouldUpdate = YES;
     self.menuItem = menuItem;
     [self updateNutritionLabelText];
 }

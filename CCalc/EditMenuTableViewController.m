@@ -12,7 +12,9 @@
 
 @interface EditMenuTableViewController ()
 
-@property (nonatomic, strong) UIBarButtonItem *saveButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
+
+@property (nonatomic, strong) CCMenuItem *editedMenuItem;
 
 @end
 
@@ -21,9 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"%lu", (unsigned long)[_menuItem.items count]);
+    self.editedMenuItem = [[CCMenuItem alloc] init];
+    for (CCIngredientItem *ingredient in self.menuItem.items) {
+        [self.editedMenuItem addIngredientItem:ingredient];
+    }
     
-    self.saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveAction)];
+    NSLog(@"%lu", (unsigned long)[self.editedMenuItem.items count]);
     
     self.navigationItem.rightBarButtonItems = @[self.saveButton, self.editButtonItem];
     
@@ -31,14 +36,16 @@
 
 - (IBAction)cancelAction:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"%lu", (unsigned long)[self.editedMenuItem.items count]);
+    }];
 }
 
-- (void)saveAction
+- (IBAction)saveAction:(id)sender
 {
     if ([self.delegate respondsToSelector:@selector(updateMenuItemWithMenuItem:)])
     {
-        [self.delegate updateMenuItemWithMenuItem:self.menuItem];
+        [self.delegate updateMenuItemWithMenuItem:self.editedMenuItem];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -50,8 +57,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.menuItem.items.count > 0) {
-        return [self.menuItem.items count];
+    if (self.editedMenuItem.items.count > 0) {
+        return [self.editedMenuItem.items count];
     } else {
         return 1;
     }
@@ -60,9 +67,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    if (self.menuItem.items.count > 0) {
-        CCIngredientItem *item = _menuItem.items[indexPath.row];
-        cell.textLabel.text = item.nutrition.name;
+    if (self.editedMenuItem.items.count > 0) {
+        CCIngredientItem *item = self.editedMenuItem.items[indexPath.row];
+        cell.textLabel.text = item.ingredientName;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     } else{
@@ -74,16 +81,16 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return self.menuItem.items.count == 0 ? NO : YES;
+    return self.editedMenuItem.items.count == 0 ? NO : YES;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [tableView beginUpdates];
-        [self.menuItem.items removeObjectAtIndex:indexPath.row];
-        NSLog(@"count %lu", (unsigned long)self.menuItem.items.count);
-        if (self.menuItem.items.count == 0) {
+        [self.editedMenuItem.items removeObjectAtIndex:indexPath.row];
+        NSLog(@"count %lu", (unsigned long)self.editedMenuItem.items.count);
+        if (self.editedMenuItem.items.count == 0) {
             [self.navigationItem setRightBarButtonItems:@[self.saveButton] animated:YES];
             [tableView reloadData];
         } else {
@@ -92,7 +99,7 @@
         
         [tableView endUpdates];
         
-        NSLog(@"There are %lu items in this menu", (unsigned long)[_menuItem.items count]);
+        NSLog(@"There are %lu items in this menu", (unsigned long)[self.editedMenuItem.items count]);
     }
 }
 

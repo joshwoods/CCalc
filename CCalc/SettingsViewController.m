@@ -121,6 +121,26 @@ static NSString *kBOOLKey = @"noBannersTesting1";
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    // Background color
+    view.tintColor = [UIColor clearColor];
+    
+    // Text Color
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    [header.textLabel setTextColor:[self colorWithHex:0xD35400 alpha:1.0]];
+}
+
+- (UIColor *)colorWithHex:(unsigned int)hex alpha:(CGFloat)alpha
+{
+    
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0
+                           green:((float)((hex & 0xFF00) >> 8)) / 255.0
+                            blue:((float)(hex & 0xFF)) / 255.0
+                           alpha:alpha];
+}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
