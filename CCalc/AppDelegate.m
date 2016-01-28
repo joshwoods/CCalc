@@ -24,8 +24,12 @@
     
     [[UITableViewCell appearance] setTintColor:[UIColor blackColor]];
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setBarTintColor:[self colorWithHex:0xcc3800 alpha:1.0]];
     [[UITabBar appearance] setTintColor:[self colorWithHex:0xd35400 alpha:1.0]];
-
+    NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
+    [titleBarAttributes setValue:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
+    
     [Fabric with:@[[Crashlytics class]]];
     
     [Appirater setAppId:@"848737175"];
