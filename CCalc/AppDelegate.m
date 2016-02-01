@@ -14,6 +14,7 @@
 #import "DataMigrationManager.h"
 #import "Appirater.h"
 #import "NewMealViewController.h"
+#import "CJPAdController.h"
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
@@ -29,7 +30,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[UITableViewCell appearance] setTintColor:[UIColor blackColor]];
+    // Setup Ads
+    if (![CJPAdController sharedInstance].adsRemoved) {
+        [CJPAdController sharedInstance].adNetworks = @[@(CJPAdNetworkiAd), @(CJPAdNetworkAdMob)];
+        [CJPAdController sharedInstance].adPosition = CJPAdPositionBottom;
+        [CJPAdController sharedInstance].initialDelay = 2.0;
+        [CJPAdController sharedInstance].testDeviceIDs = @[ @"e43f6c1fa56ac8fab97f316e3ed771a5" ];
+        // AdMob specific
+        [CJPAdController sharedInstance].adMobUnitID = @"ca-app-pub-3577357291971415/7028430681";
+        
+        [[CJPAdController sharedInstance] startWithViewController:self.window.rootViewController];
+        self.window.rootViewController = [CJPAdController sharedInstance];
+    }
+    
+    [[UITableViewCell appearance] setTintColor:[self colorWithHex:0xcc3800 alpha:1.0]];
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setBarTintColor:[self colorWithHex:0xcc3800 alpha:1.0]];
     [[UITabBar appearance] setTintColor:[self colorWithHex:0xd35400 alpha:1.0]];

@@ -56,6 +56,15 @@
 		F7351F981C58288A00DE1098 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7351F6F1C58288A00DE1098 /* AppiraterLocalizable.strings */; };
 		F7351F991C58288A00DE1098 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7351F721C58288A00DE1098 /* AppiraterLocalizable.strings */; };
 		F7351F9A1C58288A00DE1098 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7351F751C58288A00DE1098 /* AppiraterLocalizable.strings */; };
+		F73F49161C60126F00A98C5D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73F49151C60126F00A98C5D /* Launch Screen.storyboard */; };
+		F73F49181C60154700A98C5D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73F49171C60154700A98C5D /* AdSupport.framework */; };
+		F73F491A1C60155100A98C5D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73F49191C60155100A98C5D /* AudioToolbox.framework */; };
+		F73F491C1C60155800A98C5D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73F491B1C60155800A98C5D /* AVFoundation.framework */; };
+		F73F491E1C60156000A98C5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73F491D1C60156000A98C5D /* CoreGraphics.framework */; };
+		F73F49201C60156500A98C5D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73F491F1C60156500A98C5D /* CoreTelephony.framework */; };
+		F73F49221C60156D00A98C5D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73F49211C60156D00A98C5D /* MessageUI.framework */; };
+		F73F49251C60157D00A98C5D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73F49231C60157D00A98C5D /* EventKit.framework */; };
+		F73F49261C60157D00A98C5D /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73F49241C60157D00A98C5D /* EventKitUI.framework */; };
 		F742A2D91AF4A42E00CB1988 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F742A2D81AF4A42E00CB1988 /* iAd.framework */; };
 		F77899591C4EAB95001841D4 /* NSString+RRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F77899581C4EAB95001841D4 /* NSString+RRAdditions.m */; };
 		F778995E1C4EB47C001841D4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F778995D1C4EB47C001841D4 /* MainStoryboard.storyboard */; };
@@ -142,6 +151,15 @@
 		F7351F701C58288A00DE1098 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		F7351F731C58288A00DE1098 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		F7351F761C58288A00DE1098 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		F73F49151C60126F00A98C5D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F73F49171C60154700A98C5D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		F73F49191C60155100A98C5D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F73F491B1C60155800A98C5D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F73F491D1C60156000A98C5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F73F491F1C60156500A98C5D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F73F49211C60156D00A98C5D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		F73F49231C60157D00A98C5D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		F73F49241C60157D00A98C5D /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		F742A2D81AF4A42E00CB1988 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		F77899571C4EAB95001841D4 /* NSString+RRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RRAdditions.h"; sourceTree = "<group>"; };
 		F77899581C4EAB95001841D4 /* NSString+RRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RRAdditions.m"; sourceTree = "<group>"; };
@@ -169,10 +187,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F73F49251C60157D00A98C5D /* EventKit.framework in Frameworks */,
+				F73F49261C60157D00A98C5D /* EventKitUI.framework in Frameworks */,
 				F7351F0F1C5827BA00DE1098 /* StoreKit.framework in Frameworks */,
+				F73F49221C60156D00A98C5D /* MessageUI.framework in Frameworks */,
+				F73F49201C60156500A98C5D /* CoreTelephony.framework in Frameworks */,
+				F73F491E1C60156000A98C5D /* CoreGraphics.framework in Frameworks */,
+				F73F491C1C60155800A98C5D /* AVFoundation.framework in Frameworks */,
+				F73F491A1C60155100A98C5D /* AudioToolbox.framework in Frameworks */,
+				F73F49181C60154700A98C5D /* AdSupport.framework in Frameworks */,
+				F742A2D91AF4A42E00CB1988 /* iAd.framework in Frameworks */,
 				F7351F0D1C5827B300DE1098 /* SystemConfiguration.framework in Frameworks */,
 				F7351F0B1C5827AC00DE1098 /* CFNetwork.framework in Frameworks */,
-				F742A2D91AF4A42E00CB1988 /* iAd.framework in Frameworks */,
 				4CC22D5E5A6A02B461502E51 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +216,14 @@
 		7C0217EED0C2A5AE5946BAD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F73F49231C60157D00A98C5D /* EventKit.framework */,
+				F73F49241C60157D00A98C5D /* EventKitUI.framework */,
+				F73F49211C60156D00A98C5D /* MessageUI.framework */,
+				F73F491F1C60156500A98C5D /* CoreTelephony.framework */,
+				F73F491D1C60156000A98C5D /* CoreGraphics.framework */,
+				F73F491B1C60155800A98C5D /* AVFoundation.framework */,
+				F73F49191C60155100A98C5D /* AudioToolbox.framework */,
+				F73F49171C60154700A98C5D /* AdSupport.framework */,
 				F7351F0E1C5827BA00DE1098 /* StoreKit.framework */,
 				F7351F0C1C5827B300DE1098 /* SystemConfiguration.framework */,
 				F7351F0A1C5827AC00DE1098 /* CFNetwork.framework */,
@@ -229,6 +263,7 @@
 				F728F57A19FF4CA500BB7AC1 /* AppDelegate.h */,
 				F728F57B19FF4CA500BB7AC1 /* AppDelegate.m */,
 				F778995D1C4EB47C001841D4 /* MainStoryboard.storyboard */,
+				F73F49151C60126F00A98C5D /* Launch Screen.storyboard */,
 				F728F5A819FF4D2000BB7AC1 /* Data Model */,
 				F728F58619FF4CA500BB7AC1 /* Images.xcassets */,
 				F728F57D19FF4CA500BB7AC1 /* CCalc.xcdatamodeld */,
@@ -788,6 +823,7 @@
 				F7351F811C58288A00DE1098 /* AppiraterLocalizable.strings in Resources */,
 				F7351F9A1C58288A00DE1098 /* AppiraterLocalizable.strings in Resources */,
 				F7351F861C58288A00DE1098 /* AppiraterLocalizable.strings in Resources */,
+				F73F49161C60126F00A98C5D /* Launch Screen.storyboard in Resources */,
 				F7351F8A1C58288A00DE1098 /* AppiraterLocalizable.strings in Resources */,
 				F7351F8C1C58288A00DE1098 /* AppiraterLocalizable.strings in Resources */,
 				F728F58719FF4CA500BB7AC1 /* Images.xcassets in Resources */,

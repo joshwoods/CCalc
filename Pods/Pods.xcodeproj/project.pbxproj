@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16759ABD1387512737F6858EEF6FAA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6235EA22E2DF7C9D9AD6579E467F02F /* Foundation.framework */; };
-		35628D55CA723F4A1C44EB651B1E024E /* CJPAdController.h in Headers */ = {isa = PBXBuildFile; fileRef = DFD529871BE8CA1AC41B654D176B2772 /* CJPAdController.h */; };
-		4F2A66A9AA8EC5917D9E11B4C264748A /* CJPAdController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A208080CFA8D4BF2D9BBFF1093042263 /* CJPAdController-dummy.m */; };
-		5918C3D9564447DE42EA08F1399915EC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9C3BC9515DF5FAC9034A633D0B5A14 /* AdSupport.framework */; };
-		7979C4501817D9A79309D5C49303689C /* CJPAdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95498AAA044115927BC9D42D511CBC0A /* CJPAdController.m */; };
+		16759ABD1387512737F6858EEF6FAA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704557A7FB125C47F51BEFDFE9211165 /* Foundation.framework */; };
+		18CC180374222BCCF7E42BA7C78BC007 /* CJPAdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711F469082E2E745A78C442FD8C7F94 /* CJPAdController.m */; };
+		532200E4D1C89DDA17C54761FB8EFD00 /* CJPAdController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE62F1B137316395A3B65A8648A06D /* CJPAdController-dummy.m */; };
+		75F5FB738CFDDED030D3F9E938891A56 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3AFD098F2444D3690BC497D885ED7B /* AdSupport.framework */; };
 		905D35B6620ADD35EBB23FD2E982EE71 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F97EC83C7A7DB1BD72F15BB3A7766654 /* Pods-dummy.m */; };
-		B012DE519ADA3F9A66D48D8EA660A681 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6235EA22E2DF7C9D9AD6579E467F02F /* Foundation.framework */; };
-		CDDDB944B3FF883EA9D6296EB7D55399 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C121BF099215234D38B3AAE478552A7C /* iAd.framework */; };
+		9AAA76CA30BB665C8846719B09F78A79 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5414A2912B921E03A13159D7C0575DA7 /* iAd.framework */; };
+		AA38F951849240CB5489AEC3476456E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704557A7FB125C47F51BEFDFE9211165 /* Foundation.framework */; };
+		E5E49FD337CADDF689F968FBC4F3A4A8 /* CJPAdController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF41AB4BEC6A75BB4B3E4A433513A747 /* CJPAdController.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		48EAB60EF4F96AE02BEB91867780C880 /* PBXContainerItemProxy */ = {
+		6F3ABF9673DB9A1292D6E12B6D15D9E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 57896CC02DD682C1E99C3B1A80E403FA;
+			remoteGlobalIDString = 55DD301F73987DE0D13E4DAAC81A29C7;
 			remoteInfo = CJPAdController;
 		};
 /* End PBXContainerItemProxy section */
@@ -31,23 +31,23 @@
 		07F3142C2AD130E0F541B110875B8428 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F931736BA06BA211DF1291EB19AEE8D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
 		15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3F36DA717A6962A8DBB43FC455D16490 /* libCJPAdController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJPAdController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5414A2912B921E03A13159D7C0575DA7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/iAd.framework; sourceTree = DEVELOPER_DIR; };
 		641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		704557A7FB125C47F51BEFDFE9211165 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		72AF3F7FEE303B957CA70B7B3F0F0FD7 /* CJPAdController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CJPAdController-Private.xcconfig"; sourceTree = "<group>"; };
 		7DDB59C2E5D72F2EA50109F1D16BF203 /* CJPAdController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CJPAdController.xcconfig; sourceTree = "<group>"; };
 		8E673628D19765028F45742188D2BE92 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
-		95498AAA044115927BC9D42D511CBC0A /* CJPAdController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJPAdController.m; path = CJPAdController/CJPAdController.m; sourceTree = "<group>"; };
-		A208080CFA8D4BF2D9BBFF1093042263 /* CJPAdController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJPAdController-dummy.m"; sourceTree = "<group>"; };
-		AC9C3BC9515DF5FAC9034A633D0B5A14 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		9711F469082E2E745A78C442FD8C7F94 /* CJPAdController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJPAdController.m; path = CJPAdController/CJPAdController.m; sourceTree = "<group>"; };
+		AB3AFD098F2444D3690BC497D885ED7B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BF41AB4BEC6A75BB4B3E4A433513A747 /* CJPAdController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPAdController.h; path = CJPAdController/CJPAdController.h; sourceTree = "<group>"; };
 		BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		C000ADDDD6C4842BFFE57DDD1B72874A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.6.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
-		C121BF099215234D38B3AAE478552A7C /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/iAd.framework; sourceTree = DEVELOPER_DIR; };
 		C2337634B22E10A0D21B04EE74D3F2B6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		C6235EA22E2DF7C9D9AD6579E467F02F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D5EF4873AC50FD8ACA4F84E7E3A86C3E /* CJPAdController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJPAdController-prefix.pch"; sourceTree = "<group>"; };
-		DFD529871BE8CA1AC41B654D176B2772 /* CJPAdController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPAdController.h; path = CJPAdController/CJPAdController.h; sourceTree = "<group>"; };
+		E4DE62F1B137316395A3B65A8648A06D /* CJPAdController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJPAdController-dummy.m"; sourceTree = "<group>"; };
 		E8110928D7CD4E49ECAD212117666D40 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		F2111BE51715E24D27E32235A9D4A477 /* libCJPAdController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJPAdController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8BCD474D65F3329968709D4BFF437B1 /* CJPAdController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CJPAdController-Private.xcconfig"; sourceTree = "<group>"; };
 		F97EC83C7A7DB1BD72F15BB3A7766654 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,13 +60,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4F0129CA29BC845734958C6339325534 /* Frameworks */ = {
+		C71BC56D5DB8A276FC15EEE97FC2E928 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5918C3D9564447DE42EA08F1399915EC /* AdSupport.framework in Frameworks */,
-				B012DE519ADA3F9A66D48D8EA660A681 /* Foundation.framework in Frameworks */,
-				CDDDB944B3FF883EA9D6296EB7D55399 /* iAd.framework in Frameworks */,
+				75F5FB738CFDDED030D3F9E938891A56 /* AdSupport.framework in Frameworks */,
+				AA38F951849240CB5489AEC3476456E7 /* Foundation.framework in Frameworks */,
+				9AAA76CA30BB665C8846719B09F78A79 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +116,8 @@
 		3171698773D2353604F92503BD0BF8C4 /* CJPAdController */ = {
 			isa = PBXGroup;
 			children = (
-				DFD529871BE8CA1AC41B654D176B2772 /* CJPAdController.h */,
-				95498AAA044115927BC9D42D511CBC0A /* CJPAdController.m */,
+				BF41AB4BEC6A75BB4B3E4A433513A747 /* CJPAdController.h */,
+				9711F469082E2E745A78C442FD8C7F94 /* CJPAdController.m */,
 				A34C8B0A092C0CCB69E15A639A6FB486 /* Support Files */,
 			);
 			path = CJPAdController;
@@ -137,9 +137,9 @@
 		87D8CDDEE3AB7E63974C178F5A5E517E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				AC9C3BC9515DF5FAC9034A633D0B5A14 /* AdSupport.framework */,
-				C6235EA22E2DF7C9D9AD6579E467F02F /* Foundation.framework */,
-				C121BF099215234D38B3AAE478552A7C /* iAd.framework */,
+				AB3AFD098F2444D3690BC497D885ED7B /* AdSupport.framework */,
+				704557A7FB125C47F51BEFDFE9211165 /* Foundation.framework */,
+				5414A2912B921E03A13159D7C0575DA7 /* iAd.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -170,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				7DDB59C2E5D72F2EA50109F1D16BF203 /* CJPAdController.xcconfig */,
-				F8BCD474D65F3329968709D4BFF437B1 /* CJPAdController-Private.xcconfig */,
-				A208080CFA8D4BF2D9BBFF1093042263 /* CJPAdController-dummy.m */,
+				72AF3F7FEE303B957CA70B7B3F0F0FD7 /* CJPAdController-Private.xcconfig */,
+				E4DE62F1B137316395A3B65A8648A06D /* CJPAdController-dummy.m */,
 				D5EF4873AC50FD8ACA4F84E7E3A86C3E /* CJPAdController-prefix.pch */,
 			);
 			name = "Support Files";
@@ -181,7 +181,7 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F2111BE51715E24D27E32235A9D4A477 /* libCJPAdController.a */,
+				3F36DA717A6962A8DBB43FC455D16490 /* libCJPAdController.a */,
 				07F3142C2AD130E0F541B110875B8428 /* libPods.a */,
 			);
 			name = Products;
@@ -217,24 +217,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7A0B90523FBFB99D9CB3F67B8908AF7B /* Headers */ = {
+		FD52ACBD99355651388781BCED1E817E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35628D55CA723F4A1C44EB651B1E024E /* CJPAdController.h in Headers */,
+				E5E49FD337CADDF689F968FBC4F3A4A8 /* CJPAdController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		57896CC02DD682C1E99C3B1A80E403FA /* CJPAdController */ = {
+		55DD301F73987DE0D13E4DAAC81A29C7 /* CJPAdController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 426FC76CBA2B50A0FC0F00D39C7BFBBF /* Build configuration list for PBXNativeTarget "CJPAdController" */;
+			buildConfigurationList = CD6EF39E52D0128CCE616E8E32685477 /* Build configuration list for PBXNativeTarget "CJPAdController" */;
 			buildPhases = (
-				C65AA86199965F5AB823E16D2E43726A /* Sources */,
-				4F0129CA29BC845734958C6339325534 /* Frameworks */,
-				7A0B90523FBFB99D9CB3F67B8908AF7B /* Headers */,
+				E992A8A642FC8F3D23A634B1944E63B9 /* Sources */,
+				C71BC56D5DB8A276FC15EEE97FC2E928 /* Frameworks */,
+				FD52ACBD99355651388781BCED1E817E /* Headers */,
 			);
 			buildRules = (
 			);
@@ -242,7 +242,7 @@
 			);
 			name = CJPAdController;
 			productName = CJPAdController;
-			productReference = F2111BE51715E24D27E32235A9D4A477 /* libCJPAdController.a */;
+			productReference = 3F36DA717A6962A8DBB43FC455D16490 /* libCJPAdController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		EAA85639C7B64D5039F9E6FEC8D6C356 /* Pods */ = {
@@ -255,7 +255,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CE36B3322D7F66C168122A42FF99E8E8 /* PBXTargetDependency */,
+				F10C7FE6B8551F140348915003BFC722 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
@@ -283,7 +283,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				57896CC02DD682C1E99C3B1A80E403FA /* CJPAdController */,
+				55DD301F73987DE0D13E4DAAC81A29C7 /* CJPAdController */,
 				EAA85639C7B64D5039F9E6FEC8D6C356 /* Pods */,
 			);
 		};
@@ -298,23 +298,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C65AA86199965F5AB823E16D2E43726A /* Sources */ = {
+		E992A8A642FC8F3D23A634B1944E63B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F2A66A9AA8EC5917D9E11B4C264748A /* CJPAdController-dummy.m in Sources */,
-				7979C4501817D9A79309D5C49303689C /* CJPAdController.m in Sources */,
+				532200E4D1C89DDA17C54761FB8EFD00 /* CJPAdController-dummy.m in Sources */,
+				18CC180374222BCCF7E42BA7C78BC007 /* CJPAdController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CE36B3322D7F66C168122A42FF99E8E8 /* PBXTargetDependency */ = {
+		F10C7FE6B8551F140348915003BFC722 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CJPAdController;
-			target = 57896CC02DD682C1E99C3B1A80E403FA /* CJPAdController */;
-			targetProxy = 48EAB60EF4F96AE02BEB91867780C880 /* PBXContainerItemProxy */;
+			target = 55DD301F73987DE0D13E4DAAC81A29C7 /* CJPAdController */;
+			targetProxy = 6F3ABF9673DB9A1292D6E12B6D15D9E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -353,21 +353,21 @@
 			};
 			name = Release;
 		};
-		4291A9D63B7CFD4245453F715985B44D /* Release */ = {
+		12F0E24B3621B78C255154A592B2835B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8BCD474D65F3329968709D4BFF437B1 /* CJPAdController-Private.xcconfig */;
+			baseConfigurationReference = 72AF3F7FEE303B957CA70B7B3F0F0FD7 /* CJPAdController-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/CJPAdController/CJPAdController-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		7FAC9C878339A0E2721B99EE3A628737 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -440,21 +440,21 @@
 			};
 			name = Debug;
 		};
-		DED298D9C351DD87AA5F616C2FDBACAF /* Debug */ = {
+		F42F7899CEC3E994DC026A047E595BEE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8BCD474D65F3329968709D4BFF437B1 /* CJPAdController-Private.xcconfig */;
+			baseConfigurationReference = 72AF3F7FEE303B957CA70B7B3F0F0FD7 /* CJPAdController-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/CJPAdController/CJPAdController-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -468,20 +468,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		426FC76CBA2B50A0FC0F00D39C7BFBBF /* Build configuration list for PBXNativeTarget "CJPAdController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DED298D9C351DD87AA5F616C2FDBACAF /* Debug */,
-				4291A9D63B7CFD4245453F715985B44D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C28FE5D3EAC28BF3DD2CDF08641F8023 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FAC9C878339A0E2721B99EE3A628737 /* Debug */,
 				AC2C62D260EC12D17466E1CC46B1B81D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD6EF39E52D0128CCE616E8E32685477 /* Build configuration list for PBXNativeTarget "CJPAdController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12F0E24B3621B78C255154A592B2835B /* Debug */,
+				F42F7899CEC3E994DC026A047E595BEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

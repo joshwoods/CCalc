@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "CJPAdController.h"
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
@@ -22,7 +23,6 @@
 @end
 
 static NSString *kRemoveAds = @"com.joshwoods.ccalc.remove_ads";
-static NSString *kBOOLKey = @"noBannersTesting1";
 
 @implementation SettingsViewController
 
@@ -66,14 +66,14 @@ static NSString *kBOOLKey = @"noBannersTesting1";
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 self.transactionInProgress = NO;
-                [self setNoBannerDefault];
+                [[CJPAdController sharedInstance] removeAdsAndMakePermanent:YES andRemember:YES];
                 break;
             case SKPaymentTransactionStateRestored:
                 NSLog(@"Restored!");
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 self.transactionInProgress = NO;
-                [self setNoBannerDefault];
+                [[CJPAdController sharedInstance] removeAdsAndMakePermanent:YES andRemember:YES];
                 break;
             case SKPaymentTransactionStateFailed:
                 NSLog(@"Failed!");
@@ -87,13 +87,6 @@ static NSString *kBOOLKey = @"noBannersTesting1";
                 break;
         }
     }
-}
-
-- (void)setNoBannerDefault
-{
-    NSUserDefaults *noBannerDefault = [NSUserDefaults standardUserDefaults];
-    [noBannerDefault setBool:YES forKey:kBOOLKey];
-    [noBannerDefault synchronize];
 }
 
 - (void)presentErrorAlert
