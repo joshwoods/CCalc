@@ -13,9 +13,16 @@
 #import <Crashlytics/Crashlytics.h>
 #import "DataMigrationManager.h"
 #import "Appirater.h"
+#import "NewMealViewController.h"
+
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
 @interface AppDelegate ()
 
 @end
+
+#define kNewAction @"com.sdoowhsoj.ccalc.newmeal"
+#define kSavedAction @"com.sdoowhsoj.ccalc.savedmeals"
 
 @implementation AppDelegate
 
@@ -48,7 +55,22 @@
     }
     [defaults synchronize];
     
-    return YES;
+    // Override point for customization after application launch.
+    BOOL shouldPerformAdditionalDelegateHandling = YES;
+    
+    if ([application respondsToSelector:@selector(setShortcutItems:)])
+    {
+        if ([launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey])
+        {
+            _launchedShortcutItem = [launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey];
+            
+            // This will block "performActionForShortcutItem:completionHandler" from being called.
+            shouldPerformAdditionalDelegateHandling = NO;
+        }
+    }
+
+    
+    return shouldPerformAdditionalDelegateHandling;
 }
 
 - (UIColor *)colorWithHex:(unsigned int)hex alpha:(CGFloat)alpha
@@ -165,6 +187,60 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         }
     }
+}
+
+#pragma mark - Shortcuts
+
+/*
+ Called when the user activates your application by selecting a shortcut on the home screen, except when
+ application(_:,willFinishLaunchingWithOptions:) or application(_:didFinishLaunchingWithOptions) returns `false`.
+ You should handle the shortcut in those callbacks and return `false` if possible. In that case, this
+ callback is used if your application is already launched in the background.
+ */
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler
+{
+    BOOL handledShortcutItem = [self handleShortCutItem:shortcutItem];
+    
+    completionHandler(handledShortcutItem);
+}
+
+- (BOOL)handleShortCutItem:(UIApplicationShortcutItem *)shortcutItem
+{
+    BOOL handled = NO;
+    
+    if (shortcutItem == nil) {
+        return handled;
+    }
+    
+    NSInteger selectedIndex = 0;
+    
+    if ([shortcutItem.type isEqualToString:kNewAction]) {
+        handled = YES;
+        selectedIndex = 0;
+    } else if ([shortcutItem.type isEqualToString:kSavedAction]) {
+        handled = YES;
+        selectedIndex = 1;
+    }
+    
+    if (!IS_IPAD)
+    {
+        UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+        
+        if (selectedIndex == 0) {
+            UINavigationController *nav = [tabController.viewControllers objectAtIndex:0];
+            NewMealViewController *vc = [nav.viewControllers objectAtIndex:0];
+            [vc startOver];
+        }
+        
+        [tabController setSelectedIndex:selectedIndex];
+    }
+    else
+    {
+        NSLog(@"Shortcuts not supported for iPad.....YET.");
+    }
+    
+    return handled;
 }
 
 @end

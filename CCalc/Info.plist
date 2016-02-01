@@ -57,5 +57,24 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>new-meal-quick-action</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>New Meal</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.sdoowhsoj.ccalc.newmeal</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>saved-meal-quick-action</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Saved Meals</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.sdoowhsoj.ccalc.savedmeals</string>
+		</dict>
+	</array>
 </dict>
 </plist>
