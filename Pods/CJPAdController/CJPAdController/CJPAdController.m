@@ -21,7 +21,6 @@ static NSString * const CJPAdsPurchasedKey = @"adRemovalPurchased";
 
 @property (nonatomic, strong) ADBannerView *iAdView;
 @property (nonatomic, strong) GADBannerView *adMobView;
-@property (nonatomic, strong) UIViewController *contentController;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, assign) CJPAdNetwork preferredAds;
 @property (nonatomic, assign) BOOL showingiAd;

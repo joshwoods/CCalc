@@ -442,8 +442,6 @@
             
             if ([self.menuItem isIngredientInMenu:ingredient]) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
-                
-                NSLog(@"MEEP");
             } else {
                 cell.accessoryType = UITableViewCellAccessoryNone;
                 
@@ -466,8 +464,6 @@
             
             if ([self.menuItem isIngredientInMenu:ingredient]) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
-                
-                NSLog(@"MEEP");
             } else {
                 cell.accessoryType = UITableViewCellAccessoryNone;
                 

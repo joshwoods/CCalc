@@ -117,6 +117,11 @@ typedef NS_ENUM(NSInteger, CJPAdPosition) {
 /// COPPA Compliance - You must read the guidelines above before using this. By default it is left unset, but can be set to "0" or "1".
 @property (nonatomic, copy) NSString *tagForChildDirectedTreatment;
 
+/**
+ *  This is either a UINavigationController or UITabBarController, in this app's case, it is UITabBar, it has been added here so that we can access this and manually set the UITabBarController programatically 
+ */
+@property (nonatomic, strong) UIViewController *contentController;
+
 // Targeting
 /*
  Before using any of the following properties or methods, please read this page: https://developers.google.com/mobile-ads-sdk/docs/admob/ios/banner#targeting

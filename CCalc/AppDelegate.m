@@ -30,17 +30,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // Setup Ads
-    if (![CJPAdController sharedInstance].adsRemoved) {
-        [CJPAdController sharedInstance].adNetworks = @[@(CJPAdNetworkiAd), @(CJPAdNetworkAdMob)];
-        [CJPAdController sharedInstance].adPosition = CJPAdPositionBottom;
-        [CJPAdController sharedInstance].initialDelay = 2.0;
-        [CJPAdController sharedInstance].testDeviceIDs = @[ @"e43f6c1fa56ac8fab97f316e3ed771a5" ];
-        // AdMob specific
-        [CJPAdController sharedInstance].adMobUnitID = @"ca-app-pub-3577357291971415/7028430681";
-        
-        [[CJPAdController sharedInstance] startWithViewController:self.window.rootViewController];
-        self.window.rootViewController = [CJPAdController sharedInstance];
+    // Override point for customization after application launch.
+    BOOL shouldPerformAdditionalDelegateHandling = YES;
+    
+    if ([application respondsToSelector:@selector(setShortcutItems:)])
+    {
+        if ([launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey])
+        {
+            _launchedShortcutItem = [launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey];
+            
+            // This will block "performActionForShortcutItem:completionHandler" from being called.
+            shouldPerformAdditionalDelegateHandling = NO;
+        }
     }
     
     [[UITableViewCell appearance] setTintColor:[self colorWithHex:0xcc3800 alpha:1.0]];
@@ -69,20 +70,19 @@
     }
     [defaults synchronize];
     
-    // Override point for customization after application launch.
-    BOOL shouldPerformAdditionalDelegateHandling = YES;
     
-    if ([application respondsToSelector:@selector(setShortcutItems:)])
-    {
-        if ([launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey])
-        {
-            _launchedShortcutItem = [launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey];
-            
-            // This will block "performActionForShortcutItem:completionHandler" from being called.
-            shouldPerformAdditionalDelegateHandling = NO;
-        }
+    // Setup Ads
+    if (![CJPAdController sharedInstance].adsRemoved) {
+        [CJPAdController sharedInstance].adNetworks = @[@(CJPAdNetworkAdMob)];
+        [CJPAdController sharedInstance].adPosition = CJPAdPositionBottom;
+        [CJPAdController sharedInstance].initialDelay = 2.0;
+        [CJPAdController sharedInstance].testDeviceIDs = @[@"e43f6c1fa56ac8fab97f316e3ed771a5", @"68f59177685ac796191bb7751bb58e00"];
+        // AdMob specific
+        [CJPAdController sharedInstance].adMobUnitID = @"ca-app-pub-3577357291971415/7028430681";
+        
+        [[CJPAdController sharedInstance] startWithViewController:self.window.rootViewController];
+        self.window.rootViewController = [CJPAdController sharedInstance];
     }
-
     
     return shouldPerformAdditionalDelegateHandling;
 }
@@ -239,15 +239,15 @@
     
     if (!IS_IPAD)
     {
-        UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+        UITabBarController *controller = (UITabBarController *)[CJPAdController sharedInstance].contentController;
         
         if (selectedIndex == 0) {
-            UINavigationController *nav = [tabController.viewControllers objectAtIndex:0];
+            UINavigationController *nav = [controller.viewControllers objectAtIndex:0];
             NewMealViewController *vc = [nav.viewControllers objectAtIndex:0];
             [vc startOver];
         }
-        
-        [tabController setSelectedIndex:selectedIndex];
+
+        [controller setSelectedIndex:selectedIndex];
     }
     else
     {
