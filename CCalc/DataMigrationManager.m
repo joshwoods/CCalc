@@ -62,6 +62,73 @@
 @property (nonatomic, strong) CCIngredientItem *patronMargarita;
 @property (nonatomic, strong) CCIngredientItem *sauzaMargarita;
 
+// Kids Meals
+@property (nonatomic, strong) CCIngredientItem *kidsFlour;
+@property (nonatomic, strong) CCIngredientItem *kidsCrispy;
+@property (nonatomic, strong) CCIngredientItem *kidsSoft;
+
+// Kids Meats
+@property (nonatomic, strong) CCIngredientItem *kidsChicken;
+@property (nonatomic, strong) CCIngredientItem *kidsSteak;
+@property (nonatomic, strong) CCIngredientItem *kidsCarnitas;
+@property (nonatomic, strong) CCIngredientItem *kidsBarbacoa;
+@property (nonatomic, strong) CCIngredientItem *kidsSofritas;
+
+// Kids Ingredients
+@property (nonatomic, strong) CCIngredientItem *kidsGuac;
+@property (nonatomic, strong) CCIngredientItem *kidsWRice;
+@property (nonatomic, strong) CCIngredientItem *kidsBRice;
+@property (nonatomic, strong) CCIngredientItem *kidsBBeans;
+@property (nonatomic, strong) CCIngredientItem *kidsPBeans;
+@property (nonatomic, strong) CCIngredientItem *kidsFajitas;
+
+// Kids Salsas
+@property (nonatomic, strong) CCIngredientItem *kidsTomato;
+@property (nonatomic, strong) CCIngredientItem *kidsRoastedCorn;
+@property (nonatomic, strong) CCIngredientItem *kidsTRed;
+@property (nonatomic, strong) CCIngredientItem *kidsTGreen;
+
+// Kids Ingedients
+@property (nonatomic, strong) CCIngredientItem *kidsSourCream;
+@property (nonatomic, strong) CCIngredientItem *kidsCheese;
+@property (nonatomic, strong) CCIngredientItem *kidsLettuce;
+
+// Kids Sides
+@property (nonatomic, strong) CCIngredientItem *kidsMandarins;
+@property (nonatomic, strong) CCIngredientItem *kidsChips;
+@property (nonatomic, strong) CCIngredientItem *kidsGrapes;
+
+// Kids Drinks
+@property (nonatomic, strong) CCIngredientItem *kidsAppleJuice;
+@property (nonatomic, strong) CCIngredientItem *kidsOrgMilk;
+@property (nonatomic, strong) CCIngredientItem *kidsOrgChocMilk;
+
+// Ques Meals
+@property (nonatomic, strong) CCIngredientItem *quesFlour;
+@property (nonatomic, strong) CCIngredientItem *quesCorn;
+@property (nonatomic, strong) CCIngredientItem *quesCheese;
+
+// Ques Meats
+@property (nonatomic, strong) CCIngredientItem *quesChicken;
+@property (nonatomic, strong) CCIngredientItem *quesSteak;
+@property (nonatomic, strong) CCIngredientItem *quesBarbacoa;
+@property (nonatomic, strong) CCIngredientItem *quesCarnitas;
+@property (nonatomic, strong) CCIngredientItem *quesSofritas;
+
+@property (nonatomic, strong) CCIngredientItem *quesGuac;
+@property (nonatomic, strong) CCIngredientItem *quesWRice;
+@property (nonatomic, strong) CCIngredientItem *quesBRice;
+@property (nonatomic, strong) CCIngredientItem *quesBBeans;
+@property (nonatomic, strong) CCIngredientItem *quesPBeans;
+
+@property (nonatomic, strong) CCIngredientItem *quesMandarins;
+@property (nonatomic, strong) CCIngredientItem *quesChips;
+@property (nonatomic, strong) CCIngredientItem *quesGrapes;
+
+@property (nonatomic, strong) CCIngredientItem *quesOrgMilk;
+@property (nonatomic, strong) CCIngredientItem *quesOrgChocMilk;
+@property (nonatomic, strong) CCIngredientItem *guesAppleJuice;
+
 @end
 
 // Singleton Macro
@@ -110,6 +177,13 @@ return _sharedObject; \
 
 - (void)setupIngredients
 {
+    [self setupRegularMealIngredients];
+    [self setupRegularKidsMealIngredients];
+    [self setupQuesadillaMealIngredients];
+}
+
+- (void)setupRegularMealIngredients
+{
     // Setup Meals
     self.burrito = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBurrito];
     self.bowl = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeBowl];
@@ -157,6 +231,70 @@ return _sharedObject; \
     self.sauzaMargarita = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeSauzaMarg];
 }
 
+- (void)setupRegularKidsMealIngredients
+{
+    self.kidsFlour = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSoftFlourTort];
+    self.kidsCrispy = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeCrispyCornTort];
+    self.kidsSoft = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSoftCornTort];
+
+    self.kidsChicken = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeChicken];
+    self.kidsSteak = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSteak];
+    self.kidsCarnitas = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeCarnitas];
+    self.kidsBarbacoa = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeBarbacoa];
+    self.kidsSofritas = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSofritas];
+
+    self.kidsGuac = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeGuac];
+    self.kidsWRice = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeWhiteRice];
+    self.kidsBRice = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeBrownRice];
+    self.kidsBBeans = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeBlackBeans];
+    self.kidsPBeans = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypePintoBeans];
+    self.kidsFajitas = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeFajitas];
+
+    self.kidsTomato = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeFreshTomato];
+    self.kidsRoastedCorn = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeRoastedChili];
+    self.kidsTRed = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeTomatilloRed];
+    self.kidsTGreen = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeTomatilloGreen];
+
+    self.kidsMandarins = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeMandarins];
+    self.kidsGrapes = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeGrapes];
+    self.kidsChips = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeChips];
+
+    self.kidsSourCream = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeSourCream];
+    self.kidsCheese = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeCheese];
+    self.kidsLettuce = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeLettuce];
+
+    self.kidsAppleJuice = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeOrganicAppleJuice];
+    self.kidsOrgChocMilk = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeOrganicChocolateMilk];
+    self.kidsOrgMilk = [CCIngredientItem ingredientItemWithKidsType:CCIngredientKidsItemTypeOrganicMilk];
+}
+
+- (void)setupQuesadillaMealIngredients
+{
+    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
+    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+
+    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
+    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
+    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+
+    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
+    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
+    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+
+    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
+    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+
+    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
+    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+}
+
 - (void)migrateData
 {
     if (self.fetchedResultsController.fetchedObjects.count > 0) {
@@ -170,6 +308,9 @@ return _sharedObject; \
             
             for (Ingredients *ingredient in ingredients) {
                 
+                /**
+                 *  This is for handling any Regular Meal Options
+                 */
                 if ([ingredient.ingredientName isEqualToString:self.burrito.oldIngredientName]) {
                     [menuItem addIngredientItem:self.burrito];
                 } else if ([ingredient.ingredientName isEqualToString:self.bowl.oldIngredientName]) {
@@ -237,6 +378,15 @@ return _sharedObject; \
                 }
                 
                 [savedItem removeDetailsObject:ingredient];
+            }
+            
+            /**
+             *  This is for regular Kids Menu Items
+             */
+            for (Ingredients *ingredient in ingredients) {
+                if ([ingredient.ingredientName isEqualToString:self.burrito.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.burrito];
+                }
             }
             
             // Reassign the correct nutrition totals
