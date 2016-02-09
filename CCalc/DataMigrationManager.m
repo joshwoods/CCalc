@@ -127,7 +127,7 @@
 
 @property (nonatomic, strong) CCIngredientItem *quesOrgMilk;
 @property (nonatomic, strong) CCIngredientItem *quesOrgChocMilk;
-@property (nonatomic, strong) CCIngredientItem *guesAppleJuice;
+@property (nonatomic, strong) CCIngredientItem *quesAppleJuice;
 
 @end
 
@@ -270,29 +270,29 @@ return _sharedObject; \
 
 - (void)setupQuesadillaMealIngredients
 {
-    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
-    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
-    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+    self.quesFlour = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeFlourTort];
+    self.quesCorn = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeCornTort];
+    self.quesCheese = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeCheese];
 
-    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
-    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
-    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
-    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
-    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+    self.quesChicken = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeChicken];
+    self.quesSteak = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeSteak];
+    self.quesCarnitas = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeCarnitas];
+    self.quesBarbacoa = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeBarbacoa];
+    self.quesSofritas = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeSofritas];
 
-    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
-    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
-    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
-    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
-    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
+    self.quesGuac = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeGuac];
+    self.quesWRice = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeWhiteRice];
+    self.quesBRice = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeBrownRice];
+    self.quesPBeans = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypePintoBeans];
+    self.quesBBeans = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeBlackBeans];
 
-    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
-    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
-    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+    self.quesMandarins = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeMandarins];
+    self.quesBBeans = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeBlackBeans];
+    self.quesPBeans = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypePintoBeans];
 
-    self.chips = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChips];
-    self.chipsFreshTomato = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsTomato];
-    self.chipsGuac = [CCIngredientItem ingredientItemWithType:CCIngredientItemTypeChipsGuac];
+    self.quesOrgChocMilk = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeOrganicChocolateMilk];
+    self.quesOrgMilk = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeOrganicMilk];
+    self.quesAppleJuice = [CCIngredientItem ingredientItemWithKidsQuesadillaType:CCIngredientKidsQuesadillaItemTypeOrganicAppleJuice];
 }
 
 - (void)migrateData
