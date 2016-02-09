@@ -384,8 +384,105 @@ return _sharedObject; \
              *  This is for regular Kids Menu Items
              */
             for (Ingredients *ingredient in ingredients) {
-                if ([ingredient.ingredientName isEqualToString:self.burrito.oldIngredientName]) {
-                    [menuItem addIngredientItem:self.burrito];
+                if ([ingredient.ingredientName isEqualToString:self.kidsFlour.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsFlour];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsCrispy.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsCrispy];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsSoft.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsSoft];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsChicken.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsChicken];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsSteak.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsSteak];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsCarnitas.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsCarnitas];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsBarbacoa.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsBarbacoa];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsSofritas.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsSofritas];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsGuac.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsGuac];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsWRice.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsWRice];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsBRice.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsBRice];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsBBeans.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsBBeans];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsPBeans.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsPBeans];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsFajitas.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsFajitas];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsTomato.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsTomato];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsRoastedCorn.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsRoastedCorn];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsTRed.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsTRed];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsTGreen.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsTGreen];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsSourCream.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsSourCream];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsCheese.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsCheese];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsLettuce.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsLettuce];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsMandarins.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsMandarins];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsChips.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsChips];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsGrapes.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsGrapes];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsAppleJuice.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsAppleJuice];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsOrgMilk.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsOrgMilk];
+                } else if ([ingredient.ingredientName isEqualToString:self.kidsOrgChocMilk.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.kidsOrgChocMilk];
+                }
+            }
+            
+            /**
+             *  This is for Kids Quesadilla Menu Items
+             */
+            for (Ingredients *ingredient in ingredients) {
+                if ([ingredient.ingredientName isEqualToString:self.quesFlour.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesFlour];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesCorn.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesCorn];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesCheese.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesCheese];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesChicken.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesChicken];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesSteak.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesSteak];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesCarnitas.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesCarnitas];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesBarbacoa.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesBarbacoa];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesSofritas.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesSofritas];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesGuac.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesGuac];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesWRice.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesWRice];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesBRice.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesBRice];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesPBeans.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesPBeans];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesBBeans.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesBBeans];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesMandarins.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesMandarins];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesBBeans.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesBBeans];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesPBeans.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesPBeans];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesOrgChocMilk.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesOrgChocMilk];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesOrgMilk.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesOrgMilk];
+                } else if ([ingredient.ingredientName isEqualToString:self.quesAppleJuice.oldIngredientName]) {
+                    [menuItem addIngredientItem:self.quesAppleJuice];
                 }
             }
             
