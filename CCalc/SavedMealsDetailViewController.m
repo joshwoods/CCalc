@@ -130,6 +130,8 @@
                 break;
         }
         
+        cell.textLabel.textColor = [self colorWithHex:0xD35400 alpha:1.0];
+        
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
