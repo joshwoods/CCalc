@@ -756,6 +756,8 @@
 
 - (void)startOver
 {
+    self.selectedMealItem = nil;
+    
     [self.menuItem startOver];
     
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
