@@ -7,149 +7,205 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16759ABD1387512737F6858EEF6FAA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704557A7FB125C47F51BEFDFE9211165 /* Foundation.framework */; };
-		18CC180374222BCCF7E42BA7C78BC007 /* CJPAdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711F469082E2E745A78C442FD8C7F94 /* CJPAdController.m */; };
-		532200E4D1C89DDA17C54761FB8EFD00 /* CJPAdController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE62F1B137316395A3B65A8648A06D /* CJPAdController-dummy.m */; };
-		75F5FB738CFDDED030D3F9E938891A56 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3AFD098F2444D3690BC497D885ED7B /* AdSupport.framework */; };
-		905D35B6620ADD35EBB23FD2E982EE71 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F97EC83C7A7DB1BD72F15BB3A7766654 /* Pods-dummy.m */; };
-		9AAA76CA30BB665C8846719B09F78A79 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5414A2912B921E03A13159D7C0575DA7 /* iAd.framework */; };
-		AA38F951849240CB5489AEC3476456E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704557A7FB125C47F51BEFDFE9211165 /* Foundation.framework */; };
-		E5E49FD337CADDF689F968FBC4F3A4A8 /* CJPAdController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF41AB4BEC6A75BB4B3E4A433513A747 /* CJPAdController.h */; };
+		01C108E0C68E81682D1DF104E5E3792A /* CJPAdController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F74BD49364B846884FBCD6832C59198 /* CJPAdController-dummy.m */; };
+		23037A4F99B03590C466412427E77E75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF062E9AD2DCB7D8E0F09B36BF2189D /* UIKit.framework */; };
+		23C363255ED6159C345E1C78FD7ECBDA /* UIScrollView+EmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EDB830B1B7E2B10DF4CD13B48BC91AC /* UIScrollView+EmptyDataSet.h */; };
+		2D0291FAFB9E731A059072707165A0EF /* CJPAdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C178E3FF1BBDB70BF68BD747DC014D1 /* CJPAdController.m */; };
+		3E4AA3073F97FE3674775AB45294CB15 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA48DCEE56CFCE359340362F40AFB5D /* AdSupport.framework */; };
+		5BA2718AC75E82BAFF262FFD99596C33 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A88C6A1F14823764389D4558CA7FB6 /* iAd.framework */; };
+		5F546D9FCFD531750E3368003ED45D02 /* DZNEmptyDataSet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E24FA9D971690688C887CE673E7AD57 /* DZNEmptyDataSet-dummy.m */; };
+		75B08DE38CE10A69404E144A323DFE34 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5AF3A2F27AF5AA193F8E8AC6A0C03 /* UIScrollView+EmptyDataSet.m */; };
+		76F5F01C43CBCD7110957A03C070A50C /* CJPAdController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7431012B7C9E3D400A9EC8F33B015561 /* CJPAdController.h */; };
+		8B04544D246C97EE718E09ABE5693E2D /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C08F30C48D176EA74271EDA488173B /* Pods-dummy.m */; };
+		A1FAE92860FFF1789F503018D3C11109 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE7634121CEC36263D42A6235BB19F /* Foundation.framework */; };
+		A35F58D997F44FE8EA7D7DD096BC44EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE7634121CEC36263D42A6235BB19F /* Foundation.framework */; };
+		D29BB1D5B8FC5B26626D70160405760F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE7634121CEC36263D42A6235BB19F /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6F3ABF9673DB9A1292D6E12B6D15D9E4 /* PBXContainerItemProxy */ = {
+		83CC1BD62953B40FE28691889835CB85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 55DD301F73987DE0D13E4DAAC81A29C7;
+			remoteGlobalIDString = AD52FF2A2B6A13AD459D1E92BA2B86BA;
+			remoteInfo = DZNEmptyDataSet;
+		};
+		855B0C89AAFA779864301766FB741558 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C641E8A2E5B81EE0AD7ED8A4E1B7C9B0;
 			remoteInfo = CJPAdController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07F3142C2AD130E0F541B110875B8428 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F931736BA06BA211DF1291EB19AEE8D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		0F74BD49364B846884FBCD6832C59198 /* CJPAdController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJPAdController-dummy.m"; sourceTree = "<group>"; };
 		15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3F36DA717A6962A8DBB43FC455D16490 /* libCJPAdController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJPAdController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5414A2912B921E03A13159D7C0575DA7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/iAd.framework; sourceTree = DEVELOPER_DIR; };
+		1FA99814A3406BB55D31036D0B206774 /* libCJPAdController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJPAdController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B307D0709B0BF5C85A1265F55CB31F5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		3EDB830B1B7E2B10DF4CD13B48BC91AC /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+EmptyDataSet.h"; path = "Source/UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		4BF062E9AD2DCB7D8E0F09B36BF2189D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4E24FA9D971690688C887CE673E7AD57 /* DZNEmptyDataSet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DZNEmptyDataSet-dummy.m"; sourceTree = "<group>"; };
 		641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		704557A7FB125C47F51BEFDFE9211165 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		72AF3F7FEE303B957CA70B7B3F0F0FD7 /* CJPAdController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CJPAdController-Private.xcconfig"; sourceTree = "<group>"; };
-		7DDB59C2E5D72F2EA50109F1D16BF203 /* CJPAdController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CJPAdController.xcconfig; sourceTree = "<group>"; };
-		8E673628D19765028F45742188D2BE92 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
-		9711F469082E2E745A78C442FD8C7F94 /* CJPAdController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJPAdController.m; path = CJPAdController/CJPAdController.m; sourceTree = "<group>"; };
-		AB3AFD098F2444D3690BC497D885ED7B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		7431012B7C9E3D400A9EC8F33B015561 /* CJPAdController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPAdController.h; path = CJPAdController/CJPAdController.h; sourceTree = "<group>"; };
+		7C178E3FF1BBDB70BF68BD747DC014D1 /* CJPAdController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJPAdController.m; path = CJPAdController/CJPAdController.m; sourceTree = "<group>"; };
+		7FDAD885F51CD1D6266FA67C70A36226 /* CJPAdController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJPAdController-prefix.pch"; sourceTree = "<group>"; };
+		844EBD8327F9758F8F793B97614504C5 /* CJPAdController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CJPAdController.xcconfig; sourceTree = "<group>"; };
+		84890AA9B4FED0809AA9C21CCB102BD8 /* CJPAdController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CJPAdController-Private.xcconfig"; sourceTree = "<group>"; };
+		972F913804ECF190187EFFB4BC7628D8 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.7.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		A337B1EE067850F5F1CC2B1509E9E238 /* libDZNEmptyDataSet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDZNEmptyDataSet.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9C08F30C48D176EA74271EDA488173B /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		B6A88C6A1F14823764389D4558CA7FB6 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/iAd.framework; sourceTree = DEVELOPER_DIR; };
+		BA5E46A96F4A892723F8B707332D29D1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BF41AB4BEC6A75BB4B3E4A433513A747 /* CJPAdController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPAdController.h; path = CJPAdController/CJPAdController.h; sourceTree = "<group>"; };
 		BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		C000ADDDD6C4842BFFE57DDD1B72874A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.6.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
-		C2337634B22E10A0D21B04EE74D3F2B6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		D5EF4873AC50FD8ACA4F84E7E3A86C3E /* CJPAdController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJPAdController-prefix.pch"; sourceTree = "<group>"; };
-		E4DE62F1B137316395A3B65A8648A06D /* CJPAdController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJPAdController-dummy.m"; sourceTree = "<group>"; };
-		E8110928D7CD4E49ECAD212117666D40 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		F97EC83C7A7DB1BD72F15BB3A7766654 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		C2195A07CD2F6921BAF9CBE4E632B1E2 /* DZNEmptyDataSet-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DZNEmptyDataSet-Private.xcconfig"; sourceTree = "<group>"; };
+		D0BE356A563AA945CFFB641119F3C572 /* DZNEmptyDataSet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DZNEmptyDataSet.xcconfig; sourceTree = "<group>"; };
+		D126AF614BB220F5E807D115BFDCC5F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		DDA48DCEE56CFCE359340362F40AFB5D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		DDF5AF3A2F27AF5AA193F8E8AC6A0C03 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+EmptyDataSet.m"; path = "Source/UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		E59D51C63448DC42B674DA63A2EA9C2B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		E63F9A703F3F44369572098A776ADEFE /* DZNEmptyDataSet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DZNEmptyDataSet-prefix.pch"; sourceTree = "<group>"; };
+		E7FE7634121CEC36263D42A6235BB19F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		FAD9929B8F4A69BBEEAF4C02D93724AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		05A5761BF90284C755B084CDB9CFFCF8 /* Frameworks */ = {
+		383FDC1982E020F597A066D176ED5524 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16759ABD1387512737F6858EEF6FAA37 /* Foundation.framework in Frameworks */,
+				A1FAE92860FFF1789F503018D3C11109 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C71BC56D5DB8A276FC15EEE97FC2E928 /* Frameworks */ = {
+		43E4C64DB2708094B8A3E7A2E1C221C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75F5FB738CFDDED030D3F9E938891A56 /* AdSupport.framework in Frameworks */,
-				AA38F951849240CB5489AEC3476456E7 /* Foundation.framework in Frameworks */,
-				9AAA76CA30BB665C8846719B09F78A79 /* iAd.framework in Frameworks */,
+				3E4AA3073F97FE3674775AB45294CB15 /* AdSupport.framework in Frameworks */,
+				A35F58D997F44FE8EA7D7DD096BC44EC /* Foundation.framework in Frameworks */,
+				5BA2718AC75E82BAFF262FFD99596C33 /* iAd.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F55D64E380CEB922D370EC1D68E83FDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29BB1D5B8FC5B26626D70160405760F /* Foundation.framework in Frameworks */,
+				23037A4F99B03590C466412427E77E75 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03EAC26FD21B30F219B3B91AB7D3B4DB /* Frameworks */ = {
+		0C13C26E82D359D6DB73FD7CAF9C4809 /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
-				C2337634B22E10A0D21B04EE74D3F2B6 /* Crashlytics.framework */,
+				D3C226D9DDB5AF2FE0480286A08D3AC5 /* Frameworks */,
 			);
-			name = Frameworks;
+			path = Crashlytics;
 			sourceTree = "<group>";
 		};
-		0BE342C9337140DE76132DECC217494B /* Frameworks */ = {
+		147E86EAF89EE386924D28C7C5B20146 /* CJPAdController */ = {
 			isa = PBXGroup;
 			children = (
-				C000ADDDD6C4842BFFE57DDD1B72874A /* GoogleMobileAds.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				87D8CDDEE3AB7E63974C178F5A5E517E /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1976371F302EB8485B2D131AD4B97F13 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8E673628D19765028F45742188D2BE92 /* Fabric.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1D3FF3800A3958528FE8E68233B22487 /* Google-Mobile-Ads-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				0BE342C9337140DE76132DECC217494B /* Frameworks */,
-			);
-			path = "Google-Mobile-Ads-SDK";
-			sourceTree = "<group>";
-		};
-		3171698773D2353604F92503BD0BF8C4 /* CJPAdController */ = {
-			isa = PBXGroup;
-			children = (
-				BF41AB4BEC6A75BB4B3E4A433513A747 /* CJPAdController.h */,
-				9711F469082E2E745A78C442FD8C7F94 /* CJPAdController.m */,
-				A34C8B0A092C0CCB69E15A639A6FB486 /* Support Files */,
+				7431012B7C9E3D400A9EC8F33B015561 /* CJPAdController.h */,
+				7C178E3FF1BBDB70BF68BD747DC014D1 /* CJPAdController.m */,
+				82178DDBA37817A6EB0E9691D1D126A6 /* Support Files */,
 			);
 			path = CJPAdController;
+			sourceTree = "<group>";
+		};
+		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42961468ABCF718DB05B217383D24BA4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23E44F729FE184C1E4DCD2AD2C35C92F /* DZNEmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				3EDB830B1B7E2B10DF4CD13B48BC91AC /* UIScrollView+EmptyDataSet.h */,
+				DDF5AF3A2F27AF5AA193F8E8AC6A0C03 /* UIScrollView+EmptyDataSet.m */,
+				63AC5E3EAF9F1596D2C5D57E1772E4E0 /* Support Files */,
+			);
+			path = DZNEmptyDataSet;
+			sourceTree = "<group>";
+		};
+		29797F29F3EE52423C0216BFC4A27CC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				972F913804ECF190187EFFB4BC7628D8 /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42961468ABCF718DB05B217383D24BA4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DDA48DCEE56CFCE359340362F40AFB5D /* AdSupport.framework */,
+				E7FE7634121CEC36263D42A6235BB19F /* Foundation.framework */,
+				4BF062E9AD2DCB7D8E0F09B36BF2189D /* UIKit.framework */,
+				B6A88C6A1F14823764389D4558CA7FB6 /* iAd.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		63AC5E3EAF9F1596D2C5D57E1772E4E0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0BE356A563AA945CFFB641119F3C572 /* DZNEmptyDataSet.xcconfig */,
+				C2195A07CD2F6921BAF9CBE4E632B1E2 /* DZNEmptyDataSet-Private.xcconfig */,
+				4E24FA9D971690688C887CE673E7AD57 /* DZNEmptyDataSet-dummy.m */,
+				E63F9A703F3F44369572098A776ADEFE /* DZNEmptyDataSet-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DZNEmptyDataSet";
+			sourceTree = "<group>";
+		};
+		70344910D756E49397A2E59C72A67513 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B307D0709B0BF5C85A1265F55CB31F5 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79B3BF08CDDA9B7ABEF728B9FA53EFBC /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				70344910D756E49397A2E59C72A67513 /* Frameworks */,
+			);
+			path = Fabric;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				E3E336395A56186DA9C02DB87767836C /* Pods */,
+				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
+				B108EA363A46193B06EF5E54F5F86B4B /* Pods */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		87D8CDDEE3AB7E63974C178F5A5E517E /* iOS */ = {
+		82178DDBA37817A6EB0E9691D1D126A6 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AB3AFD098F2444D3690BC497D885ED7B /* AdSupport.framework */,
-				704557A7FB125C47F51BEFDFE9211165 /* Foundation.framework */,
-				5414A2912B921E03A13159D7C0575DA7 /* iAd.framework */,
+				844EBD8327F9758F8F793B97614504C5 /* CJPAdController.xcconfig */,
+				84890AA9B4FED0809AA9C21CCB102BD8 /* CJPAdController-Private.xcconfig */,
+				0F74BD49364B846884FBCD6832C59198 /* CJPAdController-dummy.m */,
+				7FDAD885F51CD1D6266FA67C70A36226 /* CJPAdController-prefix.pch */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		91355BCD489F644301D686AFD0BA165F /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-				1976371F302EB8485B2D131AD4B97F13 /* Frameworks */,
-			);
-			path = Fabric;
+			name = "Support Files";
+			path = "../Target Support Files/CJPAdController";
 			sourceTree = "<group>";
 		};
 		952EEBFAF8F7E620423C9F156F25A506 /* Pods */ = {
@@ -157,32 +213,33 @@
 			children = (
 				15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */,
 				BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */,
-				F97EC83C7A7DB1BD72F15BB3A7766654 /* Pods-dummy.m */,
+				A9C08F30C48D176EA74271EDA488173B /* Pods-dummy.m */,
 				641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */,
-				0F931736BA06BA211DF1291EB19AEE8D /* Pods.debug.xcconfig */,
-				E8110928D7CD4E49ECAD212117666D40 /* Pods.release.xcconfig */,
+				D126AF614BB220F5E807D115BFDCC5F0 /* Pods.debug.xcconfig */,
+				FAD9929B8F4A69BBEEAF4C02D93724AE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		A34C8B0A092C0CCB69E15A639A6FB486 /* Support Files */ = {
+		B108EA363A46193B06EF5E54F5F86B4B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7DDB59C2E5D72F2EA50109F1D16BF203 /* CJPAdController.xcconfig */,
-				72AF3F7FEE303B957CA70B7B3F0F0FD7 /* CJPAdController-Private.xcconfig */,
-				E4DE62F1B137316395A3B65A8648A06D /* CJPAdController-dummy.m */,
-				D5EF4873AC50FD8ACA4F84E7E3A86C3E /* CJPAdController-prefix.pch */,
+				147E86EAF89EE386924D28C7C5B20146 /* CJPAdController */,
+				0C13C26E82D359D6DB73FD7CAF9C4809 /* Crashlytics */,
+				23E44F729FE184C1E4DCD2AD2C35C92F /* DZNEmptyDataSet */,
+				79B3BF08CDDA9B7ABEF728B9FA53EFBC /* Fabric */,
+				E3D8B45BD7DF46EDDEAA400616F3CE62 /* Google-Mobile-Ads-SDK */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/CJPAdController";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F36DA717A6962A8DBB43FC455D16490 /* libCJPAdController.a */,
-				07F3142C2AD130E0F541B110875B8428 /* libPods.a */,
+				1FA99814A3406BB55D31036D0B206774 /* libCJPAdController.a */,
+				A337B1EE067850F5F1CC2B1509E9E238 /* libDZNEmptyDataSet.a */,
+				BA5E46A96F4A892723F8B707332D29D1 /* libPods.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,46 +252,86 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E3E336395A56186DA9C02DB87767836C /* Pods */ = {
+		D3C226D9DDB5AF2FE0480286A08D3AC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3171698773D2353604F92503BD0BF8C4 /* CJPAdController */,
-				FA3FD087B5DAB313649BE8F9F4668884 /* Crashlytics */,
-				91355BCD489F644301D686AFD0BA165F /* Fabric */,
-				1D3FF3800A3958528FE8E68233B22487 /* Google-Mobile-Ads-SDK */,
+				E59D51C63448DC42B674DA63A2EA9C2B /* Crashlytics.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FA3FD087B5DAB313649BE8F9F4668884 /* Crashlytics */ = {
+		E3D8B45BD7DF46EDDEAA400616F3CE62 /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				03EAC26FD21B30F219B3B91AB7D3B4DB /* Frameworks */,
+				29797F29F3EE52423C0216BFC4A27CC8 /* Frameworks */,
 			);
-			path = Crashlytics;
+			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		FD52ACBD99355651388781BCED1E817E /* Headers */ = {
+		BF32D429DA8CEAB76ABC4134AC2E7342 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5E49FD337CADDF689F968FBC4F3A4A8 /* CJPAdController.h in Headers */,
+				76F5F01C43CBCD7110957A03C070A50C /* CJPAdController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0D8DF4D4FB376551F36D76183987B2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C363255ED6159C345E1C78FD7ECBDA /* UIScrollView+EmptyDataSet.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		55DD301F73987DE0D13E4DAAC81A29C7 /* CJPAdController */ = {
+		1B8F1063B535872C336263A3A8D13EAC /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD6EF39E52D0128CCE616E8E32685477 /* Build configuration list for PBXNativeTarget "CJPAdController" */;
+			buildConfigurationList = 3E333875E79745C4AD568E3816B1F6F8 /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				E992A8A642FC8F3D23A634B1944E63B9 /* Sources */,
-				C71BC56D5DB8A276FC15EEE97FC2E928 /* Frameworks */,
-				FD52ACBD99355651388781BCED1E817E /* Headers */,
+				BB375E534B43D5D06354CC4C63544572 /* Sources */,
+				383FDC1982E020F597A066D176ED5524 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D27E45C92CE18B99486885BD762A69FD /* PBXTargetDependency */,
+				077FF125F5AD6C6164695ADC608E498F /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = BA5E46A96F4A892723F8B707332D29D1 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AD52FF2A2B6A13AD459D1E92BA2B86BA /* DZNEmptyDataSet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 717C55BFE097933D045CF6D7C9852BF1 /* Build configuration list for PBXNativeTarget "DZNEmptyDataSet" */;
+			buildPhases = (
+				B34333B1182DD26E0C868000F9309ABB /* Sources */,
+				F55D64E380CEB922D370EC1D68E83FDC /* Frameworks */,
+				FF0D8DF4D4FB376551F36D76183987B2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DZNEmptyDataSet;
+			productName = DZNEmptyDataSet;
+			productReference = A337B1EE067850F5F1CC2B1509E9E238 /* libDZNEmptyDataSet.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C641E8A2E5B81EE0AD7ED8A4E1B7C9B0 /* CJPAdController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FEC667D196838946306605E855FD977 /* Build configuration list for PBXNativeTarget "CJPAdController" */;
+			buildPhases = (
+				CD875BA323C43BB8F41E59A82FEA8F6A /* Sources */,
+				43E4C64DB2708094B8A3E7A2E1C221C5 /* Frameworks */,
+				BF32D429DA8CEAB76ABC4134AC2E7342 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -242,24 +339,7 @@
 			);
 			name = CJPAdController;
 			productName = CJPAdController;
-			productReference = 3F36DA717A6962A8DBB43FC455D16490 /* libCJPAdController.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		EAA85639C7B64D5039F9E6FEC8D6C356 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C28FE5D3EAC28BF3DD2CDF08641F8023 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				AE3B2323E73CBD4559F24E601869FD5F /* Sources */,
-				05A5761BF90284C755B084CDB9CFFCF8 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F10C7FE6B8551F140348915003BFC722 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = 07F3142C2AD130E0F541B110875B8428 /* libPods.a */;
+			productReference = 1FA99814A3406BB55D31036D0B206774 /* libCJPAdController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -283,38 +363,54 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55DD301F73987DE0D13E4DAAC81A29C7 /* CJPAdController */,
-				EAA85639C7B64D5039F9E6FEC8D6C356 /* Pods */,
+				C641E8A2E5B81EE0AD7ED8A4E1B7C9B0 /* CJPAdController */,
+				AD52FF2A2B6A13AD459D1E92BA2B86BA /* DZNEmptyDataSet */,
+				1B8F1063B535872C336263A3A8D13EAC /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AE3B2323E73CBD4559F24E601869FD5F /* Sources */ = {
+		B34333B1182DD26E0C868000F9309ABB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				905D35B6620ADD35EBB23FD2E982EE71 /* Pods-dummy.m in Sources */,
+				5F546D9FCFD531750E3368003ED45D02 /* DZNEmptyDataSet-dummy.m in Sources */,
+				75B08DE38CE10A69404E144A323DFE34 /* UIScrollView+EmptyDataSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E992A8A642FC8F3D23A634B1944E63B9 /* Sources */ = {
+		BB375E534B43D5D06354CC4C63544572 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				532200E4D1C89DDA17C54761FB8EFD00 /* CJPAdController-dummy.m in Sources */,
-				18CC180374222BCCF7E42BA7C78BC007 /* CJPAdController.m in Sources */,
+				8B04544D246C97EE718E09ABE5693E2D /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD875BA323C43BB8F41E59A82FEA8F6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01C108E0C68E81682D1DF104E5E3792A /* CJPAdController-dummy.m in Sources */,
+				2D0291FAFB9E731A059072707165A0EF /* CJPAdController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F10C7FE6B8551F140348915003BFC722 /* PBXTargetDependency */ = {
+		077FF125F5AD6C6164695ADC608E498F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DZNEmptyDataSet;
+			target = AD52FF2A2B6A13AD459D1E92BA2B86BA /* DZNEmptyDataSet */;
+			targetProxy = 83CC1BD62953B40FE28691889835CB85 /* PBXContainerItemProxy */;
+		};
+		D27E45C92CE18B99486885BD762A69FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CJPAdController;
-			target = 55DD301F73987DE0D13E4DAAC81A29C7 /* CJPAdController */;
-			targetProxy = 6F3ABF9673DB9A1292D6E12B6D15D9E4 /* PBXContainerItemProxy */;
+			target = C641E8A2E5B81EE0AD7ED8A4E1B7C9B0 /* CJPAdController */;
+			targetProxy = 855B0C89AAFA779864301766FB741558 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -353,9 +449,25 @@
 			};
 			name = Release;
 		};
-		12F0E24B3621B78C255154A592B2835B /* Debug */ = {
+		0545EC4B8F5FC1E6D5A92CCA4AF83744 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72AF3F7FEE303B957CA70B7B3F0F0FD7 /* CJPAdController-Private.xcconfig */;
+			baseConfigurationReference = FAD9929B8F4A69BBEEAF4C02D93724AE /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1874F96A81E650EC0CCBCFE1FBFA6901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84890AA9B4FED0809AA9C21CCB102BD8 /* CJPAdController-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/CJPAdController/CJPAdController-prefix.pch";
@@ -369,32 +481,16 @@
 			};
 			name = Debug;
 		};
-		7FAC9C878339A0E2721B99EE3A628737 /* Debug */ = {
+		693CA708B6D140A86373D3F829282FAA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F931736BA06BA211DF1291EB19AEE8D /* Pods.debug.xcconfig */;
+			baseConfigurationReference = C2195A07CD2F6921BAF9CBE4E632B1E2 /* DZNEmptyDataSet-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		AC2C62D260EC12D17466E1CC46B1B81D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8110928D7CD4E49ECAD212117666D40 /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -440,9 +536,9 @@
 			};
 			name = Debug;
 		};
-		F42F7899CEC3E994DC026A047E595BEE /* Release */ = {
+		BA3CF48348EA3E21A024BEB474EA35E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72AF3F7FEE303B957CA70B7B3F0F0FD7 /* CJPAdController-Private.xcconfig */;
+			baseConfigurationReference = 84890AA9B4FED0809AA9C21CCB102BD8 /* CJPAdController-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/CJPAdController/CJPAdController-prefix.pch";
@@ -456,6 +552,38 @@
 			};
 			name = Release;
 		};
+		CF2C39FAB6C114FE916805130C2636AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2195A07CD2F6921BAF9CBE4E632B1E2 /* DZNEmptyDataSet-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D6F6EDD0DEB0517BD581E749136AD99A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D126AF614BB220F5E807D115BFDCC5F0 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -468,20 +596,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C28FE5D3EAC28BF3DD2CDF08641F8023 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		3E333875E79745C4AD568E3816B1F6F8 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7FAC9C878339A0E2721B99EE3A628737 /* Debug */,
-				AC2C62D260EC12D17466E1CC46B1B81D /* Release */,
+				D6F6EDD0DEB0517BD581E749136AD99A /* Debug */,
+				0545EC4B8F5FC1E6D5A92CCA4AF83744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD6EF39E52D0128CCE616E8E32685477 /* Build configuration list for PBXNativeTarget "CJPAdController" */ = {
+		4FEC667D196838946306605E855FD977 /* Build configuration list for PBXNativeTarget "CJPAdController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				12F0E24B3621B78C255154A592B2835B /* Debug */,
-				F42F7899CEC3E994DC026A047E595BEE /* Release */,
+				1874F96A81E650EC0CCBCFE1FBFA6901 /* Debug */,
+				BA3CF48348EA3E21A024BEB474EA35E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		717C55BFE097933D045CF6D7C9852BF1 /* Build configuration list for PBXNativeTarget "DZNEmptyDataSet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF2C39FAB6C114FE916805130C2636AA /* Debug */,
+				693CA708B6D140A86373D3F829282FAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

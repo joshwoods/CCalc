@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DZNEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>55DD301F73987DE0D13E4DAAC81A29C7</key>
+		<key>1B8F1063B535872C336263A3A8D13EAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EAA85639C7B64D5039F9E6FEC8D6C356</key>
+		<key>AD52FF2A2B6A13AD459D1E92BA2B86BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C641E8A2E5B81EE0AD7ED8A4E1B7C9B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,6 +8,8 @@
 
 #import "SavedMealsViewController.h"
 #import "SavedMealsDetailViewController.h"
+#import "CJPAdController.h"
+#import "NewMealViewController.h"
 
 @interface SavedMealsViewController ()
 
@@ -31,6 +33,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.tableView.emptyDataSetDelegate = self;
+    self.tableView.emptyDataSetSource = self;
+    
+    self.tableView.tableFooterView = [UIView new];
     
     // Create Fetched Results Controller
     NSError *error;
@@ -50,6 +56,81 @@
     }
 }
 
+
+#pragma mark - Empty Set
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"burrito"];
+}
+
+- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView
+{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath: @"transform"];
+    
+    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 0.0, 0.0, 1.0)];
+    
+    animation.duration = 0.25;
+    animation.cumulative = YES;
+    animation.repeatCount = MAXFLOAT;
+    
+    return animation;
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return nil;
+}
+
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"You have no Saved Meals!";
+    
+    NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraph.alignment = NSTextAlignmentCenter;
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0f],
+                                 NSForegroundColorAttributeName: [UIColor blackColor],
+                                 NSParagraphStyleAttributeName: paragraph};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+{
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0f]};
+    
+    return [[NSAttributedString alloc] initWithString:@"Add New Meal" attributes:attributes];
+}
+
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
+{
+    UITabBarController *controller = (UITabBarController *)[CJPAdController sharedInstance].contentController;
+    
+    UINavigationController *nav = [controller.viewControllers objectAtIndex:0];
+    NewMealViewController *vc = [nav.viewControllers objectAtIndex:0];
+    [vc startOver];
+    
+    [controller setSelectedIndex:0];
+}
+
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+- (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -59,30 +140,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.fetchedResultsController.fetchedObjects.count > 0) {
-        return self.fetchedResultsController.fetchedObjects.count;
-    }
-    
-    return 1;
+    return self.fetchedResultsController.fetchedObjects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.fetchedResultsController.fetchedObjects.count > 0) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-        tableView.userInteractionEnabled = YES;
-        
-        SavedMenuItems *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        
-        cell.textLabel.text = item.menuName;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"Calories: %@", item.calories];
-        
-        return cell;
-    } else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoItemsCell" forIndexPath:indexPath];
-        tableView.userInteractionEnabled = NO;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    tableView.userInteractionEnabled = YES;
+    
+    SavedMenuItems *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    cell.textLabel.text = item.menuName;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Calories: %@", item.calories];
+    
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

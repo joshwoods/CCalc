@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SavedMenuItems.h"
+#import "UIScrollView+EmptyDataSet.h"
 @import CoreData;
 
-@interface SavedMealsViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface SavedMealsViewController : UITableViewController <NSFetchedResultsControllerDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) SavedMenuItems *savedMenuItem;
